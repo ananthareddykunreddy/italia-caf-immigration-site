@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
-{% block title %}SMDUNIYA | CAF, Immigration, Translation and University Consulting{% endblock %}
-{% block meta_description %}SMDUNIYA offers CAF services, kit soggiorno filling, document translation, university application consulting, and consular document assistance in Italy.{% endblock %}
+{% block title %}SMDUNIYA | CAF, Patronato, Immigration, Translation and University Consulting{% endblock %}
+{% block meta_description %}SMDUNIYA offers CAF services, patronato services, kit soggiorno filling, document translation, university application consulting, and consular document assistance in Italy.{% endblock %}
 
 {% block content %}
 <main>
@@ -11,7 +11,7 @@
         <p class="eyebrow">CAF, Immigration and Document Support</p>
         <h1>Professional assistance for everyday paperwork and major life moves in Italy.</h1>
         <p class="lead">
-          SMDUNIYA helps individuals and families handle CAF services, immigration support, university application consulting, document translation, and consular paperwork from one organized office.
+          SMDUNIYA helps individuals and families handle CAF services, patronato services, immigration support, university application consulting, document translation, and consular paperwork from one organized office.
         </p>
         <div class="hero-cta">
           <a class="btn" href="{{ url_for('appointments') }}">Book Appointment</a>
@@ -28,6 +28,7 @@
         <h2>Support people commonly need all year.</h2>
         <ul>
           <li>ISEE, 730, IMU, RED/ICRIC, Assegno Unico, Modello Redditi, F24, Bonus, SPID, Successioni, and cambio residenza support</li>
+          <li>Disoccupazione, assegno unico, dimissioni, maternita, invalidita civile, 104, and pensione patronato support</li>
           <li>Kit soggiorno filling, immigration document checks, and residence process guidance</li>
           <li>Document translation and consular support for passport, OCI, and surrender-related files</li>
         </ul>
@@ -42,7 +43,7 @@
     <div class="container band-grid">
       <div>
         <p class="stat">All-in-One Desk</p>
-        <p class="stat-label">CAF, immigration, translations, and university consulting in one place</p>
+        <p class="stat-label">CAF, patronato, immigration, translations, and university consulting in one place</p>
       </div>
       <div>
         <p class="stat">Practical Workflow</p>
@@ -65,6 +66,12 @@
           <h3>Fiscal and Family Services</h3>
           <p>Support for core CAF services including ISEE, 730, IMU, RED/ICRIC, Assegno Unico, Modello Redditi, Successioni, cambio residenza, F24, bonus, and SPID.</p>
           <a href="{{ url_for('caf_services') }}">Explore CAF services</a>
+        </article>
+        <article class="card">
+          <span class="card-tag">Patronato</span>
+          <h3>Patronato and Welfare Support</h3>
+          <p>Support for disoccupazione, assegno unico, dimissioni, maternita, invalidita civile, 104, and pensione-related paperwork.</p>
+          <a href="{{ url_for('patronato_services') }}">Explore patronato services</a>
         </article>
         <article class="card">
           <span class="card-tag">Immigration</span>
@@ -92,7 +99,7 @@
             <span>01</span>
             <div>
               <h3>Browse by need</h3>
-              <p>Clients can quickly understand whether they need CAF, immigration, translation, consular help, or university application consulting.</p>
+              <p>Clients can quickly understand whether they need CAF, patronato, immigration, translation, consular help, or university application consulting.</p>
             </div>
           </div>
           <div class="step">

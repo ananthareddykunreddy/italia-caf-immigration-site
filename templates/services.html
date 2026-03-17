@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block title %}Services | SMDUNIYA{% endblock %}
-{% block meta_description %}Browse CAF, immigration, translation, consular document support, and university application consulting services offered by SMDUNIYA in Italy.{% endblock %}
+{% block meta_description %}Browse CAF, patronato, immigration, translation, consular document support, and university application consulting services offered by SMDUNIYA in Italy.{% endblock %}
 
 {% block content %}
 <main class="page-shell">
@@ -51,6 +51,37 @@
   </section>
 
   <section class="section section-alt" id="immigration-services">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">Patronato Services</p>
+        <h2>Welfare and administrative assistance approved for this site.</h2>
+      </div>
+      <div class="cards cards-two">
+        <article class="card">
+          <h3>Main Patronato Services</h3>
+          <ul>
+            <li><a href="{{ url_for('patronato_service_detail', slug='disoccupazione') }}">Disoccupazione</a></li>
+            <li><a href="{{ url_for('patronato_service_detail', slug='assegno-unico-patronato') }}">Assegno Unico</a></li>
+            <li><a href="{{ url_for('patronato_service_detail', slug='dimissioni') }}">Dimissioni</a></li>
+            <li><a href="{{ url_for('patronato_service_detail', slug='maternita') }}">Maternita</a></li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Additional Patronato Support</h3>
+          <ul>
+            <li><a href="{{ url_for('patronato_service_detail', slug='invalidita-civile') }}">Invalidita Civile</a></li>
+            <li><a href="{{ url_for('patronato_service_detail', slug='legge-104') }}">104</a></li>
+            <li><a href="{{ url_for('patronato_service_detail', slug='pensione') }}">Pensione</a></li>
+          </ul>
+        </article>
+      </div>
+      <div class="section-link-row">
+        <a class="btn btn-outline" href="{{ url_for('patronato_services') }}">Open Full Patronato Services Page</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="immigration-services">
     <div class="container">
       <div class="section-heading">
         <p class="eyebrow">Immigration Services</p>

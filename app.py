@@ -470,6 +470,177 @@ EMBASSY_SERVICES = {
     },
 }
 
+PATRONATO_SERVICES = {
+    "disoccupazione": {
+        "name": "Disoccupazione",
+        "summary": "Support for unemployment-related paperwork and file preparation.",
+        "who_needs_it": [
+            "Workers dealing with unemployment-related administrative procedures",
+            "Clients who need help organizing the documents for unemployment support cases",
+        ],
+        "documents": [
+            "Identity and fiscal documents",
+            "Employment and termination-related records",
+            "Supporting documents required for the specific unemployment case",
+        ],
+        "process": [
+            "Review the unemployment-related situation",
+            "Check the required supporting documents",
+            "Prepare the file for assisted follow-up or submission readiness",
+        ],
+        "notes": [
+            "Exact requirements depend on the specific unemployment-related measure involved",
+        ],
+        "official_basis": [
+            "Patronato-style support commonly covers unemployment and related welfare paperwork",
+        ],
+    },
+    "assegno-unico-patronato": {
+        "name": "Assegno Unico",
+        "summary": "Patronato-side support for family-benefit paperwork and follow-up organization.",
+        "who_needs_it": [
+            "Families managing child-related support requests",
+            "Clients who need help preparing family and welfare documentation",
+        ],
+        "documents": [
+            "Identity and family-status records",
+            "Household and benefit-related supporting documents",
+            "Any income or supporting files relevant to the case",
+        ],
+        "process": [
+            "Review the family case and type of support needed",
+            "Organize the documents linked to the application or update",
+            "Prepare the file for assisted handling",
+        ],
+        "notes": [
+            "Requirements vary depending on the family situation and applicable rules",
+        ],
+        "official_basis": [
+            "Patronato offices commonly assist with family-benefit related documentation",
+        ],
+    },
+    "dimissioni": {
+        "name": "Dimissioni",
+        "summary": "Support for resignation-related digital or administrative filing preparation.",
+        "who_needs_it": [
+            "Workers who need help understanding resignation-related administrative steps",
+            "Clients who want support preparing the data and documents before filing",
+        ],
+        "documents": [
+            "Identity and fiscal details",
+            "Employment information",
+            "Any supporting records linked to the resignation process",
+        ],
+        "process": [
+            "Review the resignation situation",
+            "Prepare the relevant employment and identity information",
+            "Assist with the filing-readiness workflow",
+        ],
+        "notes": [
+            "Some resignation procedures use dedicated digital workflows",
+        ],
+        "official_basis": [
+            "Patronato-oriented assistance often covers resignation filing support",
+        ],
+    },
+    "maternita": {
+        "name": "Maternita",
+        "summary": "Support organizing maternity-related welfare or administrative paperwork.",
+        "who_needs_it": [
+            "Clients preparing maternity-related documentation",
+            "Families needing help with maternity support files",
+        ],
+        "documents": [
+            "Identity and family records",
+            "Employment or welfare-supporting documents where relevant",
+            "Any maternity-related case documents required for follow-up",
+        ],
+        "process": [
+            "Review the maternity-related case",
+            "Organize identity, family, and employment-related documents",
+            "Prepare the file for assisted administrative handling",
+        ],
+        "notes": [
+            "Required documents vary depending on the type of maternity-related request",
+        ],
+        "official_basis": [
+            "Patronato services commonly include maternity-related support procedures",
+        ],
+    },
+    "invalidita-civile": {
+        "name": "Invalidita Civile",
+        "summary": "Support for civil invalidity-related documentation and case preparation.",
+        "who_needs_it": [
+            "Clients preparing civil invalidity-related documentation",
+            "Families helping a relative with disability-related administrative support",
+        ],
+        "documents": [
+            "Identity and health-related records relevant to the case",
+            "Supporting administrative documents",
+            "Any records required for the recognition or follow-up workflow",
+        ],
+        "process": [
+            "Review the case type and stage",
+            "Organize the administrative and supporting records",
+            "Prepare the file for assisted follow-up",
+        ],
+        "notes": [
+            "Health and disability procedures can have specialized document requirements",
+        ],
+        "official_basis": [
+            "Patronato services frequently include civil-invalidity related support",
+        ],
+    },
+    "legge-104": {
+        "name": "104",
+        "summary": "Support for documentation connected to Law 104 related administrative needs.",
+        "who_needs_it": [
+            "Clients preparing files linked to Law 104-related benefits or protections",
+            "Families organizing supporting documents for assistance procedures",
+        ],
+        "documents": [
+            "Identity records",
+            "Family or support-related documentation",
+            "Any case-specific administrative records connected to the request",
+        ],
+        "process": [
+            "Review the purpose of the Law 104-related request",
+            "Organize supporting documents and declarations",
+            "Prepare the file for assisted handling or follow-up",
+        ],
+        "notes": [
+            "Document requirements vary depending on the specific request or benefit",
+        ],
+        "official_basis": [
+            "Law 104-related support is a common patronato assistance area",
+        ],
+    },
+    "pensione": {
+        "name": "Pensione",
+        "summary": "Support for pension-related paperwork and file preparation.",
+        "who_needs_it": [
+            "Clients preparing pension-related administrative requests",
+            "Families or workers who need help organizing pension support files",
+        ],
+        "documents": [
+            "Identity and fiscal records",
+            "Contribution or employment-related documents where applicable",
+            "Supporting pension-related case records",
+        ],
+        "process": [
+            "Review the pension-related situation",
+            "Organize the contribution and personal records involved",
+            "Prepare the file for assisted handling or follow-up",
+        ],
+        "notes": [
+            "Pension procedures differ depending on the specific pension path or status",
+        ],
+        "official_basis": [
+            "Patronato services commonly include pension-related assistance",
+        ],
+    },
+}
+
 ADMISSION_SERVICES = {
     "university-applications": {
         "name": "University Application Consulting",
@@ -640,6 +811,19 @@ def embassy_service_detail(slug: str):
     if not service:
         return redirect(url_for("embassy_services"))
     return render_template("embassy_service_detail.html", service=service, slug=slug)
+
+
+@app.route("/patronato-services")
+def patronato_services():
+    return render_template("patronato_services.html", patronato_services=PATRONATO_SERVICES)
+
+
+@app.route("/patronato-services/<slug>")
+def patronato_service_detail(slug: str):
+    service = PATRONATO_SERVICES.get(slug)
+    if not service:
+        return redirect(url_for("patronato_services"))
+    return render_template("patronato_service_detail.html", service=service, slug=slug)
 
 
 @app.route("/immigration-services")

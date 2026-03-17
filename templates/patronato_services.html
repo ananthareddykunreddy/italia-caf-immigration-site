@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Patronato Services | SMDUNIYA{% endblock %}
+{% block meta_description %}Patronato services including disoccupazione, assegno unico, dimissioni, maternita, invalidita civile, 104, and pensione support.{% endblock %}
+
+{% block content %}
+<main class="page-shell">
+  <section class="page-hero">
+    <div class="container narrow">
+      <p class="eyebrow">Patronato Services</p>
+      <h1>Dedicated patronato service pages based on the services you approved.</h1>
+      <p class="lead">
+        This page groups the patronato-related services into separate detail pages so clients can understand the type of support they need before booking.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container cards cards-two">
+      {% for slug, service in patronato_services.items() %}
+        <article class="card">
+          <span class="card-tag">Patronato</span>
+          <h3>{{ service.name }}</h3>
+          <p>{{ service.summary }}</p>
+          <a href="{{ url_for('patronato_service_detail', slug=slug) }}">Open {{ service.name }}</a>
+        </article>
+      {% endfor %}
+    </div>
+  </section>
+</main>
+{% endblock %}
