@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}{{ service.name }} | Immigration Services | ANI Italia Hub{% endblock %}
+{% block meta_description %}{{ service.summary }}{% endblock %}
+
+{% block content %}
+<main class="page-shell">
+  <section class="page-hero">
+    <div class="container narrow">
+      <p class="eyebrow">Immigration Service</p>
+      <h1>{{ service.name }}</h1>
+      <p class="lead">{{ service.summary }}</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container split">
+      <div class="card">
+        <span class="card-tag">Service Scope</span>
+        <h3>{{ service.name }}</h3>
+        <ul>
+          {% for item in service["items"] %}
+            <li>{{ item }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="panel">
+        <p class="panel-kicker">Appointment</p>
+        <h3>Book this immigration service.</h3>
+        <p>Use the appointment form and choose <strong>{{ service.name }}</strong> as the service type.</p>
+        <a class="btn" href="{{ url_for('appointments') }}">Book {{ service.name }}</a>
+      </div>
+    </div>
+  </section>
+</main>
+{% endblock %}

@@ -104,6 +104,82 @@ CAF_SERVICES = {
     },
 }
 
+IMMIGRATION_SERVICES = {
+    "kit-soggiorno": {
+        "name": "Kit Soggiorno Filling",
+        "summary": "Support for filling the kit soggiorno and preparing the required documents.",
+        "items": [
+            "Kit form filling support",
+            "Document review before submission",
+            "Case preparation for appointments",
+            "General residence process guidance",
+        ],
+    },
+    "residence-permit": {
+        "name": "Residence Permit Document Support",
+        "summary": "Help organizing residence permit files and supporting paperwork.",
+        "items": [
+            "Residence permit supporting document checks",
+            "File organization for complex cases",
+            "Appointment preparation support",
+            "Follow-up document assistance",
+        ],
+    },
+    "document-translation": {
+        "name": "Document Translation Support",
+        "summary": "Support for translated documents and related file preparation.",
+        "items": [
+            "Translation coordination support",
+            "File preparation for translated documents",
+            "Supporting copy review and organization",
+            "Intake support for multilingual case files",
+        ],
+    },
+    "international-documents": {
+        "name": "International Document Support",
+        "summary": "General support for international paperwork connected to migration and cross-border cases.",
+        "items": [
+            "International file preparation",
+            "Supporting copy review",
+            "Document organization before appointments",
+            "Case notes and follow-up support",
+        ],
+    },
+}
+
+EMBASSY_SERVICES = {
+    "passport-application": {
+        "name": "Passport Application Support",
+        "summary": "Assistance preparing passport application files and required supporting documents.",
+        "items": [
+            "Checklist review before submission",
+            "Application form support",
+            "Document scan and upload readiness",
+            "Appointment booking guidance",
+        ],
+    },
+    "oci-card": {
+        "name": "OCI Card Application Support",
+        "summary": "Support organizing OCI application files and pre-submission documentation.",
+        "items": [
+            "Eligibility discussion support",
+            "Document matching and naming",
+            "Photo and signature preparation guidance",
+            "Pre-submission review",
+        ],
+    },
+    "passport-surrender": {
+        "name": "Passport Surrender Support",
+        "summary": "Help preparing passport surrender files and reducing documentation errors.",
+        "items": [
+            "Required document preparation support",
+            "Application review assistance",
+            "Supporting copy organization",
+            "Case follow-up preparation",
+        ],
+    },
+}
+
 
 def ensure_directories() -> None:
     DATA_DIR.mkdir(exist_ok=True)
@@ -213,12 +289,28 @@ def caf_service_detail(slug: str):
 
 @app.route("/embassy-services")
 def embassy_services():
-    return render_template("embassy_services.html")
+    return render_template("embassy_services.html", embassy_services=EMBASSY_SERVICES)
+
+
+@app.route("/embassy-services/<slug>")
+def embassy_service_detail(slug: str):
+    service = EMBASSY_SERVICES.get(slug)
+    if not service:
+        return redirect(url_for("embassy_services"))
+    return render_template("embassy_service_detail.html", service=service, slug=slug)
 
 
 @app.route("/immigration-services")
 def immigration_services():
-    return render_template("immigration_services.html")
+    return render_template("immigration_services.html", immigration_services=IMMIGRATION_SERVICES)
+
+
+@app.route("/immigration-services/<slug>")
+def immigration_service_detail(slug: str):
+    service = IMMIGRATION_SERVICES.get(slug)
+    if not service:
+        return redirect(url_for("immigration_services"))
+    return render_template("immigration_service_detail.html", service=service, slug=slug)
 
 
 @app.route("/appointments", methods=["GET", "POST"])

@@ -17,46 +17,14 @@
 
   <section class="section">
     <div class="container cards cards-two">
-      <article class="card">
-        <span class="card-tag">Soggiorno</span>
-        <h3>Kit Soggiorno Filling</h3>
-        <ul>
-          <li>Kit form filling support</li>
-          <li>Document review before submission</li>
-          <li>Case preparation for appointments</li>
-          <li>General residence process guidance</li>
-        </ul>
-      </article>
-      <article class="card">
-        <span class="card-tag">Permits</span>
-        <h3>Residence and Immigration Documents</h3>
-        <ul>
-          <li>Residence permit supporting document checks</li>
-          <li>File organization for complex cases</li>
-          <li>Appointment preparation support</li>
-          <li>Follow-up document assistance</li>
-        </ul>
-      </article>
-      <article class="card">
-        <span class="card-tag">Translation</span>
-        <h3>Document Translation Support</h3>
-        <ul>
-          <li>Translation coordination support</li>
-          <li>File preparation for translated documents</li>
-          <li>Supporting copy review and organization</li>
-          <li>Intake support for multilingual case files</li>
-        </ul>
-      </article>
-      <article class="card">
-        <span class="card-tag">International</span>
-        <h3>International Document Support</h3>
-        <ul>
-          <li>Passport application file support</li>
-          <li>OCI card application support</li>
-          <li>Passport surrender support</li>
-          <li>General consular and international paperwork assistance</li>
-        </ul>
-      </article>
+      {% for slug, service in immigration_services.items() %}
+        <article class="card">
+          <span class="card-tag">Immigration</span>
+          <h3>{{ service.name }}</h3>
+          <p>{{ service.summary }}</p>
+          <a href="{{ url_for('immigration_service_detail', slug=slug) }}">Open {{ service.name }}</a>
+        </article>
+      {% endfor %}
     </div>
   </section>
 
@@ -72,10 +40,9 @@
       <div class="panel">
         <p class="panel-kicker">Common Appointment Types</p>
         <ul>
-          <li>Kit soggiorno filling assistance</li>
-          <li>Residence permit document support</li>
-          <li>Document translation support</li>
-          <li>International document support</li>
+          {% for service in immigration_services.values() %}
+            <li>{{ service.name }}</li>
+          {% endfor %}
         </ul>
         <a class="btn" href="{{ url_for('appointments') }}">Book Immigration Appointment</a>
       </div>
