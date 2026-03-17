@@ -1,39 +1,39 @@
 {% extends "base.html" %}
 
-{% block title %}ANI Italia Hub | CAF, Immigration, Student Admissions{% endblock %}
-{% block meta_description %}ANI Italia Hub offers CAF services, immigration consulting, student admission support, and Indian Embassy service assistance in Italy.{% endblock %}
+{% block title %}ANI Italia Hub | CAF, Immigration, Translation and Student Services{% endblock %}
+{% block meta_description %}ANI Italia Hub offers CAF services, patronato support, kit soggiorno filling, document translation, student admission support, and consular document assistance in Italy.{% endblock %}
 
 {% block content %}
 <main>
-  <section class="hero">
+  <section class="hero service-hero">
     <div class="container hero-grid">
       <div class="hero-copy">
-        <p class="eyebrow">CAF Services + Immigration + Embassy Support</p>
-        <h1>One office for documents, appointments, and guided applications in Italy.</h1>
+        <p class="eyebrow">CAF, Patronato, Immigration and Document Support</p>
+        <h1>Professional assistance for everyday paperwork and major life moves in Italy.</h1>
         <p class="lead">
-          ANI Italia Hub supports clients with CAF services, immigration consulting, student admissions, and Indian Embassy-related assistance including passport applications, OCI card requests, and passport surrender guidance.
+          ANI Italia Hub helps individuals and families handle CAF services, patronato practices, immigration support, student admissions, document translation, and consular paperwork from one organized office.
         </p>
         <div class="hero-cta">
           <a class="btn" href="{{ url_for('appointments') }}">Book Appointment</a>
-          <a class="btn btn-outline" href="{{ url_for('embassy_services') }}">Explore Embassy Services</a>
+          <a class="btn btn-outline" href="{{ url_for('services') }}">View All Services</a>
         </div>
         <div class="hero-highlights">
-          <p><strong>Multi-service office</strong> for Italian and Indian administrative needs</p>
-          <p><strong>Stored appointment records</strong> with attached documents for follow-up</p>
-          <p><strong>Clear guidance</strong> for students, families, workers, and returning Indian nationals</p>
+          <p><strong>Wide service coverage</strong> for tax, family, immigration, translation, and education</p>
+          <p><strong>Appointment-based workflow</strong> with file upload and follow-up support</p>
+          <p><strong>Original business site</strong> inspired by practical service portals, not copied from them</p>
         </div>
       </div>
       <aside class="hero-panel">
-        <p class="panel-kicker">Popular Requests</p>
-        <h2>Daily support clients usually ask for.</h2>
+        <p class="panel-kicker">Most Requested Services</p>
+        <h2>Support people commonly need all year.</h2>
         <ul>
-          <li>CAF support for ISEE, tax declarations, benefits, and family paperwork</li>
-          <li>Residence permit and immigration process support</li>
-          <li>University admissions and student file preparation</li>
-          <li>Indian passport applications, OCI cards, and passport surrender support</li>
+          <li>ISEE, 730, tax declarations, bonuses, and family paperwork</li>
+          <li>Pension, social security, maternity, and patronato-related support</li>
+          <li>Kit soggiorno filling, immigration document checks, and residence process guidance</li>
+          <li>Document translation and consular support for passport, OCI, and surrender-related files</li>
         </ul>
         <div class="panel-note">
-          <span>Appointment booking and record storage are active in this project.</span>
+          <span>Appointments, file intake, and admin record tracking are built into this project.</span>
         </div>
       </aside>
     </div>
@@ -42,42 +42,42 @@
   <section class="section section-band">
     <div class="container band-grid">
       <div>
-        <p class="stat">4 Core Areas</p>
-        <p class="stat-label">CAF, immigration, student admissions, and Indian Embassy services</p>
+        <p class="stat">All-in-One Desk</p>
+        <p class="stat-label">CAF, patronato, immigration, translations, and student support in one place</p>
       </div>
       <div>
-        <p class="stat">File Tracking</p>
-        <p class="stat-label">Upload client documents with each appointment request</p>
+        <p class="stat">Practical Workflow</p>
+        <p class="stat-label">Book appointments, upload files, and keep each case organized</p>
       </div>
       <div>
-        <p class="stat">Italy Based</p>
-        <p class="stat-label">Built for clients handling processes from Italian cities</p>
+        <p class="stat">Italy Focused</p>
+        <p class="stat-label">Designed for clients living, studying, working, or relocating in Italy</p>
       </div>
     </div>
   </section>
 
   <section class="section">
     <div class="container">
-      <p class="eyebrow">Service Areas</p>
-      <h2>Structured support across civil, educational, and embassy-related work.</h2>
+      <p class="eyebrow">Service Categories</p>
+      <h2>A service structure that feels comprehensive without being confusing.</h2>
       <div class="cards">
         <article class="card">
           <span class="card-tag">CAF</span>
-          <h3>Administrative and Tax Support</h3>
-          <p>Guidance for recurring CAF work such as benefits support, declarations, and everyday administrative paperwork.</p>
-          <a href="{{ url_for('services') }}">View CAF services</a>
+          <h3>Fiscal and Family Services</h3>
+          <p>Support for ISEE, 730, single certification, family bonuses, declarations, and administrative paperwork.</p>
+          <a href="{{ url_for('services') }}#caf-services">Explore CAF services</a>
         </article>
         <article class="card">
-          <span class="card-tag">Admissions</span>
-          <h3>Student Pathways</h3>
-          <p>Help students compare programs, organize application documents, and prepare for arrival in Italy.</p>
-          <a href="{{ url_for('services') }}">View student services</a>
+          <span class="card-tag">Patronato</span>
+          <h3>Patronato and Welfare Support</h3>
+          <p>Guidance for pension, disability, maternity, unemployment, and social protection related processes.</p>
+          <a href="{{ url_for('services') }}#patronato-services">Explore patronato services</a>
         </article>
         <article class="card">
-          <span class="card-tag">Embassy</span>
-          <h3>Indian Embassy Assistance</h3>
-          <p>Support packages for passport application, OCI card application, and passport surrender processes.</p>
-          <a href="{{ url_for('embassy_services') }}">View embassy services</a>
+          <span class="card-tag">Immigration</span>
+          <h3>Immigration and Documents</h3>
+          <p>Assistance with kit soggiorno filling, document preparation, translations, and international paperwork support.</p>
+          <a href="{{ url_for('services') }}#immigration-services">Explore immigration services</a>
         </article>
       </div>
     </div>
@@ -86,42 +86,40 @@
   <section class="section section-alt">
     <div class="container split">
       <div>
-        <p class="eyebrow">How It Works</p>
-        <h2>Book, upload, and follow up from one workflow.</h2>
+        <p class="eyebrow">How The Site Works</p>
+        <h2>Structured like a modern service center, without copying any existing website.</h2>
         <div class="steps">
           <div class="step">
             <span>01</span>
             <div>
-              <h3>Select the service type</h3>
-              <p>Choose CAF, immigration, student admission, passport application, OCI card, passport surrender, or another case category.</p>
+              <h3>Browse by need</h3>
+              <p>Clients can quickly understand whether they need CAF, patronato, immigration, translation, consular help, or student admission support.</p>
             </div>
           </div>
           <div class="step">
             <span>02</span>
             <div>
-              <h3>Book your appointment</h3>
-              <p>Submit date, time, city, contact details, and upload initial supporting files.</p>
+              <h3>Book an appointment</h3>
+              <p>The appointment page collects service type, contact details, date, time, city, and supporting files.</p>
             </div>
           </div>
           <div class="step">
             <span>03</span>
             <div>
-              <h3>Review and continue</h3>
-              <p>The admin dashboard keeps each request and document reference together for organized follow-up.</p>
+              <h3>Manage cases internally</h3>
+              <p>The admin area keeps records and uploaded files connected to each case for easier follow-up.</p>
             </div>
           </div>
         </div>
       </div>
       <div class="panel">
-        <p class="panel-kicker">Important Note</p>
-        <h3>Guidance page, not an official government portal.</h3>
-        <p>
-          This website positions your office as a support and document-preparation center. It should not present itself as the official Embassy or an official government submission portal.
-        </p>
+        <p class="panel-kicker">Added Services</p>
+        <h3>Extra service areas now included in the site structure.</h3>
         <ul>
-          <li>Use it to explain your assistance and booking process</li>
-          <li>Keep official submission and fee rules verified before publishing exact requirements</li>
-          <li>Direct clients to official authorities for final processing decisions</li>
+          <li>Kit soggiorno filling and residency-related process support</li>
+          <li>Document translation and supporting copy preparation</li>
+          <li>Passport, OCI, and surrender-related file assistance within the main services catalog</li>
+          <li>Student admission and pre-arrival support</li>
         </ul>
       </div>
     </div>

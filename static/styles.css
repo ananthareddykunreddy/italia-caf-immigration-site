@@ -221,6 +221,10 @@ a {
   color: var(--muted);
 }
 
+.section-heading {
+  margin-bottom: 1.4rem;
+}
+
 .hero-cta {
   display: flex;
   flex-wrap: wrap;

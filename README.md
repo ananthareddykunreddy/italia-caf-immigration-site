@@ -27,6 +27,10 @@ $env:ADMIN_PASSWORD="change-me-now"
 python run_local.py
 ```
 
+Or on Windows, double-click:
+
+- `preview-site.bat`
+
 Then open:
 
 - `http://localhost:8000/`
