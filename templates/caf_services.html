@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+{% block title %}CAF Services | ANI Italia Hub{% endblock %}
+{% block meta_description %}CAF services including ISEE, 730, IMU, RED/ICRIC, cambio residenza, F24, bonus, and SPID support in Italy.{% endblock %}
+
+{% block content %}
+<main class="page-shell">
+  <section class="page-hero">
+    <div class="container narrow">
+      <p class="eyebrow">CAF Services</p>
+      <h1>Dedicated CAF service page with the exact items from your list.</h1>
+      <p class="lead">
+        This page focuses only on the CAF services you asked to include from the uploaded image.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container cards cards-two">
+      <article class="card">
+        <span class="card-tag">CAF</span>
+        <h3>Main CAF Services</h3>
+        <ul>
+          <li>ISEE</li>
+          <li>730</li>
+          <li>IMU</li>
+          <li>RED/ICRIC</li>
+        </ul>
+      </article>
+      <article class="card">
+        <span class="card-tag">CAF</span>
+        <h3>Additional CAF Support</h3>
+        <ul>
+          <li>Cambio Residenza</li>
+          <li>F24</li>
+          <li>Bonus</li>
+          <li>SPID</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container split">
+      <div>
+        <p class="eyebrow">Appointment Flow</p>
+        <h2>Book specific CAF support directly.</h2>
+        <p class="lead">
+          Clients can choose the exact CAF service from the appointment form and upload supporting documents before their visit.
+        </p>
+      </div>
+      <div class="panel">
+        <p class="panel-kicker">Available Booking Types</p>
+        <ul>
+          <li>ISEE</li>
+          <li>730</li>
+          <li>IMU</li>
+          <li>RED/ICRIC</li>
+          <li>Cambio Residenza</li>
+          <li>F24</li>
+          <li>Bonus</li>
+          <li>SPID</li>
+        </ul>
+        <a class="btn" href="{{ url_for('appointments') }}">Book CAF Appointment</a>
+      </div>
+    </div>
+  </section>
+</main>
+{% endblock %}

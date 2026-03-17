@@ -114,6 +114,16 @@ def services():
     return render_template("services.html")
 
 
+@app.route("/caf-services")
+def caf_services():
+    return render_template("caf_services.html")
+
+
+@app.route("/embassy-services")
+def embassy_services():
+    return render_template("embassy_services.html")
+
+
 @app.route("/immigration-services")
 def immigration_services():
     return render_template("immigration_services.html")

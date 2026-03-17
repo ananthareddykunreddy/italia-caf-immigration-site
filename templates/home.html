@@ -1,17 +1,17 @@
 {% extends "base.html" %}
 
 {% block title %}ANI Italia Hub | CAF, Immigration, Translation and Student Services{% endblock %}
-{% block meta_description %}ANI Italia Hub offers CAF services, patronato support, kit soggiorno filling, document translation, student admission support, and consular document assistance in Italy.{% endblock %}
+{% block meta_description %}ANI Italia Hub offers CAF services, kit soggiorno filling, document translation, student admission support, and consular document assistance in Italy.{% endblock %}
 
 {% block content %}
 <main>
   <section class="hero service-hero">
     <div class="container hero-grid">
       <div class="hero-copy">
-        <p class="eyebrow">CAF, Patronato, Immigration and Document Support</p>
+        <p class="eyebrow">CAF, Immigration and Document Support</p>
         <h1>Professional assistance for everyday paperwork and major life moves in Italy.</h1>
         <p class="lead">
-          ANI Italia Hub helps individuals and families handle CAF services, patronato practices, immigration support, student admissions, document translation, and consular paperwork from one organized office.
+          ANI Italia Hub helps individuals and families handle CAF services, immigration support, student admissions, document translation, and consular paperwork from one organized office.
         </p>
         <div class="hero-cta">
           <a class="btn" href="{{ url_for('appointments') }}">Book Appointment</a>
@@ -27,8 +27,7 @@
         <p class="panel-kicker">Most Requested Services</p>
         <h2>Support people commonly need all year.</h2>
         <ul>
-          <li>ISEE, 730, tax declarations, bonuses, and family paperwork</li>
-          <li>Pension, social security, maternity, and patronato-related support</li>
+          <li>ISEE, 730, IMU, RED/ICRIC, F24, Bonus, SPID, and cambio residenza support</li>
           <li>Kit soggiorno filling, immigration document checks, and residence process guidance</li>
           <li>Document translation and consular support for passport, OCI, and surrender-related files</li>
         </ul>
@@ -43,7 +42,7 @@
     <div class="container band-grid">
       <div>
         <p class="stat">All-in-One Desk</p>
-        <p class="stat-label">CAF, patronato, immigration, translations, and student support in one place</p>
+        <p class="stat-label">CAF, immigration, translations, and student support in one place</p>
       </div>
       <div>
         <p class="stat">Practical Workflow</p>
@@ -64,20 +63,20 @@
         <article class="card">
           <span class="card-tag">CAF</span>
           <h3>Fiscal and Family Services</h3>
-          <p>Support for ISEE, 730, single certification, family bonuses, declarations, and administrative paperwork.</p>
-          <a href="{{ url_for('services') }}#caf-services">Explore CAF services</a>
-        </article>
-        <article class="card">
-          <span class="card-tag">Patronato</span>
-          <h3>Patronato and Welfare Support</h3>
-          <p>Guidance for pension, disability, maternity, unemployment, and social protection related processes.</p>
-          <a href="{{ url_for('services') }}#patronato-services">Explore patronato services</a>
+          <p>Support for the CAF services from your list: ISEE, 730, IMU, RED/ICRIC, cambio residenza, F24, bonus, and SPID.</p>
+          <a href="{{ url_for('caf_services') }}">Explore CAF services</a>
         </article>
         <article class="card">
           <span class="card-tag">Immigration</span>
           <h3>Immigration and Documents</h3>
           <p>Assistance with kit soggiorno filling, document preparation, translations, and international paperwork support.</p>
           <a href="{{ url_for('immigration_services') }}">Explore immigration services</a>
+        </article>
+        <article class="card">
+          <span class="card-tag">Embassy</span>
+          <h3>Embassy and Consular Support</h3>
+          <p>Support for passport application files, OCI card applications, passport surrender, and related international paperwork.</p>
+          <a href="{{ url_for('embassy_services') }}">Explore embassy services</a>
         </article>
       </div>
     </div>
@@ -93,7 +92,7 @@
             <span>01</span>
             <div>
               <h3>Browse by need</h3>
-              <p>Clients can quickly understand whether they need CAF, patronato, immigration, translation, consular help, or student admission support.</p>
+              <p>Clients can quickly understand whether they need CAF, immigration, translation, consular help, or student admission support.</p>
             </div>
           </div>
           <div class="step">
