@@ -34,6 +34,7 @@ Or on Windows, double-click:
 Then open:
 
 - `http://localhost:8000/`
+- `http://localhost:8000/immigration-services`
 - `http://localhost:8000/appointments`
 - `http://localhost:8000/admin/login`
 

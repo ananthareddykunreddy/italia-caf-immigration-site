@@ -114,9 +114,9 @@ def services():
     return render_template("services.html")
 
 
-@app.route("/embassy-services")
-def embassy_services():
-    return redirect(url_for("services"))
+@app.route("/immigration-services")
+def immigration_services():
+    return render_template("immigration_services.html")
 
 
 @app.route("/appointments", methods=["GET", "POST"])
