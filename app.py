@@ -770,7 +770,7 @@ def require_admin():
 
 @app.context_processor
 def inject_globals():
-    return {"business_name": "SMDUNIYA"}
+    return {"business_name": "ciaocaf"}
 
 
 ensure_directories()
