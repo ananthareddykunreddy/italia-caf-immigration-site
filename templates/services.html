@@ -25,21 +25,24 @@
         <article class="card">
           <h3>Main CAF Services</h3>
           <ul>
-            <li>ISEE</li>
-            <li>730</li>
-            <li>IMU</li>
-            <li>RED/ICRIC</li>
+            <li><a href="{{ url_for('caf_service_detail', slug='isee') }}">ISEE</a></li>
+            <li><a href="{{ url_for('caf_service_detail', slug='730') }}">730</a></li>
+            <li><a href="{{ url_for('caf_service_detail', slug='imu') }}">IMU</a></li>
+            <li><a href="{{ url_for('caf_service_detail', slug='red-icric') }}">RED/ICRIC</a></li>
           </ul>
         </article>
         <article class="card">
           <h3>Administrative CAF Support</h3>
           <ul>
-            <li>Cambio Residenza</li>
-            <li>F24</li>
-            <li>Bonus</li>
-            <li>SPID</li>
+            <li><a href="{{ url_for('caf_service_detail', slug='cambio-residenza') }}">Cambio Residenza</a></li>
+            <li><a href="{{ url_for('caf_service_detail', slug='f24') }}">F24</a></li>
+            <li><a href="{{ url_for('caf_service_detail', slug='bonus') }}">Bonus</a></li>
+            <li><a href="{{ url_for('caf_service_detail', slug='spid') }}">SPID</a></li>
           </ul>
         </article>
+      </div>
+      <div class="section-link-row">
+        <a class="btn btn-outline" href="{{ url_for('caf_services') }}">Open Full CAF Services Page</a>
       </div>
     </div>
   </section>

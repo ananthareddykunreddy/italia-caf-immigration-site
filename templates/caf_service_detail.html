@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}{{ service.name }} | CAF Services | ANI Italia Hub{% endblock %}
+{% block meta_description %}{{ service.summary }}{% endblock %}
+
+{% block content %}
+<main class="page-shell">
+  <section class="page-hero">
+    <div class="container narrow">
+      <p class="eyebrow">CAF Service</p>
+      <h1>{{ service.name }}</h1>
+      <p class="lead">{{ service.summary }}</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container split">
+      <div class="card">
+        <span class="card-tag">Service Scope</span>
+        <h3>{{ service.name }} Support</h3>
+        <ul>
+          {% for item in service["items"] %}
+            <li>{{ item }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="panel">
+        <p class="panel-kicker">Appointment</p>
+        <h3>Book this CAF service directly.</h3>
+        <p>Use the appointment form and choose <strong>{{ service.name }}</strong> as the service type.</p>
+        <a class="btn" href="{{ url_for('appointments') }}">Book {{ service.name }}</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="panel">
+        <p class="panel-kicker">More CAF Services</p>
+        <p><a href="{{ url_for('caf_services') }}">Back to the full CAF services page</a></p>
+      </div>
+    </div>
+  </section>
+</main>
+{% endblock %}

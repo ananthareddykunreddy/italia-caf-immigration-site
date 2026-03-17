@@ -17,26 +17,14 @@
 
   <section class="section">
     <div class="container cards cards-two">
-      <article class="card">
-        <span class="card-tag">CAF</span>
-        <h3>Main CAF Services</h3>
-        <ul>
-          <li>ISEE</li>
-          <li>730</li>
-          <li>IMU</li>
-          <li>RED/ICRIC</li>
-        </ul>
-      </article>
-      <article class="card">
-        <span class="card-tag">CAF</span>
-        <h3>Additional CAF Support</h3>
-        <ul>
-          <li>Cambio Residenza</li>
-          <li>F24</li>
-          <li>Bonus</li>
-          <li>SPID</li>
-        </ul>
-      </article>
+      {% for slug, service in caf_services.items() %}
+        <article class="card">
+          <span class="card-tag">CAF</span>
+          <h3>{{ service.name }}</h3>
+          <p>{{ service.summary }}</p>
+          <a href="{{ url_for('caf_service_detail', slug=slug) }}">Open {{ service.name }}</a>
+        </article>
+      {% endfor %}
     </div>
   </section>
 
@@ -52,14 +40,9 @@
       <div class="panel">
         <p class="panel-kicker">Available Booking Types</p>
         <ul>
-          <li>ISEE</li>
-          <li>730</li>
-          <li>IMU</li>
-          <li>RED/ICRIC</li>
-          <li>Cambio Residenza</li>
-          <li>F24</li>
-          <li>Bonus</li>
-          <li>SPID</li>
+          {% for service in caf_services.values() %}
+            <li>{{ service.name }}</li>
+          {% endfor %}
         </ul>
         <a class="btn" href="{{ url_for('appointments') }}">Book CAF Appointment</a>
       </div>

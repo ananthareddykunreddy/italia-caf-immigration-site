@@ -21,6 +21,90 @@ app.config["MAX_CONTENT_LENGTH"] = 16 * 1024 * 1024
 app.config["UPLOAD_FOLDER"] = str(UPLOAD_DIR)
 
 
+CAF_SERVICES = {
+    "isee": {
+        "name": "ISEE",
+        "summary": "Support for ISEE document preparation and appointment-ready file organization.",
+        "items": [
+            "Household and family document review",
+            "Income and supporting file preparation",
+            "Appointment file organization",
+            "General ISEE assistance",
+        ],
+    },
+    "730": {
+        "name": "730",
+        "summary": "Assistance for 730 declaration paperwork and related supporting documents.",
+        "items": [
+            "730 document preparation",
+            "Income and deduction file review",
+            "Household tax document organization",
+            "General declaration support",
+        ],
+    },
+    "imu": {
+        "name": "IMU",
+        "summary": "Support for IMU-related paperwork and payment preparation.",
+        "items": [
+            "IMU document checks",
+            "Property-related paperwork organization",
+            "Payment document preparation",
+            "General IMU support",
+        ],
+    },
+    "red-icric": {
+        "name": "RED / ICRIC",
+        "summary": "Support for RED and ICRIC documentation and case preparation.",
+        "items": [
+            "RED file preparation",
+            "ICRIC supporting document checks",
+            "Submission-ready file organization",
+            "General assistance for recurring updates",
+        ],
+    },
+    "cambio-residenza": {
+        "name": "Cambio Residenza",
+        "summary": "Support for change of residence paperwork and related municipal document preparation.",
+        "items": [
+            "Residence change document support",
+            "Municipal paperwork organization",
+            "Supporting file checks",
+            "Appointment preparation assistance",
+        ],
+    },
+    "f24": {
+        "name": "F24",
+        "summary": "Assistance for F24 preparation and payment-related document organization.",
+        "items": [
+            "F24 form support",
+            "Payment document checks",
+            "Tax and contribution file organization",
+            "General F24-related assistance",
+        ],
+    },
+    "bonus": {
+        "name": "Bonus",
+        "summary": "Support for bonus-related documentation and eligibility file preparation.",
+        "items": [
+            "Bonus-related document intake",
+            "Eligibility file organization",
+            "Supporting copy preparation",
+            "Submission-ready documentation support",
+        ],
+    },
+    "spid": {
+        "name": "SPID",
+        "summary": "Assistance for SPID activation readiness and supporting identity document checks.",
+        "items": [
+            "Identity document preparation",
+            "Contact and account setup readiness",
+            "Supporting file review",
+            "General SPID assistance",
+        ],
+    },
+}
+
+
 def ensure_directories() -> None:
     DATA_DIR.mkdir(exist_ok=True)
     UPLOAD_DIR.mkdir(exist_ok=True)
@@ -116,7 +200,15 @@ def services():
 
 @app.route("/caf-services")
 def caf_services():
-    return render_template("caf_services.html")
+    return render_template("caf_services.html", caf_services=CAF_SERVICES)
+
+
+@app.route("/caf-services/<slug>")
+def caf_service_detail(slug: str):
+    service = CAF_SERVICES.get(slug)
+    if not service:
+        return redirect(url_for("caf_services"))
+    return render_template("caf_service_detail.html", service=service, slug=slug)
 
 
 @app.route("/embassy-services")
