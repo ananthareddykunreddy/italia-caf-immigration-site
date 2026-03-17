@@ -257,7 +257,7 @@ def require_admin():
 
 @app.context_processor
 def inject_globals():
-    return {"business_name": "ANI Italia Hub"}
+    return {"business_name": "SMDUNIYA"}
 
 
 ensure_directories()
