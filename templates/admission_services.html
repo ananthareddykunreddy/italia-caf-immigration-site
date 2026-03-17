@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Admission Services | SMDUNIYA{% endblock %}
+{% block meta_description %}Admission services for students planning to study in Italy, including university application and student document support.{% endblock %}
+
+{% block content %}
+<main class="page-shell">
+  <section class="page-hero">
+    <div class="container narrow">
+      <p class="eyebrow">Admission Services</p>
+      <h1>Student support with a proper service directory, not just one section anchor.</h1>
+      <p class="lead">
+        This page groups admission-related support into dedicated service pages so students can understand the type of help they need before booking.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container cards cards-two">
+      {% for slug, service in admission_services.items() %}
+        <article class="card">
+          <span class="card-tag">Admission</span>
+          <h3>{{ service.name }}</h3>
+          <p>{{ service.summary }}</p>
+          <a href="{{ url_for('admission_service_detail', slug=slug) }}">Open {{ service.name }}</a>
+        </article>
+      {% endfor %}
+    </div>
+  </section>
+</main>
+{% endblock %}

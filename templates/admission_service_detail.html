@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 
-{% block title %}{{ service.name }} | CAF Services | SMDUNIYA{% endblock %}
+{% block title %}{{ service.name }} | Admission Services | SMDUNIYA{% endblock %}
 {% block meta_description %}{{ service.summary }}{% endblock %}
 
 {% block content %}
 <main class="page-shell">
   <section class="page-hero">
     <div class="container narrow">
-      <p class="eyebrow">CAF Service</p>
+      <p class="eyebrow">Admission Service</p>
       <h1>{{ service.name }}</h1>
       <p class="lead">{{ service.summary }}</p>
     </div>
@@ -16,8 +16,7 @@
   <section class="section">
     <div class="container split">
       <div class="card">
-        <span class="card-tag">Service Scope</span>
-        <h3>Who Usually Needs This</h3>
+        <span class="card-tag">Who Needs It</span>
         <ul>
           {% for item in service["who_needs_it"] %}
             <li>{{ item }}</li>
@@ -26,8 +25,8 @@
       </div>
       <div class="panel">
         <p class="panel-kicker">Appointment</p>
-        <h3>Book this CAF service directly.</h3>
-        <p>Use the appointment form and choose <strong>{{ service.name }}</strong> as the service type.</p>
+        <h3>Book this admission service.</h3>
+        <p>Use the appointment form and choose <strong>{{ service.name }}</strong> or the closest related option.</p>
         <a class="btn" href="{{ url_for('appointments') }}">Book {{ service.name }}</a>
       </div>
     </div>
@@ -73,7 +72,6 @@
             <li>{{ item }}</li>
           {% endfor %}
         </ul>
-        <p><a href="{{ url_for('caf_services') }}">Back to the full CAF services page</a></p>
       </div>
     </div>
   </section>

@@ -25,81 +25,200 @@ CAF_SERVICES = {
     "isee": {
         "name": "ISEE",
         "summary": "Support for ISEE document preparation and appointment-ready file organization.",
-        "items": [
-            "Household and family document review",
-            "Income and supporting file preparation",
-            "Appointment file organization",
-            "General ISEE assistance",
+        "who_needs_it": [
+            "Families applying for benefits linked to household economic status",
+            "Students who need ISEE-related support for university or services",
+            "Households that need an updated DSU/ISEE for ongoing administrative use",
+        ],
+        "documents": [
+            "Identity documents and tax codes for household members",
+            "Income and financial documentation used for DSU preparation",
+            "Property, account, or household information relevant to the declaration",
+        ],
+        "process": [
+            "Review the household situation and the type of ISEE needed",
+            "Organize the documents required for the DSU",
+            "Check whether pre-filled or updated data must be verified",
+            "Prepare the file for submission or assisted processing",
+        ],
+        "notes": [
+            "ISEE rules and DSU requirements can change over time",
+            "Some specific cases need more than the standard mini declaration",
+        ],
+        "official_basis": [
+            "INPS explains DSU and ISEE updates and availability of precompiled functionality",
         ],
     },
     "730": {
         "name": "730",
         "summary": "Assistance for 730 declaration paperwork and related supporting documents.",
-        "items": [
-            "730 document preparation",
-            "Income and deduction file review",
-            "Household tax document organization",
-            "General declaration support",
+        "who_needs_it": [
+            "Workers and pensioners using the 730 declaration route",
+            "Taxpayers who want help reviewing precompiled tax data",
+            "Clients who need support checking deductible or credit-related documents",
+        ],
+        "documents": [
+            "Identity and tax information",
+            "Income and withholding documents",
+            "Receipts or records for deductions, detractions, and household data",
+        ],
+        "process": [
+            "Review whether the 730 is the right declaration route",
+            "Check precompiled or client-provided data",
+            "Organize deductions, credits, and supporting documents",
+            "Prepare the file for assisted declaration submission",
+        ],
+        "notes": [
+            "The Agenzia delle Entrate provides precompiled returns that still need checking",
+            "Final required documents vary by the taxpayer’s case",
+        ],
+        "official_basis": [
+            "Agenzia delle Entrate explains the precompiled declaration and 730 workflow",
         ],
     },
     "imu": {
         "name": "IMU",
         "summary": "Support for IMU-related paperwork and payment preparation.",
-        "items": [
-            "IMU document checks",
-            "Property-related paperwork organization",
-            "Payment document preparation",
-            "General IMU support",
+        "who_needs_it": [
+            "Property owners or taxpayers dealing with IMU obligations",
+            "Clients who need help organizing payment-related documents",
+        ],
+        "documents": [
+            "Identity and tax code details",
+            "Property information and relevant municipal/tax data",
+            "Previous payment or assessment records when applicable",
+        ],
+        "process": [
+            "Review the property and tax context",
+            "Organize the data needed for the payment or review",
+            "Prepare the supporting documents and payment workflow",
+        ],
+        "notes": [
+            "IMU obligations depend on the type of property and municipality context",
+        ],
+        "official_basis": [
+            "IMU is part of the standard tax and local-payment support usually connected with F24 workflows",
         ],
     },
     "red-icric": {
         "name": "RED / ICRIC",
         "summary": "Support for RED and ICRIC documentation and case preparation.",
-        "items": [
-            "RED file preparation",
-            "ICRIC supporting document checks",
-            "Submission-ready file organization",
-            "General assistance for recurring updates",
+        "who_needs_it": [
+            "Pension or benefit holders involved in RED or ICRIC-related declarations",
+            "Clients who need help organizing recurring declaration updates",
+        ],
+        "documents": [
+            "Identity and fiscal information",
+            "Income or responsibility declaration documents relevant to the campaign",
+            "Supporting records related to the specific declaration type",
+        ],
+        "process": [
+            "Identify whether the case relates to RED or ICRIC responsibilities",
+            "Check the relevant supporting information",
+            "Prepare the file for the applicable declaration or assisted transmission workflow",
+        ],
+        "notes": [
+            "INPS campaign processes can require authorized channels or assisted operators",
+        ],
+        "official_basis": [
+            "INPS provides dedicated RED and invalidity-related service areas for authorized intermediaries",
         ],
     },
     "cambio-residenza": {
         "name": "Cambio Residenza",
         "summary": "Support for change of residence paperwork and related municipal document preparation.",
-        "items": [
-            "Residence change document support",
-            "Municipal paperwork organization",
-            "Supporting file checks",
-            "Appointment preparation assistance",
+        "who_needs_it": [
+            "Residents changing address or municipal registration details",
+            "Clients who need help collecting the paperwork for residence updates",
+        ],
+        "documents": [
+            "Identity documents",
+            "Address and residence-related supporting documents",
+            "Any municipal or family-status records required by the case",
+        ],
+        "process": [
+            "Review the residence-change situation",
+            "Collect the documents linked to the new address or registration",
+            "Prepare the file for the municipal or assisted submission process",
+        ],
+        "notes": [
+            "Exact documents can vary depending on local municipal requirements",
+        ],
+        "official_basis": [
+            "Residence changes are commonly tied to municipal registry processes and supporting documentation",
         ],
     },
     "f24": {
         "name": "F24",
         "summary": "Assistance for F24 preparation and payment-related document organization.",
-        "items": [
-            "F24 form support",
-            "Payment document checks",
-            "Tax and contribution file organization",
-            "General F24-related assistance",
+        "who_needs_it": [
+            "Taxpayers who need to prepare or review F24 payments",
+            "Clients making tax, contribution, or local-levy payments through F24",
+        ],
+        "documents": [
+            "Identity and tax details",
+            "Payment references, codes, and related tax/contribution data",
+            "Any prior F24 or payment-support records relevant to the case",
+        ],
+        "process": [
+            "Review the payment purpose and tax codes involved",
+            "Prepare the F24-related supporting information",
+            "Check deadlines and payment setup details",
+        ],
+        "notes": [
+            "Agenzia delle Entrate offers F24 Web and telematic workflows for payments",
+        ],
+        "official_basis": [
+            "Agenzia delle Entrate describes F24 Web as a free online way to compile and transmit F24 payments",
         ],
     },
     "bonus": {
         "name": "Bonus",
         "summary": "Support for bonus-related documentation and eligibility file preparation.",
-        "items": [
-            "Bonus-related document intake",
-            "Eligibility file organization",
-            "Supporting copy preparation",
-            "Submission-ready documentation support",
+        "who_needs_it": [
+            "Families or individuals applying for benefit or bonus-related measures",
+            "Clients who need help preparing the supporting documents for bonus requests",
+        ],
+        "documents": [
+            "Identity and household information",
+            "ISEE or other eligibility-related documents when required",
+            "Supporting records linked to the specific bonus",
+        ],
+        "process": [
+            "Identify the type of bonus or allowance involved",
+            "Check the required eligibility and support documents",
+            "Prepare the file for assisted submission or follow-up",
+        ],
+        "notes": [
+            "Bonus requirements vary depending on the specific scheme and timing",
+        ],
+        "official_basis": [
+            "Many bonus-related procedures rely on household, income, and identity documentation",
         ],
     },
     "spid": {
         "name": "SPID",
         "summary": "Assistance for SPID activation readiness and supporting identity document checks.",
-        "items": [
-            "Identity document preparation",
-            "Contact and account setup readiness",
-            "Supporting file review",
-            "General SPID assistance",
+        "who_needs_it": [
+            "Citizens who need digital identity access to public services",
+            "Clients who want help preparing the documents before activation with an identity provider",
+        ],
+        "documents": [
+            "Identity document",
+            "Tax code",
+            "Contact details and any information required by the chosen identity provider",
+        ],
+        "process": [
+            "Identify the most suitable recognition method",
+            "Check that identity and contact information are ready",
+            "Prepare the user for activation with an authorized identity provider",
+        ],
+        "notes": [
+            "SPID is used to access public-administration and participating private services",
+            "Final activation depends on the chosen identity provider",
+        ],
+        "official_basis": [
+            "SPID is the official digital identity system for access to Italian public services",
         ],
     },
 }
@@ -108,41 +227,98 @@ IMMIGRATION_SERVICES = {
     "kit-soggiorno": {
         "name": "Kit Soggiorno Filling",
         "summary": "Support for filling the kit soggiorno and preparing the required documents.",
-        "items": [
-            "Kit form filling support",
-            "Document review before submission",
-            "Case preparation for appointments",
-            "General residence process guidance",
+        "who_needs_it": [
+            "Applicants handling a permit-of-stay process that uses the postal kit workflow",
+            "Clients who want help organizing forms before submission",
+        ],
+        "documents": [
+            "Identity and permit-related records",
+            "Supporting documents required for the specific permit case",
+            "Photocopies and file organization for submission",
+        ],
+        "process": [
+            "Review the type of permit or renewal case",
+            "Check the documents and forms required for the kit",
+            "Prepare the file before the client proceeds to submission or appointment steps",
+        ],
+        "notes": [
+            "Exact requirements depend on the permit category",
+            "Official instructions and costs should always be checked on the immigration portal",
+        ],
+        "official_basis": [
+            "Portale Immigrazione provides official guidance, office search, and cost information for the permit workflow",
         ],
     },
     "residence-permit": {
         "name": "Residence Permit Document Support",
         "summary": "Help organizing residence permit files and supporting paperwork.",
-        "items": [
-            "Residence permit supporting document checks",
-            "File organization for complex cases",
-            "Appointment preparation support",
-            "Follow-up document assistance",
+        "who_needs_it": [
+            "Clients preparing for residence permit-related appointments or submissions",
+            "Applicants who need help organizing a complete file",
+        ],
+        "documents": [
+            "Permit-related identity and supporting records",
+            "Case-specific documents linked to study, work, family, or renewal",
+            "Copies, translations, or supporting forms when needed",
+        ],
+        "process": [
+            "Review the permit category and stage of the case",
+            "Check document completeness and consistency",
+            "Prepare the file for assisted follow-up or appointment readiness",
+        ],
+        "notes": [
+            "Required documents vary materially by permit type and applicant status",
+        ],
+        "official_basis": [
+            "Official permit workflows are tied to immigration-portal and public-authority procedures",
         ],
     },
     "document-translation": {
         "name": "Document Translation Support",
         "summary": "Support for translated documents and related file preparation.",
-        "items": [
-            "Translation coordination support",
-            "File preparation for translated documents",
-            "Supporting copy review and organization",
-            "Intake support for multilingual case files",
+        "who_needs_it": [
+            "Clients with foreign-language documents for immigration, study, or consular cases",
+            "Applicants who need help organizing translated files before submission",
+        ],
+        "documents": [
+            "Original documents",
+            "Translated versions when available",
+            "Supporting copies or certification-related records depending on the use case",
+        ],
+        "process": [
+            "Review which documents need translation support",
+            "Organize originals, copies, and translated versions",
+            "Prepare the file so it is usable for the relevant process",
+        ],
+        "notes": [
+            "Some procedures require specific translation or legalization standards",
+        ],
+        "official_basis": [
+            "Translation needs are process-dependent and should be matched to the receiving authority’s rules",
         ],
     },
     "international-documents": {
         "name": "International Document Support",
         "summary": "General support for international paperwork connected to migration and cross-border cases.",
-        "items": [
-            "International file preparation",
-            "Supporting copy review",
-            "Document organization before appointments",
-            "Case notes and follow-up support",
+        "who_needs_it": [
+            "Clients with cross-border paperwork beyond one specific immigration form",
+            "Applicants needing help preparing international document sets",
+        ],
+        "documents": [
+            "Identity and case-specific records",
+            "Cross-border or foreign-issued supporting documents",
+            "Copies, translations, or consular paperwork depending on the case",
+        ],
+        "process": [
+            "Identify the authority or process involved",
+            "Organize the document pack by use and priority",
+            "Prepare the file for appointment or follow-up steps",
+        ],
+        "notes": [
+            "International cases often combine immigration, translation, and consular elements",
+        ],
+        "official_basis": [
+            "International document support should always be aligned with the authority receiving the file",
         ],
     },
 }
@@ -151,31 +327,124 @@ EMBASSY_SERVICES = {
     "passport-application": {
         "name": "Passport Application Support",
         "summary": "Assistance preparing passport application files and required supporting documents.",
-        "items": [
-            "Checklist review before submission",
-            "Application form support",
-            "Document scan and upload readiness",
-            "Appointment booking guidance",
+        "who_needs_it": [
+            "Applicants preparing a passport-related case through the consular workflow",
+            "Clients who want help organizing supporting documents before submission",
+        ],
+        "documents": [
+            "Identity and current passport-related records",
+            "Photographs and case-specific supporting documents",
+            "Scans or upload-ready copies where required",
+        ],
+        "process": [
+            "Check the service category and required paperwork",
+            "Review form readiness and supporting documents",
+            "Prepare the file before appointment or submission steps",
+        ],
+        "notes": [
+            "Final requirements must be checked against the competent mission/provider instructions",
+        ],
+        "official_basis": [
+            "Official mission/provider pages publish service steps and supporting-document expectations",
         ],
     },
     "oci-card": {
         "name": "OCI Card Application Support",
         "summary": "Support organizing OCI application files and pre-submission documentation.",
-        "items": [
-            "Eligibility discussion support",
-            "Document matching and naming",
-            "Photo and signature preparation guidance",
-            "Pre-submission review",
+        "who_needs_it": [
+            "Applicants preparing an OCI card case",
+            "Clients who need help matching foreign and identity documents in one file set",
+        ],
+        "documents": [
+            "Identity and nationality-related documents",
+            "Photo, signature, and supporting records required for the OCI case",
+            "Scans and copies prepared to the required format",
+        ],
+        "process": [
+            "Review the client’s OCI case profile",
+            "Organize supporting documents and digital files",
+            "Prepare the application pack before submission",
+        ],
+        "notes": [
+            "OCI requirements can be very document-specific and should be verified against official instructions",
+        ],
+        "official_basis": [
+            "Official mission/provider channels define OCI process steps and file expectations",
         ],
     },
     "passport-surrender": {
         "name": "Passport Surrender Support",
         "summary": "Help preparing passport surrender files and reducing documentation errors.",
-        "items": [
-            "Required document preparation support",
-            "Application review assistance",
-            "Supporting copy organization",
-            "Case follow-up preparation",
+        "who_needs_it": [
+            "Applicants who need to prepare a passport surrender-related file",
+            "Clients who want help reducing documentation mistakes before submission",
+        ],
+        "documents": [
+            "Current and former nationality/passport records as required",
+            "Supporting identity and case documents",
+            "Copies, forms, and scanned documents needed for the process",
+        ],
+        "process": [
+            "Review the case and supporting documents",
+            "Prepare forms and copies in the required format",
+            "Organize the file for appointment or submission follow-up",
+        ],
+        "notes": [
+            "Final requirements and fees should be checked with the competent official channel",
+        ],
+        "official_basis": [
+            "Official mission/provider channels define surrender-related documentation and workflow",
+        ],
+    },
+}
+
+ADMISSION_SERVICES = {
+    "university-applications": {
+        "name": "University Application Support",
+        "summary": "Help preparing university applications, profile documents, and admissions planning for Italy.",
+        "who_needs_it": [
+            "Students comparing courses or universities in Italy",
+            "Applicants who need help organizing academic and admissions documents",
+        ],
+        "documents": [
+            "Academic records and personal identity documents",
+            "Program-specific forms or supporting files",
+            "Language, profile, or statement documents when required",
+        ],
+        "process": [
+            "Identify the target program or institution",
+            "Review the admissions timeline and file requirements",
+            "Prepare the application pack and next-step checklist",
+        ],
+        "notes": [
+            "Admission requirements vary by university and program",
+        ],
+        "official_basis": [
+            "Applicants should always confirm the final checklist with the target university",
+        ],
+    },
+    "student-document-support": {
+        "name": "Student Document Support",
+        "summary": "Assistance organizing academic, translated, and supporting documents for student cases.",
+        "who_needs_it": [
+            "Students with complex multi-document applications",
+            "Applicants who need help arranging translated or certified files",
+        ],
+        "documents": [
+            "Academic certificates and transcripts",
+            "Identity and travel records",
+            "Translations or supporting copies where required",
+        ],
+        "process": [
+            "Review the student’s target use for the documents",
+            "Organize originals, translations, and copies",
+            "Prepare the file for submission or appointment support",
+        ],
+        "notes": [
+            "Document expectations depend on the institution and purpose",
+        ],
+        "official_basis": [
+            "Final admissions document rules come from the receiving institution",
         ],
     },
 }
@@ -311,6 +580,19 @@ def immigration_service_detail(slug: str):
     if not service:
         return redirect(url_for("immigration_services"))
     return render_template("immigration_service_detail.html", service=service, slug=slug)
+
+
+@app.route("/admission-services")
+def admission_services():
+    return render_template("admission_services.html", admission_services=ADMISSION_SERVICES)
+
+
+@app.route("/admission-services/<slug>")
+def admission_service_detail(slug: str):
+    service = ADMISSION_SERVICES.get(slug)
+    if not service:
+        return redirect(url_for("admission_services"))
+    return render_template("admission_service_detail.html", service=service, slug=slug)
 
 
 @app.route("/appointments", methods=["GET", "POST"])

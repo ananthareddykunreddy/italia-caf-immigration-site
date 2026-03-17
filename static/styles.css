@@ -225,6 +225,10 @@ a {
   margin-bottom: 1.4rem;
 }
 
+.section-link-row {
+  margin-top: 1.2rem;
+}
+
 .hero-cta {
   display: flex;
   flex-wrap: wrap;
