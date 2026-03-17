@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Admin Login | ANI Italia Hub{% endblock %}
+
+{% block content %}
+<main class="page-shell">
+  <section class="page-hero">
+    <div class="container narrow">
+      <p class="eyebrow">Admin</p>
+      <h1>Sign in to view appointment records.</h1>
+      <p class="lead">
+        The dashboard lists saved appointment submissions and uploaded document references. Change the default admin password before using this outside a local setup.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container narrow">
+      <form class="contact-form admin-form" method="post">
+        <label for="password">Admin Password</label>
+        <input id="password" name="password" type="password" required>
+        <button class="btn" type="submit">Sign In</button>
+      </form>
+    </div>
+  </section>
+</main>
+{% endblock %}

@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block title %}Appointments | ANI Italia Hub{% endblock %}
+
+{% block content %}
+<main class="page-shell">
+  <section class="page-hero">
+    <div class="container narrow">
+      <p class="eyebrow">Appointments</p>
+      <h1>Book appointments and upload client files.</h1>
+      <p class="lead">
+        This form stores each appointment request in the local SQLite database and saves uploaded files on the server for admin review.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container split appointment-layout">
+      <div class="panel">
+        <p class="panel-kicker">Booking Details</p>
+        <ul>
+          <li>Required fields are validated before saving</li>
+          <li>Multiple files can be attached in one request</li>
+          <li>Records are visible from the admin dashboard after sign-in</li>
+          <li>Allowed files: PDF, JPG, PNG, DOC, DOCX</li>
+        </ul>
+      </div>
+      <form class="contact-form appointment-form" method="post" enctype="multipart/form-data">
+        <label for="full_name">Full Name</label>
+        <input id="full_name" name="full_name" type="text" required>
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required>
+
+        <label for="phone">Phone / WhatsApp</label>
+        <input id="phone" name="phone" type="text" required>
+
+        <label for="service_type">Service Type</label>
+        <select id="service_type" name="service_type" required>
+          <option value="">Select a service</option>
+          <option>CAF Services</option>
+          <option>Immigration Consulting</option>
+          <option>Student Admission Support</option>
+          <option>Passport Application Assistance</option>
+          <option>OCI Card Application Assistance</option>
+          <option>Passport Surrender Assistance</option>
+          <option>General Embassy Consultation</option>
+        </select>
+
+        <label for="preferred_date">Preferred Date</label>
+        <input id="preferred_date" name="preferred_date" type="date" required>
+
+        <label for="preferred_time">Preferred Time</label>
+        <input id="preferred_time" name="preferred_time" type="time" required>
+
+        <label for="city">City</label>
+        <input id="city" name="city" type="text" required>
+
+        <label for="documents">Upload Documents</label>
+        <input id="documents" name="documents" type="file" multiple>
+
+        <label for="notes">Case Notes</label>
+        <textarea id="notes" name="notes" rows="6" placeholder="Describe the case, missing documents, or urgency."></textarea>
+
+        <button class="btn" type="submit">Save Appointment Request</button>
+      </form>
+    </div>
+  </section>
+</main>
+{% endblock %}

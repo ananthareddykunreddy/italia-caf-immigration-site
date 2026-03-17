@@ -1,0 +1,130 @@
+{% extends "base.html" %}
+
+{% block title %}ANI Italia Hub | CAF, Immigration, Student Admissions{% endblock %}
+{% block meta_description %}ANI Italia Hub offers CAF services, immigration consulting, student admission support, and Indian Embassy service assistance in Italy.{% endblock %}
+
+{% block content %}
+<main>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">CAF Services + Immigration + Embassy Support</p>
+        <h1>One office for documents, appointments, and guided applications in Italy.</h1>
+        <p class="lead">
+          ANI Italia Hub supports clients with CAF services, immigration consulting, student admissions, and Indian Embassy-related assistance including passport applications, OCI card requests, and passport surrender guidance.
+        </p>
+        <div class="hero-cta">
+          <a class="btn" href="{{ url_for('appointments') }}">Book Appointment</a>
+          <a class="btn btn-outline" href="{{ url_for('embassy_services') }}">Explore Embassy Services</a>
+        </div>
+        <div class="hero-highlights">
+          <p><strong>Multi-service office</strong> for Italian and Indian administrative needs</p>
+          <p><strong>Stored appointment records</strong> with attached documents for follow-up</p>
+          <p><strong>Clear guidance</strong> for students, families, workers, and returning Indian nationals</p>
+        </div>
+      </div>
+      <aside class="hero-panel">
+        <p class="panel-kicker">Popular Requests</p>
+        <h2>Daily support clients usually ask for.</h2>
+        <ul>
+          <li>CAF support for ISEE, tax declarations, benefits, and family paperwork</li>
+          <li>Residence permit and immigration process support</li>
+          <li>University admissions and student file preparation</li>
+          <li>Indian passport applications, OCI cards, and passport surrender support</li>
+        </ul>
+        <div class="panel-note">
+          <span>Appointment booking and record storage are active in this project.</span>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section section-band">
+    <div class="container band-grid">
+      <div>
+        <p class="stat">4 Core Areas</p>
+        <p class="stat-label">CAF, immigration, student admissions, and Indian Embassy services</p>
+      </div>
+      <div>
+        <p class="stat">File Tracking</p>
+        <p class="stat-label">Upload client documents with each appointment request</p>
+      </div>
+      <div>
+        <p class="stat">Italy Based</p>
+        <p class="stat-label">Built for clients handling processes from Italian cities</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <p class="eyebrow">Service Areas</p>
+      <h2>Structured support across civil, educational, and embassy-related work.</h2>
+      <div class="cards">
+        <article class="card">
+          <span class="card-tag">CAF</span>
+          <h3>Administrative and Tax Support</h3>
+          <p>Guidance for recurring CAF work such as benefits support, declarations, and everyday administrative paperwork.</p>
+          <a href="{{ url_for('services') }}">View CAF services</a>
+        </article>
+        <article class="card">
+          <span class="card-tag">Admissions</span>
+          <h3>Student Pathways</h3>
+          <p>Help students compare programs, organize application documents, and prepare for arrival in Italy.</p>
+          <a href="{{ url_for('services') }}">View student services</a>
+        </article>
+        <article class="card">
+          <span class="card-tag">Embassy</span>
+          <h3>Indian Embassy Assistance</h3>
+          <p>Support packages for passport application, OCI card application, and passport surrender processes.</p>
+          <a href="{{ url_for('embassy_services') }}">View embassy services</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container split">
+      <div>
+        <p class="eyebrow">How It Works</p>
+        <h2>Book, upload, and follow up from one workflow.</h2>
+        <div class="steps">
+          <div class="step">
+            <span>01</span>
+            <div>
+              <h3>Select the service type</h3>
+              <p>Choose CAF, immigration, student admission, passport application, OCI card, passport surrender, or another case category.</p>
+            </div>
+          </div>
+          <div class="step">
+            <span>02</span>
+            <div>
+              <h3>Book your appointment</h3>
+              <p>Submit date, time, city, contact details, and upload initial supporting files.</p>
+            </div>
+          </div>
+          <div class="step">
+            <span>03</span>
+            <div>
+              <h3>Review and continue</h3>
+              <p>The admin dashboard keeps each request and document reference together for organized follow-up.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="panel">
+        <p class="panel-kicker">Important Note</p>
+        <h3>Guidance page, not an official government portal.</h3>
+        <p>
+          This website positions your office as a support and document-preparation center. It should not present itself as the official Embassy or an official government submission portal.
+        </p>
+        <ul>
+          <li>Use it to explain your assistance and booking process</li>
+          <li>Keep official submission and fee rules verified before publishing exact requirements</li>
+          <li>Direct clients to official authorities for final processing decisions</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+{% endblock %}

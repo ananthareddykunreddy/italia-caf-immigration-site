@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block title %}Indian Embassy Services | ANI Italia Hub{% endblock %}
+
+{% block content %}
+<main class="page-shell">
+  <section class="page-hero">
+    <div class="container narrow">
+      <p class="eyebrow">Indian Embassy Services</p>
+      <h1>Support for Indian Embassy-related applications from Italy.</h1>
+      <p class="lead">
+        These pages describe your office support packages. Keep exact official checklist rules and final fee details aligned with the relevant Embassy or consular authority before publishing case-specific instructions.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container cards">
+      <article class="card">
+        <span class="card-tag">Passport</span>
+        <h3>Passport Application Support</h3>
+        <p>Assist clients with document preparation, form review, photo and supporting file readiness, and appointment preparation for passport-related applications.</p>
+        <ul>
+          <li>Checklist review before submission</li>
+          <li>Application form support</li>
+          <li>Document scan and upload readiness</li>
+          <li>Appointment booking guidance</li>
+        </ul>
+      </article>
+      <article class="card">
+        <span class="card-tag">OCI</span>
+        <h3>OCI Card Application Support</h3>
+        <p>Guide applicants through OCI file organization, supporting document checks, and preparation of the case before official submission.</p>
+        <ul>
+          <li>Eligibility discussion support</li>
+          <li>Document matching and naming</li>
+          <li>Photo and signature preparation guidance</li>
+          <li>Pre-submission review</li>
+        </ul>
+      </article>
+      <article class="card">
+        <span class="card-tag">Surrender</span>
+        <h3>Passport Surrender Support</h3>
+        <p>Help clients prepare the required file set for passport surrender-related processes and reduce common documentation errors before submission.</p>
+        <ul>
+          <li>Required document preparation support</li>
+          <li>Application review assistance</li>
+          <li>Supporting copy organization</li>
+          <li>Case follow-up preparation</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container split">
+      <div>
+        <p class="eyebrow">Booking Flow</p>
+        <h2>Use appointment booking for embassy-related cases too.</h2>
+        <p class="lead">
+          Clients can choose the exact embassy-related service type in the booking form and attach documents for review before their visit.
+        </p>
+      </div>
+      <div class="panel">
+        <p class="panel-kicker">Recommended Booking Types</p>
+        <ul>
+          <li>Passport application assistance</li>
+          <li>OCI card application assistance</li>
+          <li>Passport surrender assistance</li>
+          <li>General Embassy-related consultation</li>
+        </ul>
+        <a class="btn" href="{{ url_for('appointments') }}">Book Embassy Appointment</a>
+      </div>
+    </div>
+  </section>
+</main>
+{% endblock %}

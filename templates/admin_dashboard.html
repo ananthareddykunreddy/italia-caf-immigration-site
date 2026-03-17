@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block title %}Admin Dashboard | ANI Italia Hub{% endblock %}
+
+{% block content %}
+<main class="page-shell">
+  <section class="page-hero">
+    <div class="container narrow">
+      <p class="eyebrow">Admin Dashboard</p>
+      <h1>Stored appointment records and uploaded files.</h1>
+      <p class="lead">
+        This dashboard reads from the local SQLite database and shows the files attached to each appointment request.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container dashboard-head">
+      <form method="post" action="{{ url_for('admin_logout') }}">
+        <button class="btn btn-outline" type="submit">Sign Out</button>
+      </form>
+    </div>
+    <div class="container">
+      {% if appointments %}
+        <div class="records-grid">
+          {% for appointment in appointments %}
+            <article class="card record-card">
+              <span class="card-tag">{{ appointment.service_type }}</span>
+              <h3>{{ appointment.full_name }}</h3>
+              <p><strong>Email:</strong> {{ appointment.email }}</p>
+              <p><strong>Phone:</strong> {{ appointment.phone }}</p>
+              <p><strong>Appointment:</strong> {{ appointment.preferred_date }} at {{ appointment.preferred_time }}</p>
+              <p><strong>City:</strong> {{ appointment.city }}</p>
+              <p><strong>Submitted:</strong> {{ appointment.created_at }}</p>
+              <p><strong>Notes:</strong> {{ appointment.notes or "No notes submitted." }}</p>
+              <div class="files-list">
+                <strong>Files:</strong>
+                {% if appointment.uploaded_files %}
+                  <ul>
+                    {% for file in appointment.uploaded_files %}
+                      <li><a href="{{ url_for('admin_upload', filename=file.stored_name) }}">{{ file.original_name }}</a></li>
+                    {% endfor %}
+                  </ul>
+                {% else %}
+                  <p>No files attached.</p>
+                {% endif %}
+              </div>
+            </article>
+          {% endfor %}
+        </div>
+      {% else %}
+        <div class="panel">
+          <p class="panel-kicker">No Records Yet</p>
+          <h2>No appointment submissions have been saved.</h2>
+          <p>Use the public booking page to create the first record.</p>
+        </div>
+      {% endif %}
+    </div>
+  </section>
+</main>
+{% endblock %}

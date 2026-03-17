@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}{{ business_name }}{% endblock %}</title>
+  <meta name="description" content="{% block meta_description %}CAF services, immigration consulting, student admission support, and Indian Embassy service guidance in Italy.{% endblock %}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="{{ url_for('home') }}" class="brand">
+        <span class="brand-mark">ANI</span>
+        <span class="brand-text">Italia Hub</span>
+      </a>
+      <nav aria-label="Main navigation">
+        <ul class="nav-links">
+          <li><a href="{{ url_for('home') }}">Home</a></li>
+          <li><a href="{{ url_for('services') }}">Services</a></li>
+          <li><a href="{{ url_for('embassy_services') }}">Embassy Services</a></li>
+          <li><a href="{{ url_for('appointments') }}">Appointments</a></li>
+          <li><a href="{{ url_for('admin_login') }}">Admin</a></li>
+        </ul>
+      </nav>
+      <a class="btn btn-small" href="{{ url_for('appointments') }}">Book Appointment</a>
+    </div>
+  </header>
+
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      <section class="flash-stack container" aria-label="Notifications">
+        {% for category, message in messages %}
+          <div class="flash flash-{{ category }}">{{ message }}</div>
+        {% endfor %}
+      </section>
+    {% endif %}
+  {% endwith %}
+
+  {% block content %}{% endblock %}
+
+  <footer class="site-footer">
+    <div class="container footer-wrap">
+      <div>
+        <p>&copy; 2026 {{ business_name }}. All rights reserved.</p>
+        <p>CAF services, immigration support, student admissions, and Indian Embassy service assistance in Italy.</p>
+      </div>
+      <div class="footer-links">
+        <a href="{{ url_for('services') }}">All Services</a>
+        <a href="{{ url_for('embassy_services') }}">Embassy Services</a>
+        <a href="{{ url_for('appointments') }}">Appointments</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
