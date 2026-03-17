@@ -221,6 +221,78 @@ CAF_SERVICES = {
             "SPID is the official digital identity system for access to Italian public services",
         ],
     },
+    "assegno-unico": {
+        "name": "Assegno Unico",
+        "summary": "Support organizing family and household documents for Assegno Unico-related assistance.",
+        "who_needs_it": [
+            "Families checking household documentation for child-related support requests",
+            "Clients who need help preparing files connected to family-benefit procedures",
+        ],
+        "documents": [
+            "Identity and tax information for the household",
+            "Family-status and child-related records",
+            "ISEE or other supporting documents where relevant to the case",
+        ],
+        "process": [
+            "Review the household situation and relevant support route",
+            "Organize the supporting family and income documentation",
+            "Prepare the file for assisted follow-up or submission readiness",
+        ],
+        "notes": [
+            "Exact required documents can depend on the household case and current rules",
+        ],
+        "official_basis": [
+            "Public SmartCAF descriptions list Assegno Unico among its supported services",
+        ],
+    },
+    "modello-redditi": {
+        "name": "Modello Redditi",
+        "summary": "Support for Modello Redditi documentation and preparation of related tax files.",
+        "who_needs_it": [
+            "Taxpayers whose situation is better matched to Modello Redditi than the 730 route",
+            "Clients who need help collecting and organizing tax documents for filing",
+        ],
+        "documents": [
+            "Identity and tax details",
+            "Income and fiscal-supporting documents",
+            "Documents for deductions, credits, and tax positions relevant to the case",
+        ],
+        "process": [
+            "Review the taxpayer profile and declaration route",
+            "Organize the supporting tax documents",
+            "Prepare the file for assisted declaration support",
+        ],
+        "notes": [
+            "The right declaration route depends on the taxpayer’s specific situation",
+        ],
+        "official_basis": [
+            "Public SmartCAF descriptions list Modello Redditi among supported services",
+        ],
+    },
+    "successioni": {
+        "name": "Successioni",
+        "summary": "Support for succession-related document collection and file organization.",
+        "who_needs_it": [
+            "Families handling succession paperwork",
+            "Clients who need help preparing supporting documents for succession-related procedures",
+        ],
+        "documents": [
+            "Identity documents",
+            "Family and inheritance-related records",
+            "Property or registry-supporting documents where applicable",
+        ],
+        "process": [
+            "Review the type of succession-related need",
+            "Organize the personal, family, and property records involved",
+            "Prepare the file for assisted succession handling steps",
+        ],
+        "notes": [
+            "Succession cases can become document-heavy and may involve multiple authorities",
+        ],
+        "official_basis": [
+            "Public SmartCAF app descriptions list succession services among supported areas",
+        ],
+    },
 }
 
 IMMIGRATION_SERVICES = {
