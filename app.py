@@ -400,11 +400,12 @@ EMBASSY_SERVICES = {
 
 ADMISSION_SERVICES = {
     "university-applications": {
-        "name": "University Application Support",
-        "summary": "Help preparing university applications, profile documents, and admissions planning for Italy.",
+        "name": "University Application Consulting",
+        "summary": "Educational consulting for students applying to universities in Italy, including profile review and application planning.",
         "who_needs_it": [
             "Students comparing courses or universities in Italy",
             "Applicants who need help organizing academic and admissions documents",
+            "Families seeking educational consulting before choosing a university pathway",
         ],
         "documents": [
             "Academic records and personal identity documents",
@@ -424,11 +425,11 @@ ADMISSION_SERVICES = {
         ],
     },
     "student-document-support": {
-        "name": "Student Document Support",
-        "summary": "Assistance organizing academic, translated, and supporting documents for student cases.",
+        "name": "University Admission Document Support",
+        "summary": "Educational consulting support for organizing academic, translated, and application-related documents for university admissions.",
         "who_needs_it": [
-            "Students with complex multi-document applications",
-            "Applicants who need help arranging translated or certified files",
+            "Students with complex university application files",
+            "Applicants who need help arranging translated or certified academic documents",
         ],
         "documents": [
             "Academic certificates and transcripts",
