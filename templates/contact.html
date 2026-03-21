@@ -8,9 +8,9 @@
   <section class="page-hero">
     <div class="container narrow">
       <p class="eyebrow">Contact</p>
-      <h1>Office contact details in one place.</h1>
+      <h1>Contact and booking guidance in one place.</h1>
       <p class="lead">
-        Replace the sample contact details below with your real phone number, WhatsApp, email, address, and office hours.
+        This page is designed to work even before final business contact details are published. It focuses on clear next steps for visitors.
       </p>
     </div>
   </section>
@@ -18,23 +18,24 @@
   <section class="section">
     <div class="container split">
       <article class="panel">
-        <p class="panel-kicker">Direct Contact</p>
-        <h3>Get in touch</h3>
+        <p class="panel-kicker">Best Next Step</p>
+        <h3>Book the right appointment first.</h3>
         <ul>
-          <li>Phone: +39 000 000 0000</li>
-          <li>WhatsApp: +39 000 000 0000</li>
-          <li>Email: info@ciaocaf.it</li>
-          <li>Office Hours: Mon-Sat, 9:00-13:00 and 15:00-19:00</li>
+          <li>Choose the exact service before contacting the office</li>
+          <li>Check the required documents for the practice</li>
+          <li>Upload supporting files in advance when booking</li>
+          <li>Use the appointment page for the fastest routing of your request</li>
         </ul>
+        <a class="btn" href="{{ url_for('appointments') }}">Book Appointment</a>
       </article>
       <article class="panel">
-        <p class="panel-kicker">Office</p>
-        <h3>Visit the office</h3>
+        <p class="panel-kicker">Useful Pages</p>
+        <h3>Navigate the site like a service center.</h3>
         <ul>
-          <li>Address: Via Example 10, Rome, Italy</li>
-          <li>City Support: Rome and nearby areas</li>
-          <li>Appointments recommended for complex cases and document review</li>
-          <li><a href="{{ url_for('appointments') }}">Book an appointment online</a></li>
+          <li><a href="{{ url_for('services') }}">Browse all service categories</a></li>
+          <li><a href="{{ url_for('required_documents') }}">Open required documents hub</a></li>
+          <li><a href="{{ url_for('news') }}">Read service updates and reminders</a></li>
+          <li><a href="{{ url_for('client_area') }}">Open the client area</a></li>
         </ul>
       </article>
     </div>

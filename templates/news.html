@@ -16,16 +16,25 @@
   </section>
 
   <section class="section">
-    <div class="container news-stack">
-      {% for item in news_items %}
-        <article class="news-card">
-          <p class="news-date">{{ item.date }}</p>
-          <h2>{{ item.title }}</h2>
-          <p>{{ item.summary }}</p>
-          <p class="news-cta">{{ item.cta }}</p>
-          <a href="{{ url_for('appointments') }}">Book related appointment</a>
-        </article>
-      {% endfor %}
+    <div class="container split news-feature">
+      <article class="news-card news-card-featured">
+        <p class="news-date">{{ news_items[0].date }}</p>
+        <h2>{{ news_items[0].title }}</h2>
+        <p>{{ news_items[0].summary }}</p>
+        <p class="news-cta">{{ news_items[0].cta }}</p>
+        <a href="{{ url_for('appointments') }}">Book related appointment</a>
+      </article>
+      <div class="news-stack">
+        {% for item in news_items[1:] %}
+          <article class="news-card">
+            <p class="news-date">{{ item.date }}</p>
+            <h3>{{ item.title }}</h3>
+            <p>{{ item.summary }}</p>
+            <p class="news-cta">{{ item.cta }}</p>
+            <a href="{{ url_for('appointments') }}">Book related appointment</a>
+          </article>
+        {% endfor %}
+      </div>
     </div>
   </section>
 </main>
