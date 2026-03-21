@@ -31,9 +31,9 @@ CAF_SERVICES = {
             "Households that need an updated DSU/ISEE for ongoing administrative use",
         ],
         "documents": [
-            "Identity documents and tax codes for household members",
-            "Income and financial documentation used for DSU preparation",
-            "Property, account, or household information relevant to the declaration",
+            "Identity document and codice fiscale for the declarant and household members",
+            "Redditi, CU/730/Modello Redditi, and information on pensions or benefits received by the household",
+            "Saldo and giacenza media for bank or postal accounts, plus property and rental data used in the DSU",
         ],
         "process": [
             "Review the household situation and the type of ISEE needed",
@@ -58,9 +58,9 @@ CAF_SERVICES = {
             "Clients who need support checking deductible or credit-related documents",
         ],
         "documents": [
-            "Identity and tax information",
-            "Income and withholding documents",
-            "Receipts or records for deductions, detractions, and household data",
+            "Documento di identita and codice fiscale of the taxpayer and spouse or dependants if included",
+            "CU, pension certifications, and any income records used for the dichiarazione precompilata or ordinary 730",
+            "Receipts for detrazioni and deduzioni such as medical expenses, rent, mortgage interest, school, insurance, and family charges",
         ],
         "process": [
             "Review whether the 730 is the right declaration route",
@@ -84,9 +84,9 @@ CAF_SERVICES = {
             "Clients who need help organizing payment-related documents",
         ],
         "documents": [
-            "Identity and tax code details",
-            "Property information and relevant municipal/tax data",
-            "Previous payment or assessment records when applicable",
+            "Documento di identita and codice fiscale of the taxpayer",
+            "Cadastral data, visura, rogito, succession, or other documents identifying the property and ownership share",
+            "Previous IMU or F24 payments, municipal rates, and any exemption or residence documentation relevant to the property",
         ],
         "process": [
             "Review the property and tax context",
@@ -108,9 +108,9 @@ CAF_SERVICES = {
             "Clients who need help organizing recurring declaration updates",
         ],
         "documents": [
-            "Identity and fiscal information",
-            "Income or responsibility declaration documents relevant to the campaign",
-            "Supporting records related to the specific declaration type",
+            "Documento di identita, codice fiscale, and pension or benefit identification data",
+            "Income declarations or supporting statements requested in the annual RED campaign",
+            "Medical or responsibility declarations required for ICRIC or related invalidity-linked checks",
         ],
         "process": [
             "Identify whether the case relates to RED or ICRIC responsibilities",
@@ -132,9 +132,9 @@ CAF_SERVICES = {
             "Clients who need help collecting the paperwork for residence updates",
         ],
         "documents": [
-            "Identity documents",
-            "Address and residence-related supporting documents",
-            "Any municipal or family-status records required by the case",
+            "Identity documents and codice fiscale of the applicant and family members moving",
+            "Deed, registered rental contract, hospitality declaration, or owner authorization for the new address",
+            "Vehicle data, family-status information, and any municipality-specific forms or attachments",
         ],
         "process": [
             "Review the residence-change situation",
@@ -156,9 +156,9 @@ CAF_SERVICES = {
             "Clients making tax, contribution, or local-levy payments through F24",
         ],
         "documents": [
-            "Identity and tax details",
-            "Payment references, codes, and related tax/contribution data",
-            "Any prior F24 or payment-support records relevant to the case",
+            "Codice fiscale and an identity document of the payer",
+            "Tributo codes, ente code, reference period, and amounts due for the tax or contribution being paid",
+            "Any previous F24, avviso di pagamento, or assessment notice needed to compile the model correctly",
         ],
         "process": [
             "Review the payment purpose and tax codes involved",
@@ -180,9 +180,9 @@ CAF_SERVICES = {
             "Clients who need help preparing the supporting documents for bonus requests",
         ],
         "documents": [
-            "Identity and household information",
-            "ISEE or other eligibility-related documents when required",
-            "Supporting records linked to the specific bonus",
+            "Documento di identita and codice fiscale of the applicant and household members when required",
+            "ISEE or DSU documentation if the bonus is tied to household economic status",
+            "Service-specific proofs such as rental, utility, family, disability, or school documents depending on the bonus requested",
         ],
         "process": [
             "Identify the type of bonus or allowance involved",
@@ -206,7 +206,7 @@ CAF_SERVICES = {
         "documents": [
             "Identity document",
             "Tax code",
-            "Contact details and any information required by the chosen identity provider",
+            "Email address, mobile number, and if requested the health card or CIE/CNS needed by the chosen identity provider",
         ],
         "process": [
             "Identify the most suitable recognition method",
@@ -231,7 +231,7 @@ CAF_SERVICES = {
         "documents": [
             "Identity document",
             "Tax code",
-            "Contact information required for activation",
+            "Email address, mobile number, and where required the business or professional data used for activation",
         ],
         "process": [
             "Check the intended use of the PEC address",
@@ -253,9 +253,9 @@ CAF_SERVICES = {
             "Clients who need help preparing files connected to family-benefit procedures",
         ],
         "documents": [
-            "Identity and tax information for the household",
-            "Family-status and child-related records",
-            "ISEE or other supporting documents where relevant to the case",
+            "SPID/CIE/CNS for online filing or identity and codice fiscale details of the applicant",
+            "Codice fiscale of each child, family-status data, and any custody or separation documentation where relevant",
+            "IBAN for payment and ISEE when the family wants the amount calculated with the economic indicator",
         ],
         "process": [
             "Review the household situation and relevant support route",
@@ -277,9 +277,9 @@ CAF_SERVICES = {
             "Clients who need help collecting and organizing tax documents for filing",
         ],
         "documents": [
-            "Identity and tax details",
-            "Income and fiscal-supporting documents",
-            "Documents for deductions, credits, and tax positions relevant to the case",
+            "Documento di identita and codice fiscale of the taxpayer and any family members included in the declaration",
+            "Income, withholding, and foreign or special-tax records not manageable through the ordinary 730 route",
+            "Receipts and documents for deductions, credits, property income, investments, and any fiscal positions declared in the model",
         ],
         "process": [
             "Review the taxpayer profile and declaration route",
@@ -301,9 +301,9 @@ CAF_SERVICES = {
             "Clients who need help preparing supporting documents for succession-related procedures",
         ],
         "documents": [
-            "Identity documents",
-            "Family and inheritance-related records",
-            "Property or registry-supporting documents where applicable",
+            "Identity documents and codice fiscale of heirs and deceased person, plus death certificate",
+            "Family-status certificates, wills or declarations of heirship, and details of the estate shares",
+            "Property deeds, cadastral data, bank or postal balances, and any debts or deductible funeral expenses linked to the succession",
         ],
         "process": [
             "Review the type of succession-related need",
@@ -328,9 +328,9 @@ IMMIGRATION_SERVICES = {
             "Clients who want help organizing forms before submission",
         ],
         "documents": [
-            "Identity and permit-related records",
-            "Supporting documents required for the specific permit case",
-            "Photocopies and file organization for submission",
+            "Completed permit kit forms, a valid passport with photocopies of all used pages, and current permit if renewing",
+            "Marca da bollo and postal payment receipts required for the permit procedure",
+            "Case-specific documents such as work contract, enrollment certificate, family papers, housing proof, or income proof depending on permit type",
         ],
         "process": [
             "Review the type of permit or renewal case",
@@ -353,9 +353,9 @@ IMMIGRATION_SERVICES = {
             "Applicants who need help organizing a complete file",
         ],
         "documents": [
-            "Permit-related identity and supporting records",
-            "Case-specific documents linked to study, work, family, or renewal",
-            "Copies, translations, or supporting forms when needed",
+            "Passport, current permesso di soggiorno, four passport photos where requested, and copies of the identity pages",
+            "Receipts showing postal filing or appointment booking plus any payment slips required by the Questura workflow",
+            "Supporting documents linked to the permit basis, such as work, study, family, accommodation, health insurance, or income records",
         ],
         "process": [
             "Review the permit category and stage of the case",
@@ -377,9 +377,9 @@ IMMIGRATION_SERVICES = {
             "Applicants who need help organizing translated files before submission",
         ],
         "documents": [
-            "Original documents",
-            "Translated versions when available",
-            "Supporting copies or certification-related records depending on the use case",
+            "Original documents to be translated and clear copies of each page",
+            "Identity document of the applicant and any request form required by the receiving authority or translator",
+            "Any legalization, apostille, or authority-specific checklist showing how the translated document must be presented",
         ],
         "process": [
             "Review which documents need translation support",
@@ -401,9 +401,9 @@ IMMIGRATION_SERVICES = {
             "Applicants needing help preparing international document sets",
         ],
         "documents": [
-            "Identity and case-specific records",
-            "Cross-border or foreign-issued supporting documents",
-            "Copies, translations, or consular paperwork depending on the case",
+            "Passport or identity document and the applicant's residence details",
+            "Foreign civil-status, education, or administrative documents that will be presented in Italy or abroad",
+            "Translations, apostille or legalization papers, and appointment confirmations required by the authority receiving the file",
         ],
         "process": [
             "Identify the authority or process involved",
@@ -425,9 +425,9 @@ IMMIGRATION_SERVICES = {
             "Clients who need help collecting relationship and residence-supporting documents",
         ],
         "documents": [
-            "Identity and family relationship records",
-            "Residence and accommodation-related documents",
-            "Supporting immigration paperwork for the family case",
+            "Passport copies of family members and documents proving the family relationship, duly legalized and translated where required",
+            "Residence permit of the sponsor, accommodation suitability certificate, and proof of income",
+            "Family-status records, housing papers, and any nulla osta or portal documents required for the reunification file",
         ],
         "process": [
             "Review the family reunification case type",
@@ -449,9 +449,9 @@ IMMIGRATION_SERVICES = {
             "Applicants who need help preparing the supporting documents before filing",
         ],
         "documents": [
-            "Identity records",
-            "Work or sponsor-related supporting documents",
-            "Any documents linked to the flussi procedure involved",
+            "Passport copy of the worker and identity details of the employer or sponsor",
+            "Draft work contract, housing declaration, and employer income or company documents required for the decree flow",
+            "Any online application receipts, quota references, or supporting records linked to the relevant decreto flussi",
         ],
         "process": [
             "Review the flussi-related route and timing",
@@ -473,9 +473,9 @@ IMMIGRATION_SERVICES = {
             "Families who need help collecting a complete citizenship support file",
         ],
         "documents": [
-            "Identity and civil-status records",
-            "Residence and supporting administrative documents",
-            "Any translations, copies, or linked records required by the case",
+            "Passport or identity document, residence permit where applicable, and current residence certificates",
+            "Birth certificate, criminal record certificates, and any marriage or family-status certificates required by the citizenship path",
+            "Translations, legalizations, payment receipt, and the online application submission documents required by the Ministry workflow",
         ],
         "process": [
             "Review the citizenship path involved",
@@ -497,9 +497,9 @@ IMMIGRATION_SERVICES = {
             "Applicants who need help organizing the supporting file before follow-up steps",
         ],
         "documents": [
-            "Current permit-related documents",
-            "Identity and supporting records linked to the new permit basis",
-            "Any work, study, or family-related documents required for the conversion",
+            "Current passport and valid residence permit with copies",
+            "Documents proving the basis for the new status, such as work contract, study completion, or family documents",
+            "Quota or portal receipts, payment receipts, and any accommodation or income proof required for the conversion route",
         ],
         "process": [
             "Review the current permit and intended conversion route",
@@ -524,9 +524,9 @@ EMBASSY_SERVICES = {
             "Clients who want help organizing supporting documents before submission",
         ],
         "documents": [
-            "Identity and current passport-related records",
-            "Photographs and case-specific supporting documents",
-            "Scans or upload-ready copies where required",
+            "Completed online application printout, current passport in original, and copies of the relevant passport pages",
+            "Recent photographs matching mission specifications and proof of legal stay or residence in Italy",
+            "Case-specific support such as address proof, spouse or minor documents, or police report and annexures for lost or damaged passports",
         ],
         "process": [
             "Check the service category and required paperwork",
@@ -548,9 +548,9 @@ EMBASSY_SERVICES = {
             "Clients who need help matching foreign and identity documents in one file set",
         ],
         "documents": [
-            "Identity and nationality-related documents",
-            "Photo, signature, and supporting records required for the OCI case",
-            "Scans and copies prepared to the required format",
+            "Current foreign passport with at least six months validity and copy of legal residence status where required",
+            "Proof of Indian origin such as old Indian passport, domicile or nativity certificate, or parents' or grandparents' Indian documents",
+            "Photo, signature, and relationship documents such as birth or marriage certificates when the OCI claim is through parents or spouse",
         ],
         "process": [
             "Review the client’s OCI case profile",
@@ -572,9 +572,9 @@ EMBASSY_SERVICES = {
             "Clients who want help reducing documentation mistakes before submission",
         ],
         "documents": [
-            "Current and former nationality/passport records as required",
-            "Supporting identity and case documents",
-            "Copies, forms, and scanned documents needed for the process",
+            "Duly filled surrender or renunciation application and the original last Indian passport",
+            "Current foreign passport and proof of acquired foreign nationality, such as naturalization certificate or citizenship certificate",
+            "Photographs, declaration forms, and copies of the relevant passport and nationality pages required by the mission or provider",
         ],
         "process": [
             "Review the case and supporting documents",
@@ -599,9 +599,9 @@ PATRONATO_SERVICES = {
             "Clients who need help organizing the documents for unemployment support cases",
         ],
         "documents": [
-            "Identity and fiscal documents",
-            "Employment and termination-related records",
-            "Supporting documents required for the specific unemployment case",
+            "SPID, CIE, or CNS for online filing, plus identity document and codice fiscale",
+            "Employment termination data, UNILAV or employer communications, and the latest employment contract information",
+            "IBAN and any documents requested to prove recent work periods or contributory status for the unemployment measure involved",
         ],
         "process": [
             "Review the unemployment-related situation",
@@ -623,9 +623,9 @@ PATRONATO_SERVICES = {
             "Clients who need help preparing family and welfare documentation",
         ],
         "documents": [
-            "Identity and family-status records",
-            "Household and benefit-related supporting documents",
-            "Any income or supporting files relevant to the case",
+            "SPID, CIE, or CNS for online filing, plus identity and codice fiscale details of the parent",
+            "Codice fiscale of the children, custody or separation documents if applicable, and family-status information",
+            "IBAN and ISEE if the family wants the amount linked to the economic indicator",
         ],
         "process": [
             "Review the family case and type of support needed",
@@ -647,9 +647,9 @@ PATRONATO_SERVICES = {
             "Clients who want support preparing the data and documents before filing",
         ],
         "documents": [
-            "Identity and fiscal details",
-            "Employment information",
-            "Any supporting records linked to the resignation process",
+            "SPID or CIE to access the official resignation portal",
+            "Employment contract data, employer details, and the worker's personal and contact information",
+            "Any supporting records for protected categories, maternity-related suspension, or assisted filing when applicable",
         ],
         "process": [
             "Review the resignation situation",
@@ -671,9 +671,9 @@ PATRONATO_SERVICES = {
             "Families needing help with maternity support files",
         ],
         "documents": [
-            "Identity and family records",
-            "Employment or welfare-supporting documents where relevant",
-            "Any maternity-related case documents required for follow-up",
+            "Identity document, codice fiscale, and medical certification of pregnancy or birth data depending on the benefit requested",
+            "Employment information, INPS position details, and IBAN for payment where applicable",
+            "Any leave, employer, or family documentation required for the specific maternity or parental benefit",
         ],
         "process": [
             "Review the maternity-related case",
@@ -695,9 +695,9 @@ PATRONATO_SERVICES = {
             "Families helping a relative with disability-related administrative support",
         ],
         "documents": [
-            "Identity and health-related records relevant to the case",
-            "Supporting administrative documents",
-            "Any records required for the recognition or follow-up workflow",
+            "Identity document, codice fiscale, and the introductory medical certificate used to start the INPS procedure",
+            "Specialist medical reports and health documentation supporting the disability claim",
+            "Residence and contact details plus any delegation or guardian documents when another person files the case",
         ],
         "process": [
             "Review the case type and stage",
@@ -719,9 +719,9 @@ PATRONATO_SERVICES = {
             "Families organizing supporting documents for assistance procedures",
         ],
         "documents": [
-            "Identity records",
-            "Family or support-related documentation",
-            "Any case-specific administrative records connected to the request",
+            "Identity document and codice fiscale of the disabled person and, if relevant, the family member requesting benefits",
+            "Medical and invalidity recognition documents linked to the handicap assessment",
+            "Employment or care-related records when the request concerns permits, leave, or family assistance benefits",
         ],
         "process": [
             "Review the purpose of the Law 104-related request",
@@ -743,9 +743,9 @@ PATRONATO_SERVICES = {
             "Families or workers who need help organizing pension support files",
         ],
         "documents": [
-            "Identity and fiscal records",
-            "Contribution or employment-related documents where applicable",
-            "Supporting pension-related case records",
+            "Identity document, codice fiscale, and pension or contribution statement",
+            "Employment history, contributory records, and any ricongiunzione or totalization documents where relevant",
+            "IBAN and supporting civil-status or family documents when required for survivor or family-linked pension cases",
         ],
         "process": [
             "Review the pension-related situation",
@@ -767,9 +767,9 @@ PATRONATO_SERVICES = {
             "Clients who need help organizing unemployment support files",
         ],
         "documents": [
-            "Identity and fiscal details",
-            "Employment or collaboration records",
-            "Termination and supporting case documents",
+            "SPID, CIE, or CNS for the online procedure, plus identity document and codice fiscale",
+            "Employment or collaboration contract data and the termination date or cause",
+            "IBAN, employer details, and any supporting documents used to prove the right to NASPI or DIS-COLL",
         ],
         "process": [
             "Review the unemployment support route involved",
@@ -791,9 +791,9 @@ PATRONATO_SERVICES = {
             "Families preparing files for benefit or support-related administrative steps",
         ],
         "documents": [
-            "Identity and household documents",
-            "Income or family-supporting records where relevant",
-            "Any ADI-related supporting documentation required by the case",
+            "ISEE in force, identity documents, and codice fiscale of all household members",
+            "DSU-linked information, residence details, and any documents proving disability, minors, age, or care burden where relevant",
+            "IBAN and documentation requested by INPS or social services for activation or follow-up of the ADI path",
         ],
         "process": [
             "Review the family or household case",
@@ -819,9 +819,9 @@ ADMISSION_SERVICES = {
             "Families seeking educational consulting before choosing a university pathway",
         ],
         "documents": [
-            "Academic records and personal identity documents",
-            "Program-specific forms or supporting files",
-            "Language, profile, or statement documents when required",
+            "Passport or identity document, academic transcripts, diploma or degree certificates",
+            "Language certificates, CV, statement of purpose, and letters of recommendation if required by the university",
+            "Any pre-enrolment, Universitaly, portfolio, or program-specific forms requested by the target institution",
         ],
         "process": [
             "Identify the target program or institution",
@@ -843,9 +843,9 @@ ADMISSION_SERVICES = {
             "Applicants who need help arranging translated or certified academic documents",
         ],
         "documents": [
-            "Academic certificates and transcripts",
-            "Identity and travel records",
-            "Translations or supporting copies where required",
+            "Original diploma, transcript, and syllabus or declaration documents requested by the target university",
+            "Passport, tax code if already available, and any prior visa or residence documents relevant to the admission path",
+            "Official translations, legalization or apostille, and declarations of value or CIMEA statements where the institution requires them",
         ],
         "process": [
             "Review the student’s target use for the documents",
@@ -870,9 +870,9 @@ BUSINESS_SERVICES = {
             "Clients who need help organizing the basic file for P. IVA-related procedures",
         ],
         "documents": [
-            "Identity and fiscal records",
-            "Address and activity-related information",
-            "Supporting business-start information where needed",
+            "Documento di identita, codice fiscale, and residence or registered-address details",
+            "Description of the activity with the correct ATECO code and the chosen tax regime data",
+            "Where relevant, professional register data, PEC, and any authorization or business-start documents needed for the opening declaration",
         ],
         "process": [
             "Review the intended business or self-employment activity",
@@ -894,9 +894,9 @@ BUSINESS_SERVICES = {
             "Clients who need help understanding electronic invoicing documentation",
         ],
         "documents": [
-            "Identity and fiscal details",
-            "Business or invoicing-related records",
-            "Any provider or system information used for invoicing setup",
+            "Partita IVA, codice fiscale, and company or sole-trader registry details",
+            "PEC or codice destinatario used for receiving electronic invoices",
+            "Customer and supplier fiscal data plus the credentials or delegations needed for the chosen invoicing platform",
         ],
         "process": [
             "Review the invoicing context and practical needs",
@@ -918,9 +918,9 @@ BUSINESS_SERVICES = {
             "Businesses or individuals reviewing CU-related records",
         ],
         "documents": [
-            "Identity and tax information",
-            "CU-related fiscal documents",
-            "Supporting income or withholding records where needed",
+            "Withholding agent data, codice fiscale, and company or employer identification details",
+            "Income, withholding, social security, and tax data for the workers or collaborators covered by the CU",
+            "Recipient personal details and any adjustments or conguaglio information needed to issue the certification",
         ],
         "process": [
             "Review the CU-related situation",
@@ -942,9 +942,9 @@ BUSINESS_SERVICES = {
             "Clients who need help organizing commercial registration paperwork",
         ],
         "documents": [
-            "Identity and business-related records",
-            "Company or activity-supporting documents",
-            "Any registration or chamber-related paperwork involved in the case",
+            "Identity document, codice fiscale, and company or sole-trader registration data",
+            "Constitutive deed, statutes, or business-start forms when the practice concerns registration or changes",
+            "Any delegated forms, digital-signature files, and supporting attachments required for the Registro Imprese filing",
         ],
         "process": [
             "Review the chamber-related need",
@@ -966,9 +966,9 @@ BUSINESS_SERVICES = {
             "Businesses needing help organizing SCIA-supporting documents",
         ],
         "documents": [
-            "Identity and business-related information",
-            "Activity and premises-supporting documents where relevant",
-            "Any administrative forms or records linked to the SCIA case",
+            "Identity document and company details of the person filing the SCIA",
+            "Technical or professional requisites, floor plans, and premises-availability documents when the activity requires them",
+            "Sector-specific declarations, attachments, and any accompanying permits or notifications required by the SUAP procedure",
         ],
         "process": [
             "Review the business activity and administrative scope",
@@ -993,9 +993,9 @@ SUPPORT_SERVICES = {
             "Applicants who need help managing translation and legalization steps",
         ],
         "documents": [
-            "Original documents",
-            "Translated versions where available",
-            "Supporting copies and identity records linked to the process",
+            "Original or certified-copy documents to be translated, legalized, or apostilled",
+            "Identity document of the applicant and any delegation if another person deposits or collects the documents",
+            "Translated versions, appointment receipts, and authority-specific request forms where the receiving office requires them",
         ],
         "process": [
             "Review which documents need translation or legalization support",
@@ -1017,9 +1017,9 @@ SUPPORT_SERVICES = {
             "Applicants preparing documents linked to language-related requirements",
         ],
         "documents": [
-            "Identity and contact details",
-            "Any appointment or registration-related records",
-            "Supporting immigration or residence documents where relevant",
+            "Identity document and codice fiscale",
+            "Residence permit or residence documentation if the exam is being used for an immigration procedure",
+            "Exam registration confirmation, payment receipt, and any institution-specific application form",
         ],
         "process": [
             "Review the purpose of the A2 language test in the client’s case",
@@ -1041,9 +1041,9 @@ SUPPORT_SERVICES = {
             "People who need support understanding housing paperwork before signing or applying",
         ],
         "documents": [
-            "Identity documents",
-            "Income or guarantee-related records where relevant",
-            "Housing or contract-supporting documents",
+            "Identity documents and codice fiscale of the tenant or guarantor",
+            "Employment contract, payslips, tax return, or guarantor income documents commonly requested by landlords or agencies",
+            "Rental proposal, existing contract, residence permit if applicable, and any deposit or guarantee documentation",
         ],
         "process": [
             "Review the housing or rental situation",
@@ -1065,9 +1065,9 @@ SUPPORT_SERVICES = {
             "Clients who want support preparing the file for auto or moto insurance follow-up",
         ],
         "documents": [
-            "Identity records",
-            "Vehicle-related documents",
-            "Any prior insurance or ownership-supporting records",
+            "Identity document, codice fiscale, and driving licence of the insured person or vehicle owner",
+            "Vehicle registration document and any certificate of ownership or plate details",
+            "Previous insurance policy, attestato di rischio, and any documents relating to additional drivers or claims history",
         ],
         "process": [
             "Review the vehicle and insurance context",
@@ -1089,9 +1089,9 @@ SUPPORT_SERVICES = {
             "Applicants handling health-card or tax-code support steps",
         ],
         "documents": [
-            "Identity records",
-            "Residence or immigration-related records where relevant",
-            "Any supporting administrative documents tied to the case",
+            "Passport or identity document and codice fiscale if already assigned",
+            "Residence permit or residence-registration documents where the office requires proof of legal stay in Italy",
+            "Health registration forms, family-status data, or delegation documents depending on whether the request is for codice fiscale, duplicate card, or health-card issue",
         ],
         "process": [
             "Review the requested administrative action",
@@ -1113,9 +1113,9 @@ SUPPORT_SERVICES = {
             "Applicants organizing identity, contact, or work-related information for account setup",
         ],
         "documents": [
-            "Identity and contact details",
-            "Any platform-required supporting documents",
-            "Work-related records where needed by the registration process",
+            "Identity document, tax code, and contact details used to create the rider or courier account",
+            "Residence permit for non-EU citizens and driving licence plus vehicle insurance when the platform and vehicle type require them",
+            "IBAN, vehicle information, and any platform onboarding forms or tax-registration details requested by Glovo, Deliveroo, or Just Eat",
         ],
         "process": [
             "Review the platform and account requirements",
