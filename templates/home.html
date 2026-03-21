@@ -70,6 +70,28 @@
     </div>
   </section>
 
+  <section class="updates-strip-section">
+    <div class="container">
+      <div class="updates-strip-head">
+        <p class="eyebrow">Latest Updates</p>
+        <a href="{{ url_for('news') }}">View all news</a>
+      </div>
+      <div class="updates-ticker" aria-label="Latest updates">
+        <div class="updates-track">
+          {% for _ in range(2) %}
+            {% for item in news_items %}
+              <a class="update-pill" href="{{ url_for('news') }}">
+                <span class="update-date">{{ item.date }}</span>
+                <strong>{{ item.title }}</strong>
+                <span>{{ item.cta }}</span>
+              </a>
+            {% endfor %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="section">
     <div class="container">
       <div class="section-heading">
@@ -141,7 +163,7 @@
     <div class="container split">
       <div>
         <div class="section-heading">
-          <p class="eyebrow">Latest Updates</p>
+          <p class="eyebrow">News Highlights</p>
           <h2>News and seasonal service reminders.</h2>
         </div>
         <div class="news-stack">
