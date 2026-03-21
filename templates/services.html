@@ -6,12 +6,23 @@
 {% block content %}
 <main class="page-shell">
   <section class="page-hero">
-    <div class="container narrow">
-      <p class="eyebrow">All Services</p>
-      <h1>Full service overview for clients who need practical help in Italy.</h1>
-      <p class="lead">
-        This services page is organized like a professional help center: clear categories, broad coverage, and direct appointment paths. It is intentionally original in layout and wording, while following the practical clarity users expect from service-heavy websites.
-      </p>
+    <div class="container hero-grid services-hero-grid">
+      <div>
+        <p class="eyebrow">All Services</p>
+        <h1>Full service overview for clients who need practical help in Italy.</h1>
+        <p class="lead">
+          This services page is organized like a professional help center: clear categories, broad coverage, direct appointment paths, and faster visual scanning through category illustrations.
+        </p>
+      </div>
+      <aside class="hero-panel">
+        <p class="panel-kicker">Browse Faster</p>
+        <div class="mini-visual-grid">
+          <img src="{{ url_for('static', filename='illustrations/caf.svg') }}" alt="CAF services">
+          <img src="{{ url_for('static', filename='illustrations/immigration.svg') }}" alt="Immigration services">
+          <img src="{{ url_for('static', filename='illustrations/admission.svg') }}" alt="Admission services">
+          <img src="{{ url_for('static', filename='illustrations/business.svg') }}" alt="Business services">
+        </div>
+      </aside>
     </div>
   </section>
 

@@ -96,38 +96,44 @@
     <div class="container">
       <p class="eyebrow">Service Categories</p>
       <h2>The complete service directory.</h2>
-      <div class="cards">
-        <article class="card">
+      <div class="service-showcase">
+        <article class="visual-card">
+          <img src="{{ url_for('static', filename='illustrations/caf.svg') }}" alt="CAF services illustration">
           <span class="card-tag">CAF</span>
           <h3>Fiscal and Family Services</h3>
           <p>Support for core CAF services including ISEE, 730, IMU, RED/ICRIC, Assegno Unico, Modello Redditi, Successioni, cambio residenza, F24, bonus, and SPID.</p>
           <a href="{{ url_for('caf_services') }}">Explore CAF services</a>
         </article>
-        <article class="card">
+        <article class="visual-card">
+          <img src="{{ url_for('static', filename='illustrations/patronato.svg') }}" alt="Patronato services illustration">
           <span class="card-tag">Patronato</span>
           <h3>Patronato and Welfare Support</h3>
           <p>Support for disoccupazione, assegno unico, dimissioni, maternita, invalidita civile, 104, and pensione-related paperwork.</p>
           <a href="{{ url_for('patronato_services') }}">Explore patronato services</a>
         </article>
-        <article class="card">
+        <article class="visual-card">
+          <img src="{{ url_for('static', filename='illustrations/immigration.svg') }}" alt="Immigration services illustration">
           <span class="card-tag">Immigration</span>
           <h3>Immigration and Consular Documents</h3>
           <p>Assistance with kit soggiorno filling, document preparation, translations, passport and OCI paperwork, and international support.</p>
           <a href="{{ url_for('immigration_services') }}">Explore immigration services</a>
         </article>
-        <article class="card">
+        <article class="visual-card">
+          <img src="{{ url_for('static', filename='illustrations/others.svg') }}" alt="Other services illustration">
           <span class="card-tag">Others</span>
           <h3>Practical Everyday Services</h3>
           <p>Support for translations, housing paperwork, account registration for delivery apps, insurance, and tessera sanitaria or codice fiscale assistance.</p>
           <a href="{{ url_for('support_services') }}">Explore other services</a>
         </article>
-        <article class="card">
+        <article class="visual-card">
+          <img src="{{ url_for('static', filename='illustrations/admission.svg') }}" alt="Admission services illustration">
           <span class="card-tag">Admission</span>
           <h3>University Application Consulting</h3>
           <p>Educational consulting for students applying to universities in Italy and support organizing admission documentation.</p>
           <a href="{{ url_for('admission_services') }}">Explore admission services</a>
         </article>
-        <article class="card">
+        <article class="visual-card">
+          <img src="{{ url_for('static', filename='illustrations/business.svg') }}" alt="Business services illustration">
           <span class="card-tag">Gestione Imprese</span>
           <h3>Business Setup and Management</h3>
           <p>Support for partita IVA, fattura elettronica, certificazione unica, camera di commercio, and SCIA-related paperwork.</p>

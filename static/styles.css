@@ -191,6 +191,10 @@ a {
   align-items: stretch;
 }
 
+.services-hero-grid {
+  align-items: center;
+}
+
 .split {
   grid-template-columns: minmax(0, 1.1fr) minmax(320px, 1fr);
 }
@@ -257,6 +261,7 @@ a {
 .hero-panel,
 .panel,
 .card,
+.visual-card,
 .contact-form,
 .flash {
   background: rgba(255, 250, 244, 0.88);
@@ -268,6 +273,7 @@ a {
 .hero-panel,
 .panel,
 .card,
+.visual-card,
 .contact-form {
   padding: 1.5rem;
 }
@@ -322,6 +328,36 @@ a {
 
 .service-bullets a:hover {
   color: var(--brand-dark);
+}
+
+.service-showcase {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.2rem;
+}
+
+.visual-card {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.visual-card img,
+.mini-visual-grid img {
+  width: 100%;
+  border-radius: 1rem;
+  border: 1px solid rgba(80, 50, 30, 0.12);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(239, 226, 208, 0.8));
+}
+
+.mini-visual-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.mini-visual-grid img {
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
 }
 
 .docs-grid,
@@ -475,6 +511,7 @@ a {
   .split,
   .cards,
   .cards-two,
+  .service-showcase,
   .service-board,
   .service-board-wide,
   .docs-grid,
@@ -485,7 +522,8 @@ a {
 
   .nav-wrap,
   .footer-wrap,
-  .dashboard-head {
+  .dashboard-head,
+  .header-actions {
     flex-wrap: wrap;
   }
 
