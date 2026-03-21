@@ -5,6 +5,28 @@
 
 {% block content %}
 <main>
+  <section class="updates-strip-section">
+    <div class="container">
+      <div class="updates-strip-head">
+        <p class="eyebrow">Latest Updates</p>
+        <a href="{{ url_for('news') }}">View all news</a>
+      </div>
+      <div class="updates-ticker" aria-label="Latest updates">
+        <div class="updates-track">
+          {% for _ in range(2) %}
+            {% for item in news_items %}
+              <a class="update-pill" href="{{ url_for('news') }}">
+                <span class="update-date">{{ item.date }}</span>
+                <strong>{{ item.title }}</strong>
+                <span>{{ item.cta }}</span>
+              </a>
+            {% endfor %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="hero service-hero">
     <div class="container hero-grid campaign-grid">
       <article class="campaign-card">
@@ -66,28 +88,6 @@
       <div>
         <p class="stat">Appointment Flow</p>
         <p class="stat-label">Book, upload files, and keep each case organized through the site</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="updates-strip-section">
-    <div class="container">
-      <div class="updates-strip-head">
-        <p class="eyebrow">Latest Updates</p>
-        <a href="{{ url_for('news') }}">View all news</a>
-      </div>
-      <div class="updates-ticker" aria-label="Latest updates">
-        <div class="updates-track">
-          {% for _ in range(2) %}
-            {% for item in news_items %}
-              <a class="update-pill" href="{{ url_for('news') }}">
-                <span class="update-date">{{ item.date }}</span>
-                <strong>{{ item.title }}</strong>
-                <span>{{ item.cta }}</span>
-              </a>
-            {% endfor %}
-          {% endfor %}
-        </div>
       </div>
     </div>
   </section>
