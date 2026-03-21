@@ -6,10 +6,15 @@
 {% block content %}
 <main class="page-shell">
   <section class="page-hero">
-    <div class="container narrow">
-      <p class="eyebrow">Embassy Service</p>
-      <h1>{{ service.name }}</h1>
-      <p class="lead">{{ service.summary }}</p>
+    <div class="container hero-grid service-detail-hero">
+      <div>
+        <p class="eyebrow">Embassy Service</p>
+        <h1>{{ service.name }}</h1>
+        <p class="lead">{{ service.summary }}</p>
+      </div>
+      <aside class="service-hero-art">
+        <img src="{{ url_for('static', filename='illustrations/immigration.svg') }}" alt="{{ service.name }} illustration">
+      </aside>
     </div>
   </section>
 

@@ -426,6 +426,24 @@ a {
   object-fit: cover;
 }
 
+.service-detail-hero {
+  align-items: center;
+}
+
+.service-hero-art {
+  padding: 1rem;
+  border-radius: 1.4rem;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: var(--shadow);
+}
+
+.service-hero-art img {
+  display: block;
+  width: 100%;
+  border-radius: 1rem;
+}
+
 .docs-grid,
 .news-stack {
   display: grid;
