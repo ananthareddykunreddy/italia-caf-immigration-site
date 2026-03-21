@@ -1129,6 +1129,30 @@ SUPPORT_SERVICES = {
             "The uploaded list includes account registration support for Glovo, Deliveroo, and Just Eat",
         ],
     },
+    "abbonamento-agevolazione": {
+        "name": "Abbonamento Agevolazione",
+        "summary": "Support for reduced-fare subscription applications and the related document preparation.",
+        "who_needs_it": [
+            "Clients applying for transport or service subscriptions with agevolazione requirements",
+            "Students, workers, seniors, or families who need help organizing the documents for discounted subscriptions",
+        ],
+        "documents": [
+            "Identity document and codice fiscale of the applicant",
+            "ISEE or any certificate proving the eligibility band when the agevolazione is income-based",
+            "Student, disability, residence, or family-status documents if the reduced subscription depends on a specific category",
+        ],
+        "process": [
+            "Review which subscription or reduced-fare scheme the client is applying for",
+            "Check the identity, eligibility, and category-specific supporting documents",
+            "Prepare the file for online application, office submission, or assisted follow-up",
+        ],
+        "notes": [
+            "Required documents vary depending on the transport provider or public body managing the agevolazione",
+        ],
+        "official_basis": [
+            "Agevolated subscription schemes usually require identity, fiscal data, and proof of eligibility such as ISEE, student status, disability, or residence documentation",
+        ],
+    },
 }
 
 NEWS_ITEMS = [
