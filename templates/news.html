@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}News | ciaocaf{% endblock %}
+{% block meta_description %}Latest service updates, seasonal reminders, and practical filing notices from ciaocaf.{% endblock %}
+
+{% block content %}
+<main class="page-shell">
+  <section class="page-hero">
+    <div class="container narrow">
+      <p class="eyebrow">News</p>
+      <h1>Service updates and practical reminders.</h1>
+      <p class="lead">
+        Use this page for campaign reminders, tax-season timing, welfare updates, and document-preparation notices.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container news-stack">
+      {% for item in news_items %}
+        <article class="news-card">
+          <p class="news-date">{{ item.date }}</p>
+          <h2>{{ item.title }}</h2>
+          <p>{{ item.summary }}</p>
+          <p class="news-cta">{{ item.cta }}</p>
+          <a href="{{ url_for('appointments') }}">Book related appointment</a>
+        </article>
+      {% endfor %}
+    </div>
+  </section>
+</main>
+{% endblock %}

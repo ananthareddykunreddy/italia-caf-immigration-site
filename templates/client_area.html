@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}Client Area | ciaocaf{% endblock %}
+{% block meta_description %}Client Area for future online-document, signature, and follow-up features at ciaocaf.{% endblock %}
+
+{% block content %}
+<main class="page-shell">
+  <section class="page-hero">
+    <div class="container narrow">
+      <p class="eyebrow">Client Area</p>
+      <h1>A dedicated space for digital client services.</h1>
+      <p class="lead">
+        This page can evolve into your online area for document uploads, digital signatures, appointment follow-up, and service updates.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container cards cards-two">
+      <article class="card">
+        <span class="card-tag">Current Use</span>
+        <h3>Appointment and document workflow</h3>
+        <p>Clients can already book appointments and upload files through the booking form.</p>
+        <a href="{{ url_for('appointments') }}">Open appointment form</a>
+      </article>
+      <article class="card">
+        <span class="card-tag">Future Use</span>
+        <h3>Digital follow-up area</h3>
+        <p>This area can later connect to file history, signed forms, and appointment-status updates.</p>
+        <a href="{{ url_for('required_documents') }}">Open document hub</a>
+      </article>
+    </div>
+  </section>
+</main>
+{% endblock %}

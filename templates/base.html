@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{% block title %}{{ business_name }}{% endblock %}</title>
-  <meta name="description" content="{% block meta_description %}CAF services, patronato, immigration support including consular paperwork, university application consulting, gestione imprese, and other practical services in Italy.{% endblock %}">
+  <meta name="description" content="{% block meta_description %}CAF services, patronato, immigration support including consular paperwork, required document checklists, university application consulting, gestione imprese, and practical services in Italy.{% endblock %}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
@@ -20,17 +20,17 @@
       <nav aria-label="Main navigation">
         <ul class="nav-links">
           <li><a href="{{ url_for('home') }}">Home</a></li>
-          <li><a href="{{ url_for('caf_services') }}">CAF Services</a></li>
-          <li><a href="{{ url_for('patronato_services') }}">Patronato Services</a></li>
-          <li><a href="{{ url_for('immigration_services') }}">Immigration Services</a></li>
-          <li><a href="{{ url_for('admission_services') }}">Admission Services</a></li>
-          <li><a href="{{ url_for('support_services') }}">Others</a></li>
-          <li><a href="{{ url_for('business_services') }}">Gestione Imprese</a></li>
-          <li><a href="{{ url_for('appointments') }}">Appointments</a></li>
+          <li><a href="{{ url_for('services') }}">Services</a></li>
+          <li><a href="{{ url_for('required_documents') }}">Required Documents</a></li>
+          <li><a href="{{ url_for('news') }}">News</a></li>
+          <li><a href="{{ url_for('contact') }}">Contact</a></li>
           <li><a href="{{ url_for('admin_login') }}">Admin</a></li>
         </ul>
       </nav>
-      <a class="btn btn-small" href="{{ url_for('appointments') }}">Book Appointment</a>
+      <div class="header-actions">
+        <a class="btn btn-small btn-outline" href="{{ url_for('client_area') }}">Client Area</a>
+        <a class="btn btn-small" href="{{ url_for('appointments') }}">Book Appointment</a>
+      </div>
     </div>
   </header>
 
@@ -54,6 +54,10 @@
       </div>
       <div class="footer-links">
         <a href="{{ url_for('services') }}">All Services</a>
+        <a href="{{ url_for('required_documents') }}">Required Documents</a>
+        <a href="{{ url_for('news') }}">News</a>
+        <a href="{{ url_for('contact') }}">Contact</a>
+        <a href="{{ url_for('client_area') }}">Client Area</a>
         <a href="{{ url_for('caf_services') }}">CAF Services</a>
         <a href="{{ url_for('patronato_services') }}">Patronato Services</a>
         <a href="{{ url_for('immigration_services') }}">Immigration Services</a>

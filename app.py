@@ -1131,6 +1131,67 @@ SUPPORT_SERVICES = {
     },
 }
 
+NEWS_ITEMS = [
+    {
+        "title": "730 Campaign Support",
+        "date": "March 2026",
+        "summary": "Prepare your 730 file early with income records, deductible expense receipts, and any family documents that affect detrazioni or credits.",
+        "cta": "Book a tax appointment before the peak filing period starts.",
+    },
+    {
+        "title": "ISEE and Family Benefits",
+        "date": "March 2026",
+        "summary": "Updated DSU and ISEE files are often needed for assegni, school-related requests, and other family or welfare measures.",
+        "cta": "Use the required-documents page to check what to bring for your household case.",
+    },
+    {
+        "title": "Permesso and Citizenship Files",
+        "date": "March 2026",
+        "summary": "Immigration cases move faster when passport copies, permit records, translations, and payment receipts are organized before submission.",
+        "cta": "Choose the exact immigration service and upload supporting documents when booking.",
+    },
+]
+
+
+def service_directory():
+    return [
+        {
+            "label": "CAF Services",
+            "endpoint": "caf_service_detail",
+            "services": CAF_SERVICES,
+        },
+        {
+            "label": "Patronato Services",
+            "endpoint": "patronato_service_detail",
+            "services": PATRONATO_SERVICES,
+        },
+        {
+            "label": "Immigration Services",
+            "endpoint": "immigration_service_detail",
+            "services": IMMIGRATION_SERVICES,
+        },
+        {
+            "label": "Consular Services",
+            "endpoint": "embassy_service_detail",
+            "services": EMBASSY_SERVICES,
+        },
+        {
+            "label": "Admission Services",
+            "endpoint": "admission_service_detail",
+            "services": ADMISSION_SERVICES,
+        },
+        {
+            "label": "Gestione Imprese",
+            "endpoint": "business_service_detail",
+            "services": BUSINESS_SERVICES,
+        },
+        {
+            "label": "Others",
+            "endpoint": "support_service_detail",
+            "services": SUPPORT_SERVICES,
+        },
+    ]
+
 
 def ensure_directories() -> None:
     DATA_DIR.mkdir(exist_ok=True)
@@ -1217,12 +1278,32 @@ init_db()
 
 @app.route("/")
 def home():
-    return render_template("home.html")
+    return render_template("home.html", news_items=NEWS_ITEMS)
 
 
 @app.route("/services")
 def services():
     return render_template("services.html")
+
+
+@app.route("/required-documents")
+def required_documents():
+    return render_template("required_documents.html", service_directory=service_directory())
+
+
+@app.route("/news")
+def news():
+    return render_template("news.html", news_items=NEWS_ITEMS)
+
+
+@app.route("/contact")
+def contact():
+    return render_template("contact.html")
+
+
+@app.route("/client-area")
+def client_area():
+    return render_template("client_area.html")
 
 
 @app.route("/caf-services")

@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}Required Documents | ciaocaf{% endblock %}
+{% block meta_description %}Required document checklists for CAF, patronato, immigration, consular, admission, gestione imprese, and other services at ciaocaf.{% endblock %}
+
+{% block content %}
+<main class="page-shell">
+  <section class="page-hero">
+    <div class="container narrow">
+      <p class="eyebrow">Required Documents</p>
+      <h1>One hub for the checklists linked to every service page.</h1>
+      <p class="lead">
+        Open the category you need, then choose the exact practice to see the required documents, process notes, and booking path.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container docs-grid">
+      {% for category in service_directory %}
+        <article class="service-list-panel">
+          <span class="card-tag">{{ category.label }}</span>
+          <h3>{{ category.label }}</h3>
+          <ul class="service-bullets">
+            {% for slug, service in category.services.items() %}
+              <li><a href="{{ url_for(category.endpoint, slug=slug) }}">{{ service.name }}</a></li>
+            {% endfor %}
+          </ul>
+        </article>
+      {% endfor %}
+    </div>
+  </section>
+</main>
+{% endblock %}

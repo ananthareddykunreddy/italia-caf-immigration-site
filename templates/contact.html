@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}Contact | ciaocaf{% endblock %}
+{% block meta_description %}Contact ciaocaf for appointments, document questions, office visits, and practical support in Italy.{% endblock %}
+
+{% block content %}
+<main class="page-shell">
+  <section class="page-hero">
+    <div class="container narrow">
+      <p class="eyebrow">Contact</p>
+      <h1>Office contact details in one place.</h1>
+      <p class="lead">
+        Replace the sample contact details below with your real phone number, WhatsApp, email, address, and office hours.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container split">
+      <article class="panel">
+        <p class="panel-kicker">Direct Contact</p>
+        <h3>Get in touch</h3>
+        <ul>
+          <li>Phone: +39 000 000 0000</li>
+          <li>WhatsApp: +39 000 000 0000</li>
+          <li>Email: info@ciaocaf.it</li>
+          <li>Office Hours: Mon-Sat, 9:00-13:00 and 15:00-19:00</li>
+        </ul>
+      </article>
+      <article class="panel">
+        <p class="panel-kicker">Office</p>
+        <h3>Visit the office</h3>
+        <ul>
+          <li>Address: Via Example 10, Rome, Italy</li>
+          <li>City Support: Rome and nearby areas</li>
+          <li>Appointments recommended for complex cases and document review</li>
+          <li><a href="{{ url_for('appointments') }}">Book an appointment online</a></li>
+        </ul>
+      </article>
+    </div>
+  </section>
+</main>
+{% endblock %}
