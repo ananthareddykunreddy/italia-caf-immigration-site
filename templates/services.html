@@ -31,6 +31,7 @@
             <li><a href="{{ url_for('caf_service_detail', slug='red-icric') }}">RED/ICRIC</a></li>
             <li><a href="{{ url_for('caf_service_detail', slug='assegno-unico') }}">Assegno Unico</a></li>
             <li><a href="{{ url_for('caf_service_detail', slug='modello-redditi') }}">Modello Redditi</a></li>
+            <li><a href="{{ url_for('caf_service_detail', slug='pec') }}">PEC</a></li>
           </ul>
         </article>
         <article class="card">
@@ -64,6 +65,8 @@
             <li><a href="{{ url_for('patronato_service_detail', slug='assegno-unico-patronato') }}">Assegno Unico</a></li>
             <li><a href="{{ url_for('patronato_service_detail', slug='dimissioni') }}">Dimissioni</a></li>
             <li><a href="{{ url_for('patronato_service_detail', slug='maternita') }}">Maternita</a></li>
+            <li><a href="{{ url_for('patronato_service_detail', slug='naspi-dis-coll') }}">NASPI / DIS-COLL</a></li>
+            <li><a href="{{ url_for('patronato_service_detail', slug='adi') }}">ADI</a></li>
           </ul>
         </article>
         <article class="card">
@@ -91,19 +94,19 @@
         <article class="card">
           <h3>Soggiorno and Residence Support</h3>
           <ul>
-            <li>Kit soggiorno filling assistance</li>
-            <li>Residence permit document review</li>
-            <li>Appointment preparation support</li>
-            <li>General immigration case guidance</li>
+            <li><a href="{{ url_for('immigration_service_detail', slug='kit-soggiorno') }}">Kit Soggiorno Filling</a></li>
+            <li><a href="{{ url_for('immigration_service_detail', slug='residence-permit') }}">Residence Permit Document Support</a></li>
+            <li><a href="{{ url_for('immigration_service_detail', slug='ricongiungimento-familiare') }}">Ricongiungimento Familiare</a></li>
+            <li><a href="{{ url_for('immigration_service_detail', slug='flussi') }}">Flussi</a></li>
+            <li><a href="{{ url_for('immigration_service_detail', slug='cittadinanza') }}">Cittadinanza</a></li>
+            <li><a href="{{ url_for('immigration_service_detail', slug='conversione-permesso') }}">Conversione Permesso</a></li>
           </ul>
         </article>
         <article class="card">
           <h3>Document Translation</h3>
           <ul>
-            <li>Translation coordination support</li>
-            <li>Document formatting and file preparation</li>
-            <li>Supporting copy organization</li>
-            <li>Translated file intake for appointments</li>
+            <li><a href="{{ url_for('immigration_service_detail', slug='document-translation') }}">Document Translation Support</a></li>
+            <li><a href="{{ url_for('immigration_service_detail', slug='international-documents') }}">International Document Support</a></li>
           </ul>
         </article>
       </div>
@@ -173,6 +176,55 @@
       </div>
       <div class="section-link-row">
         <a class="btn btn-outline" href="{{ url_for('admission_services') }}">Open Full Admission Services Page</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="business-services">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">Business Services</p>
+        <h2>Business-management services from your uploaded list.</h2>
+      </div>
+      <div class="cards cards-two">
+        <article class="card">
+          <h3>Business Setup and Management</h3>
+          <ul>
+            <li><a href="{{ url_for('business_service_detail', slug='partita-iva') }}">P. IVA</a></li>
+            <li><a href="{{ url_for('business_service_detail', slug='fattura-elettronica') }}">Fattura Elettronica</a></li>
+            <li><a href="{{ url_for('business_service_detail', slug='certificazione-unica') }}">Certificazione Unica</a></li>
+            <li><a href="{{ url_for('business_service_detail', slug='camera-di-commercio') }}">Camera di Commercio</a></li>
+            <li><a href="{{ url_for('business_service_detail', slug='scia') }}">SCIA</a></li>
+          </ul>
+        </article>
+      </div>
+      <div class="section-link-row">
+        <a class="btn btn-outline" href="{{ url_for('business_services') }}">Open Full Business Services Page</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="support-services">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">Support Services</p>
+        <h2>Extra practical services from your uploaded list.</h2>
+      </div>
+      <div class="cards cards-two">
+        <article class="card">
+          <h3>Documents, Housing, and Everyday Support</h3>
+          <ul>
+            <li><a href="{{ url_for('support_service_detail', slug='traduzioni-legalizzazione') }}">Traduzioni e Legalizzazione Documenti</a></li>
+            <li><a href="{{ url_for('support_service_detail', slug='test-lingua-a2') }}">Test Lingua Italiana A2</a></li>
+            <li><a href="{{ url_for('support_service_detail', slug='appartamenti-affitto-garanzie') }}">Appartamenti / Affitto / Garanzie</a></li>
+            <li><a href="{{ url_for('support_service_detail', slug='assicurazione-auto-moto') }}">Assicurazione Auto / Moto</a></li>
+            <li><a href="{{ url_for('support_service_detail', slug='tessera-sanitaria-codice-fiscale') }}">Tessera Sanitaria / Codice Fiscale</a></li>
+            <li><a href="{{ url_for('support_service_detail', slug='account-registration-apps') }}">Account Registration (Glovo / Deliveroo)</a></li>
+          </ul>
+        </article>
+      </div>
+      <div class="section-link-row">
+        <a class="btn btn-outline" href="{{ url_for('support_services') }}">Open Full Support Services Page</a>
       </div>
     </div>
   </section>

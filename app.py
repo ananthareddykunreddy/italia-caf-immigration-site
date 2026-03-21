@@ -221,6 +221,30 @@ CAF_SERVICES = {
             "SPID is the official digital identity system for access to Italian public services",
         ],
     },
+    "pec": {
+        "name": "PEC",
+        "summary": "Support for PEC setup readiness and document organization for certified email-related needs.",
+        "who_needs_it": [
+            "Clients who need a PEC address for administrative, fiscal, or professional procedures",
+            "Users who need help preparing identity and contact data before activation",
+        ],
+        "documents": [
+            "Identity document",
+            "Tax code",
+            "Contact information required for activation",
+        ],
+        "process": [
+            "Check the intended use of the PEC address",
+            "Prepare the identity and registration information",
+            "Assist with activation readiness and supporting setup steps",
+        ],
+        "notes": [
+            "Final PEC activation depends on the provider chosen by the client",
+        ],
+        "official_basis": [
+            "PEC is commonly used in Italy for certified communications in administrative and business contexts",
+        ],
+    },
     "assegno-unico": {
         "name": "Assegno Unico",
         "summary": "Support organizing family and household documents for Assegno Unico-related assistance.",
@@ -391,6 +415,102 @@ IMMIGRATION_SERVICES = {
         ],
         "official_basis": [
             "International document support should always be aligned with the authority receiving the file",
+        ],
+    },
+    "ricongiungimento-familiare": {
+        "name": "Ricongiungimento Familiare",
+        "summary": "Support organizing family reunification files and related immigration documents.",
+        "who_needs_it": [
+            "Families preparing family reunification-related paperwork",
+            "Clients who need help collecting relationship and residence-supporting documents",
+        ],
+        "documents": [
+            "Identity and family relationship records",
+            "Residence and accommodation-related documents",
+            "Supporting immigration paperwork for the family case",
+        ],
+        "process": [
+            "Review the family reunification case type",
+            "Check the documents linked to the family members involved",
+            "Prepare the file for assisted submission or appointment readiness",
+        ],
+        "notes": [
+            "Family reunification cases can require multiple linked documents for different persons",
+        ],
+        "official_basis": [
+            "Family reunification is a standard immigration case area requiring structured document support",
+        ],
+    },
+    "flussi": {
+        "name": "Flussi",
+        "summary": "Support for flussi-related case preparation and document organization.",
+        "who_needs_it": [
+            "Clients or families involved in flussi-related procedures",
+            "Applicants who need help preparing the supporting documents before filing",
+        ],
+        "documents": [
+            "Identity records",
+            "Work or sponsor-related supporting documents",
+            "Any documents linked to the flussi procedure involved",
+        ],
+        "process": [
+            "Review the flussi-related route and timing",
+            "Check supporting documents and any sponsor-related records",
+            "Prepare the file for assisted handling",
+        ],
+        "notes": [
+            "Flussi-related procedures are highly timing-sensitive and document-specific",
+        ],
+        "official_basis": [
+            "Flussi procedures require careful file preparation and timing awareness",
+        ],
+    },
+    "cittadinanza": {
+        "name": "Cittadinanza",
+        "summary": "Support organizing citizenship-related documents and case files.",
+        "who_needs_it": [
+            "Applicants preparing citizenship-related paperwork",
+            "Families who need help collecting a complete citizenship support file",
+        ],
+        "documents": [
+            "Identity and civil-status records",
+            "Residence and supporting administrative documents",
+            "Any translations, copies, or linked records required by the case",
+        ],
+        "process": [
+            "Review the citizenship path involved",
+            "Organize personal, family, and residence-related records",
+            "Prepare the file for assisted follow-up or digital handling",
+        ],
+        "notes": [
+            "Citizenship cases can be document-heavy and may require translated records",
+        ],
+        "official_basis": [
+            "Citizenship procedures are official public-administration processes with significant documentation needs",
+        ],
+    },
+    "conversione-permesso": {
+        "name": "Conversione Permesso",
+        "summary": "Support for conversion-related residence permit document preparation.",
+        "who_needs_it": [
+            "Clients converting a permit from one basis to another",
+            "Applicants who need help organizing the supporting file before follow-up steps",
+        ],
+        "documents": [
+            "Current permit-related documents",
+            "Identity and supporting records linked to the new permit basis",
+            "Any work, study, or family-related documents required for the conversion",
+        ],
+        "process": [
+            "Review the current permit and intended conversion route",
+            "Organize the supporting documents needed for the new status",
+            "Prepare the case file for assisted handling",
+        ],
+        "notes": [
+            "Required documents depend on both the existing and target permit basis",
+        ],
+        "official_basis": [
+            "Permit conversions are a standard immigration support area with case-specific documentation",
         ],
     },
 }
@@ -639,6 +759,54 @@ PATRONATO_SERVICES = {
             "Patronato services commonly include pension-related assistance",
         ],
     },
+    "naspi-dis-coll": {
+        "name": "NASPI / DIS-COLL",
+        "summary": "Support for NASPI or DIS-COLL-related unemployment documentation and case preparation.",
+        "who_needs_it": [
+            "Workers or collaborators preparing NASPI or DIS-COLL-related paperwork",
+            "Clients who need help organizing unemployment support files",
+        ],
+        "documents": [
+            "Identity and fiscal details",
+            "Employment or collaboration records",
+            "Termination and supporting case documents",
+        ],
+        "process": [
+            "Review the unemployment support route involved",
+            "Organize the identity, employment, and termination documents",
+            "Prepare the file for assisted handling",
+        ],
+        "notes": [
+            "The applicable support measure depends on the person’s work situation",
+        ],
+        "official_basis": [
+            "Public patronato-style service lists commonly separate general unemployment help from NASPI or DIS-COLL support",
+        ],
+    },
+    "adi": {
+        "name": "ADI",
+        "summary": "Support for ADI-related administrative documentation and case preparation.",
+        "who_needs_it": [
+            "Clients needing help organizing ADI-related documentation",
+            "Families preparing files for benefit or support-related administrative steps",
+        ],
+        "documents": [
+            "Identity and household documents",
+            "Income or family-supporting records where relevant",
+            "Any ADI-related supporting documentation required by the case",
+        ],
+        "process": [
+            "Review the family or household case",
+            "Prepare the relevant supporting records",
+            "Organize the documentation for assisted follow-up",
+        ],
+        "notes": [
+            "Exact requirements depend on the applicable ADI framework and case details",
+        ],
+        "official_basis": [
+            "Public patronato-style service lists commonly include ADI support",
+        ],
+    },
 }
 
 ADMISSION_SERVICES = {
@@ -689,6 +857,276 @@ ADMISSION_SERVICES = {
         ],
         "official_basis": [
             "Final admissions document rules come from the receiving institution",
+        ],
+    },
+}
+
+BUSINESS_SERVICES = {
+    "partita-iva": {
+        "name": "P. IVA",
+        "summary": "Support for opening and organizing paperwork connected to P. IVA-related administrative needs.",
+        "who_needs_it": [
+            "Individuals starting a self-employed or business-related path",
+            "Clients who need help organizing the basic file for P. IVA-related procedures",
+        ],
+        "documents": [
+            "Identity and fiscal records",
+            "Address and activity-related information",
+            "Supporting business-start information where needed",
+        ],
+        "process": [
+            "Review the intended business or self-employment activity",
+            "Prepare the identity and activity information",
+            "Organize the file for assisted handling of the P. IVA-related process",
+        ],
+        "notes": [
+            "The exact workflow depends on the business model and administrative route involved",
+        ],
+        "official_basis": [
+            "The uploaded list includes P. IVA among the business-management services",
+        ],
+    },
+    "fattura-elettronica": {
+        "name": "Fattura Elettronica",
+        "summary": "Support for electronic invoicing-related setup and document organization.",
+        "who_needs_it": [
+            "Individuals or businesses managing invoice-related administrative workflows",
+            "Clients who need help understanding electronic invoicing documentation",
+        ],
+        "documents": [
+            "Identity and fiscal details",
+            "Business or invoicing-related records",
+            "Any provider or system information used for invoicing setup",
+        ],
+        "process": [
+            "Review the invoicing context and practical needs",
+            "Organize the business and fiscal records involved",
+            "Prepare the file and supporting information for assisted setup or follow-up",
+        ],
+        "notes": [
+            "Electronic invoicing setups differ depending on the business and software workflow used",
+        ],
+        "official_basis": [
+            "The uploaded list includes Fattura Elettronica among business services",
+        ],
+    },
+    "certificazione-unica": {
+        "name": "Certificazione Unica",
+        "summary": "Support for Certificazione Unica-related file organization and follow-up.",
+        "who_needs_it": [
+            "Clients who need help organizing Certificazione Unica-related tax documents",
+            "Businesses or individuals reviewing CU-related records",
+        ],
+        "documents": [
+            "Identity and tax information",
+            "CU-related fiscal documents",
+            "Supporting income or withholding records where needed",
+        ],
+        "process": [
+            "Review the CU-related situation",
+            "Organize supporting tax records",
+            "Prepare the file for assisted handling or related tax workflows",
+        ],
+        "notes": [
+            "CU-related work may connect with broader tax declaration support",
+        ],
+        "official_basis": [
+            "The uploaded list includes CU/CUD-related support among business or fiscal services",
+        ],
+    },
+    "camera-di-commercio": {
+        "name": "Camera di Commercio",
+        "summary": "Support for Chamber of Commerce-related paperwork and administrative file preparation.",
+        "who_needs_it": [
+            "Businesses or individuals dealing with chamber-related procedures",
+            "Clients who need help organizing commercial registration paperwork",
+        ],
+        "documents": [
+            "Identity and business-related records",
+            "Company or activity-supporting documents",
+            "Any registration or chamber-related paperwork involved in the case",
+        ],
+        "process": [
+            "Review the chamber-related need",
+            "Organize identity, business, and administrative records",
+            "Prepare the file for assisted follow-up",
+        ],
+        "notes": [
+            "The exact chamber workflow depends on the business action required",
+        ],
+        "official_basis": [
+            "The uploaded list includes Camera di Commercio among business services",
+        ],
+    },
+    "scia": {
+        "name": "SCIA",
+        "summary": "Support for SCIA-related document preparation and administrative organization.",
+        "who_needs_it": [
+            "Clients preparing an activity-start or administrative-notice file",
+            "Businesses needing help organizing SCIA-supporting documents",
+        ],
+        "documents": [
+            "Identity and business-related information",
+            "Activity and premises-supporting documents where relevant",
+            "Any administrative forms or records linked to the SCIA case",
+        ],
+        "process": [
+            "Review the business activity and administrative scope",
+            "Collect the supporting documents tied to the activity",
+            "Prepare the file for assisted SCIA-related handling",
+        ],
+        "notes": [
+            "SCIA requirements depend on the type of activity and local administration",
+        ],
+        "official_basis": [
+            "The uploaded list includes SCIA among business-management services",
+        ],
+    },
+}
+
+SUPPORT_SERVICES = {
+    "traduzioni-legalizzazione": {
+        "name": "Traduzioni e Legalizzazione Documenti",
+        "summary": "Support organizing translated and legalization-related document workflows.",
+        "who_needs_it": [
+            "Clients preparing foreign or multilingual documents for official use",
+            "Applicants who need help managing translation and legalization steps",
+        ],
+        "documents": [
+            "Original documents",
+            "Translated versions where available",
+            "Supporting copies and identity records linked to the process",
+        ],
+        "process": [
+            "Review which documents need translation or legalization support",
+            "Organize originals, copies, and translated files",
+            "Prepare the case file for the relevant authority or appointment",
+        ],
+        "notes": [
+            "Requirements depend on the authority receiving the documents",
+        ],
+        "official_basis": [
+            "The uploaded list explicitly includes translations and document legalization support",
+        ],
+    },
+    "test-lingua-a2": {
+        "name": "Test Lingua Italiana A2",
+        "summary": "Support for preparing the administrative side of Italian language test related needs.",
+        "who_needs_it": [
+            "Clients who need help understanding the administrative steps around the A2 language test",
+            "Applicants preparing documents linked to language-related requirements",
+        ],
+        "documents": [
+            "Identity and contact details",
+            "Any appointment or registration-related records",
+            "Supporting immigration or residence documents where relevant",
+        ],
+        "process": [
+            "Review the purpose of the A2 language test in the client’s case",
+            "Organize the supporting administrative documents",
+            "Prepare the file for registration or follow-up support",
+        ],
+        "notes": [
+            "Testing procedures depend on the institution or authority involved",
+        ],
+        "official_basis": [
+            "The uploaded list includes Test Lingua Italiana A2 as a separate support service",
+        ],
+    },
+    "appartamenti-affitto-garanzie": {
+        "name": "Appartamenti / Affitto / Garanzie",
+        "summary": "Support organizing housing-related paperwork, rental information, and guarantee documents.",
+        "who_needs_it": [
+            "Clients looking for help with rental-related documentation",
+            "People who need support understanding housing paperwork before signing or applying",
+        ],
+        "documents": [
+            "Identity documents",
+            "Income or guarantee-related records where relevant",
+            "Housing or contract-supporting documents",
+        ],
+        "process": [
+            "Review the housing or rental situation",
+            "Organize the documents required for the next housing step",
+            "Prepare the file for rental or guarantee-related follow-up",
+        ],
+        "notes": [
+            "Housing requirements vary by landlord, agency, and contract situation",
+        ],
+        "official_basis": [
+            "The uploaded list includes apartment, rent, and guarantee support",
+        ],
+    },
+    "assicurazione-auto-moto": {
+        "name": "Assicurazione Auto / Moto",
+        "summary": "Support organizing identity and vehicle documents for insurance-related assistance.",
+        "who_needs_it": [
+            "Vehicle owners who need help organizing documents before an insurance-related step",
+            "Clients who want support preparing the file for auto or moto insurance follow-up",
+        ],
+        "documents": [
+            "Identity records",
+            "Vehicle-related documents",
+            "Any prior insurance or ownership-supporting records",
+        ],
+        "process": [
+            "Review the vehicle and insurance context",
+            "Organize the identity and vehicle records",
+            "Prepare the file for assisted follow-up",
+        ],
+        "notes": [
+            "Insurance offers and requirements vary by provider",
+        ],
+        "official_basis": [
+            "The uploaded list includes insurance support for auto and moto",
+        ],
+    },
+    "tessera-sanitaria-codice-fiscale": {
+        "name": "Tessera Sanitaria / Codice Fiscale",
+        "summary": "Support for health-card and tax-code related administrative paperwork.",
+        "who_needs_it": [
+            "Clients who need help organizing identity and health-related administrative documents",
+            "Applicants handling health-card or tax-code support steps",
+        ],
+        "documents": [
+            "Identity records",
+            "Residence or immigration-related records where relevant",
+            "Any supporting administrative documents tied to the case",
+        ],
+        "process": [
+            "Review the requested administrative action",
+            "Collect the supporting identity and residence documents",
+            "Prepare the file for assisted follow-up",
+        ],
+        "notes": [
+            "Requirements vary depending on the person’s status and the office involved",
+        ],
+        "official_basis": [
+            "The uploaded list explicitly includes tessera sanitaria and codice fiscale support",
+        ],
+    },
+    "account-registration-apps": {
+        "name": "Account Registration (Glovo / Deliveroo)",
+        "summary": "Support for app-account registration readiness and related document organization.",
+        "who_needs_it": [
+            "Clients who need help preparing the documents used for platform account registration",
+            "Applicants organizing identity, contact, or work-related information for account setup",
+        ],
+        "documents": [
+            "Identity and contact details",
+            "Any platform-required supporting documents",
+            "Work-related records where needed by the registration process",
+        ],
+        "process": [
+            "Review the platform and account requirements",
+            "Organize the supporting registration information",
+            "Prepare the user for the next registration step",
+        ],
+        "notes": [
+            "Platform requirements vary by service and account type",
+        ],
+        "official_basis": [
+            "The uploaded list includes account registration support for Glovo and Deliveroo",
         ],
     },
 }
@@ -850,6 +1288,64 @@ def admission_service_detail(slug: str):
     if not service:
         return redirect(url_for("admission_services"))
     return render_template("admission_service_detail.html", service=service, slug=slug)
+
+
+@app.route("/business-services")
+def business_services():
+    return render_template(
+        "generic_services.html",
+        title="Business Services | ciaocaf",
+        eyebrow="Business Services",
+        heading="Business and enterprise support from your uploaded list.",
+        lead="These services cover business setup and administrative management items listed in your uploaded note.",
+        category_label="Business",
+        services=BUSINESS_SERVICES,
+        detail_endpoint="business_service_detail",
+    )
+
+
+@app.route("/business-services/<slug>")
+def business_service_detail(slug: str):
+    service = BUSINESS_SERVICES.get(slug)
+    if not service:
+        return redirect(url_for("business_services"))
+    return render_template(
+        "generic_service_detail.html",
+        page_title=f'{service["name"]} | Business Services | ciaocaf',
+        eyebrow="Business Service",
+        category_label="Business",
+        booking_label="Book this business service.",
+        service=service,
+    )
+
+
+@app.route("/support-services")
+def support_services():
+    return render_template(
+        "generic_services.html",
+        title="Support Services | ciaocaf",
+        eyebrow="Support Services",
+        heading="Additional practical support services from your uploaded list.",
+        lead="These services cover translation, legalization, housing, insurance, health-card, and account-registration support.",
+        category_label="Support",
+        services=SUPPORT_SERVICES,
+        detail_endpoint="support_service_detail",
+    )
+
+
+@app.route("/support-services/<slug>")
+def support_service_detail(slug: str):
+    service = SUPPORT_SERVICES.get(slug)
+    if not service:
+        return redirect(url_for("support_services"))
+    return render_template(
+        "generic_service_detail.html",
+        page_title=f'{service["name"]} | Support Services | ciaocaf',
+        eyebrow="Support Service",
+        category_label="Support",
+        booking_label="Book this support service.",
+        service=service,
+    )
 
 
 @app.route("/appointments", methods=["GET", "POST"])

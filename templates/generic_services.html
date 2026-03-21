@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+<main class="page-shell">
+  <section class="page-hero">
+    <div class="container narrow">
+      <p class="eyebrow">{{ eyebrow }}</p>
+      <h1>{{ heading }}</h1>
+      <p class="lead">{{ lead }}</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container cards cards-two">
+      {% for slug, service in services.items() %}
+        <article class="card">
+          <span class="card-tag">{{ category_label }}</span>
+          <h3>{{ service.name }}</h3>
+          <p>{{ service.summary }}</p>
+          <a href="{{ url_for(detail_endpoint, slug=slug) }}">Open {{ service.name }}</a>
+        </article>
+      {% endfor %}
+    </div>
+  </section>
+</main>
+{% endblock %}
