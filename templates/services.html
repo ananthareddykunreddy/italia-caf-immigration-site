@@ -26,96 +26,65 @@
     </div>
   </section>
 
-  <section class="section" id="caf-services">
+  <section class="section">
     <div class="container">
       <div class="section-heading">
-        <p class="eyebrow">CAF Services</p>
-        <h2>CAF services based on your uploaded list.</h2>
+        <p class="eyebrow">Services Directory</p>
+        <h2>Browse services by practical category.</h2>
       </div>
-      <div class="cards cards-two">
-        <article class="card">
-          <h3>Main CAF Services</h3>
-          <ul>
+      <div class="directory-grid">
+        <article class="directory-card">
+          <p class="card-tag">Fisco / Dichiarazioni</p>
+          <h3>CAF and tax support</h3>
+          <ul class="directory-links">
             <li><a href="{{ url_for('caf_service_detail', slug='isee') }}">ISEE</a></li>
             <li><a href="{{ url_for('caf_service_detail', slug='730') }}">730</a></li>
+            <li><a href="{{ url_for('caf_service_detail', slug='modello-redditi') }}">Modello Redditi</a></li>
             <li><a href="{{ url_for('caf_service_detail', slug='imu') }}">IMU</a></li>
             <li><a href="{{ url_for('caf_service_detail', slug='red-icric') }}">RED/ICRIC</a></li>
-            <li><a href="{{ url_for('caf_service_detail', slug='assegno-unico') }}">Assegno Unico</a></li>
-            <li><a href="{{ url_for('caf_service_detail', slug='modello-redditi') }}">Modello Redditi</a></li>
-            <li><a href="{{ url_for('caf_service_detail', slug='pec') }}">PEC</a></li>
-          </ul>
-        </article>
-        <article class="card">
-          <h3>Administrative CAF Support</h3>
-          <ul>
-            <li><a href="{{ url_for('caf_service_detail', slug='cambio-residenza') }}">Cambio Residenza</a></li>
             <li><a href="{{ url_for('caf_service_detail', slug='f24') }}">F24</a></li>
-            <li><a href="{{ url_for('caf_service_detail', slug='bonus') }}">Bonus</a></li>
-            <li><a href="{{ url_for('caf_service_detail', slug='spid') }}">SPID</a></li>
             <li><a href="{{ url_for('caf_service_detail', slug='successioni') }}">Successioni</a></li>
+            <li><a href="{{ url_for('business_service_detail', slug='certificazione-unica') }}">Certificazione Unica</a></li>
           </ul>
         </article>
-      </div>
-      <div class="section-link-row">
-        <a class="btn btn-outline" href="{{ url_for('caf_services') }}">Open Full CAF Services Page</a>
-      </div>
-    </div>
-  </section>
 
-  <section class="section section-alt" id="immigration-services">
-    <div class="container">
-      <div class="section-heading">
-        <p class="eyebrow">Patronato Services</p>
-        <h2>Welfare and administrative assistance approved for this site.</h2>
-      </div>
-      <div class="cards cards-two">
-        <article class="card">
-          <h3>Main Patronato Services</h3>
-          <ul>
+        <article class="directory-card">
+          <p class="card-tag">Modelli INPS / Welfare</p>
+          <h3>Patronato and family support</h3>
+          <ul class="directory-links">
+            <li><a href="{{ url_for('caf_service_detail', slug='assegno-unico') }}">Assegno Unico</a></li>
+            <li><a href="{{ url_for('caf_service_detail', slug='bonus') }}">Bonus</a></li>
             <li><a href="{{ url_for('patronato_service_detail', slug='disoccupazione') }}">Disoccupazione</a></li>
-            <li><a href="{{ url_for('patronato_service_detail', slug='assegno-unico-patronato') }}">Assegno Unico</a></li>
-            <li><a href="{{ url_for('patronato_service_detail', slug='dimissioni') }}">Dimissioni</a></li>
-            <li><a href="{{ url_for('patronato_service_detail', slug='maternita') }}">Maternita</a></li>
             <li><a href="{{ url_for('patronato_service_detail', slug='naspi-dis-coll') }}">NASPI / DIS-COLL</a></li>
             <li><a href="{{ url_for('patronato_service_detail', slug='adi') }}">ADI</a></li>
-          </ul>
-        </article>
-        <article class="card">
-          <h3>Additional Patronato Support</h3>
-          <ul>
+            <li><a href="{{ url_for('patronato_service_detail', slug='maternita') }}">Maternita</a></li>
             <li><a href="{{ url_for('patronato_service_detail', slug='invalidita-civile') }}">Invalidita Civile</a></li>
             <li><a href="{{ url_for('patronato_service_detail', slug='legge-104') }}">104</a></li>
             <li><a href="{{ url_for('patronato_service_detail', slug='pensione') }}">Pensione</a></li>
           </ul>
         </article>
-      </div>
-      <div class="section-link-row">
-        <a class="btn btn-outline" href="{{ url_for('patronato_services') }}">Open Full Patronato Services Page</a>
-      </div>
-    </div>
-  </section>
 
-  <section class="section" id="immigration-services">
-    <div class="container">
-      <div class="section-heading">
-        <p class="eyebrow">Immigration Services</p>
-        <h2>Residency, citizenship, consular paperwork support, and translations.</h2>
-      </div>
-      <div class="cards cards-two">
-        <article class="card">
-          <h3>Soggiorno and Residence Support</h3>
-          <ul>
+        <article class="directory-card">
+          <p class="card-tag">Casa / Anagrafe</p>
+          <h3>Home and municipal paperwork</h3>
+          <ul class="directory-links">
+            <li><a href="{{ url_for('caf_service_detail', slug='cambio-residenza') }}">Cambio Residenza</a></li>
+            <li><a href="{{ url_for('support_service_detail', slug='appartamenti-affitto-garanzie') }}">Appartamenti / Affitto / Garanzie</a></li>
+            <li><a href="{{ url_for('support_service_detail', slug='tessera-sanitaria-codice-fiscale') }}">Tessera Sanitaria / Codice Fiscale</a></li>
+            <li><a href="{{ url_for('support_service_detail', slug='assicurazione-auto-moto') }}">Assicurazione Auto / Moto</a></li>
+          </ul>
+        </article>
+
+        <article class="directory-card">
+          <p class="card-tag">Immigration / Consular</p>
+          <h3>Permesso, citizenship, and consular services</h3>
+          <ul class="directory-links">
             <li><a href="{{ url_for('immigration_service_detail', slug='kit-soggiorno') }}">Kit Soggiorno Filling</a></li>
             <li><a href="{{ url_for('immigration_service_detail', slug='residence-permit') }}">Residence Permit Document Support</a></li>
             <li><a href="{{ url_for('immigration_service_detail', slug='ricongiungimento-familiare') }}">Ricongiungimento Familiare</a></li>
             <li><a href="{{ url_for('immigration_service_detail', slug='flussi') }}">Flussi</a></li>
             <li><a href="{{ url_for('immigration_service_detail', slug='cittadinanza') }}">Cittadinanza</a></li>
             <li><a href="{{ url_for('immigration_service_detail', slug='conversione-permesso') }}">Conversione Permesso</a></li>
-          </ul>
-        </article>
-        <article class="card">
-          <h3>Translation and Consular Support</h3>
-          <ul>
             <li><a href="{{ url_for('immigration_service_detail', slug='document-translation') }}">Document Translation Support</a></li>
             <li><a href="{{ url_for('immigration_service_detail', slug='international-documents') }}">International Document Support</a></li>
             <li><a href="{{ url_for('embassy_service_detail', slug='passport-application') }}">Passport Application Support</a></li>
@@ -123,55 +92,20 @@
             <li><a href="{{ url_for('embassy_service_detail', slug='passport-surrender') }}">Passport Surrender Support</a></li>
           </ul>
         </article>
-      </div>
-      <div class="section-link-row">
-        <a class="btn btn-outline" href="{{ url_for('immigration_services') }}">Open Full Immigration Services Page</a>
-      </div>
-    </div>
-  </section>
 
-  <section class="section" id="student-services">
-    <div class="container">
-      <div class="section-heading">
-        <p class="eyebrow">Student Services</p>
-        <h2>Educational consulting for students applying to universities in Italy.</h2>
-      </div>
-      <div class="cards cards-two">
-        <article class="card">
-          <h3>University Application Consulting</h3>
-          <ul>
-            <li>University and course selection guidance</li>
-            <li>Application file preparation</li>
-            <li>SOP and profile support</li>
-            <li>Pre-arrival planning help</li>
+        <article class="directory-card">
+          <p class="card-tag">Studio / Universita</p>
+          <h3>Admission consulting</h3>
+          <ul class="directory-links">
+            <li><a href="{{ url_for('admission_service_detail', slug='university-applications') }}">University Application Consulting</a></li>
+            <li><a href="{{ url_for('admission_service_detail', slug='student-document-support') }}">University Admission Document Support</a></li>
           </ul>
         </article>
-        <article class="card">
-          <h3>University Admission Document Support</h3>
-          <ul>
-            <li>Academic document organization</li>
-            <li>Translation and supporting file review</li>
-            <li>Appointment booking for complex cases</li>
-            <li>Follow-up case management assistance</li>
-          </ul>
-        </article>
-      </div>
-      <div class="section-link-row">
-        <a class="btn btn-outline" href="{{ url_for('admission_services') }}">Open Full Admission Services Page</a>
-      </div>
-    </div>
-  </section>
 
-  <section class="section section-alt" id="business-services">
-    <div class="container">
-      <div class="section-heading">
-        <p class="eyebrow">Gestione Imprese</p>
-        <h2>Business-management services from your uploaded list.</h2>
-      </div>
-      <div class="cards cards-two">
-        <article class="card">
-          <h3>Business Setup and Management</h3>
-          <ul>
+        <article class="directory-card">
+          <p class="card-tag">Autonomi / Imprese</p>
+          <h3>Gestione imprese</h3>
+          <ul class="directory-links">
             <li><a href="{{ url_for('business_service_detail', slug='partita-iva') }}">P. IVA</a></li>
             <li><a href="{{ url_for('business_service_detail', slug='fattura-elettronica') }}">Fattura Elettronica</a></li>
             <li><a href="{{ url_for('business_service_detail', slug='certificazione-unica') }}">Certificazione Unica</a></li>
@@ -179,34 +113,18 @@
             <li><a href="{{ url_for('business_service_detail', slug='scia') }}">SCIA</a></li>
           </ul>
         </article>
-      </div>
-      <div class="section-link-row">
-        <a class="btn btn-outline" href="{{ url_for('business_services') }}">Open Gestione Imprese Page</a>
-      </div>
-    </div>
-  </section>
 
-  <section class="section" id="support-services">
-    <div class="container">
-      <div class="section-heading">
-        <p class="eyebrow">Others</p>
-        <h2>Extra practical services from your uploaded list.</h2>
-      </div>
-      <div class="cards cards-two">
-        <article class="card">
-          <h3>Documents, Housing, and Everyday Support</h3>
-          <ul>
+        <article class="directory-card">
+          <p class="card-tag">Altro</p>
+          <h3>Everyday support services</h3>
+          <ul class="directory-links">
             <li><a href="{{ url_for('support_service_detail', slug='traduzioni-legalizzazione') }}">Traduzioni e Legalizzazione Documenti</a></li>
             <li><a href="{{ url_for('support_service_detail', slug='test-lingua-a2') }}">Test Lingua Italiana A2</a></li>
-            <li><a href="{{ url_for('support_service_detail', slug='appartamenti-affitto-garanzie') }}">Appartamenti / Affitto / Garanzie</a></li>
-            <li><a href="{{ url_for('support_service_detail', slug='assicurazione-auto-moto') }}">Assicurazione Auto / Moto</a></li>
-            <li><a href="{{ url_for('support_service_detail', slug='tessera-sanitaria-codice-fiscale') }}">Tessera Sanitaria / Codice Fiscale</a></li>
+            <li><a href="{{ url_for('caf_service_detail', slug='spid') }}">SPID</a></li>
+            <li><a href="{{ url_for('caf_service_detail', slug='pec') }}">PEC</a></li>
             <li><a href="{{ url_for('support_service_detail', slug='account-registration-apps') }}">Account Registration (Glovo / Deliveroo / Just Eat)</a></li>
           </ul>
         </article>
-      </div>
-      <div class="section-link-row">
-        <a class="btn btn-outline" href="{{ url_for('support_services') }}">Open Others Page</a>
       </div>
     </div>
   </section>

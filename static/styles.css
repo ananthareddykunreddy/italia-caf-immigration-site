@@ -336,6 +336,37 @@ a {
   gap: 1.2rem;
 }
 
+.directory-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.2rem;
+}
+
+.directory-card {
+  padding: 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: 1.2rem;
+  background: rgba(255, 250, 244, 0.92);
+  box-shadow: var(--shadow);
+}
+
+.directory-links {
+  margin: 0;
+  padding-left: 1.1rem;
+  display: grid;
+  gap: 0.42rem;
+}
+
+.directory-links a {
+  text-decoration: none;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.directory-links a:hover {
+  color: var(--brand-dark);
+}
+
 .visual-card {
   display: grid;
   gap: 0.9rem;
@@ -512,6 +543,7 @@ a {
   .cards,
   .cards-two,
   .service-showcase,
+  .directory-grid,
   .service-board,
   .service-board-wide,
   .docs-grid,
