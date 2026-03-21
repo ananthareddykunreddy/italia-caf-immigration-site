@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{% block title %}{{ business_name }}{% endblock %}</title>
-  <meta name="description" content="{% block meta_description %}CAF services, immigration consulting, translation, university application consulting, and international document assistance in Italy.{% endblock %}">
+  <meta name="description" content="{% block meta_description %}CAF services, patronato, immigration support including consular paperwork, university application consulting, gestione imprese, and other practical services in Italy.{% endblock %}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
@@ -23,8 +23,9 @@
           <li><a href="{{ url_for('caf_services') }}">CAF Services</a></li>
           <li><a href="{{ url_for('patronato_services') }}">Patronato Services</a></li>
           <li><a href="{{ url_for('immigration_services') }}">Immigration Services</a></li>
-          <li><a href="{{ url_for('embassy_services') }}">Embassy Services</a></li>
           <li><a href="{{ url_for('admission_services') }}">Admission Services</a></li>
+          <li><a href="{{ url_for('support_services') }}">Others</a></li>
+          <li><a href="{{ url_for('business_services') }}">Gestione Imprese</a></li>
           <li><a href="{{ url_for('appointments') }}">Appointments</a></li>
           <li><a href="{{ url_for('admin_login') }}">Admin</a></li>
         </ul>
@@ -49,15 +50,16 @@
     <div class="container footer-wrap">
       <div>
         <p>&copy; 2026 {{ business_name }}. All rights reserved.</p>
-        <p>CAF services, immigration support, university application consulting, translation, and international document assistance in Italy.</p>
+        <p>CAF services, patronato support, immigration assistance including consular paperwork, university consulting, gestione imprese, and practical services in Italy.</p>
       </div>
       <div class="footer-links">
         <a href="{{ url_for('services') }}">All Services</a>
         <a href="{{ url_for('caf_services') }}">CAF Services</a>
         <a href="{{ url_for('patronato_services') }}">Patronato Services</a>
         <a href="{{ url_for('immigration_services') }}">Immigration Services</a>
-        <a href="{{ url_for('embassy_services') }}">Embassy Services</a>
         <a href="{{ url_for('admission_services') }}">Admission Services</a>
+        <a href="{{ url_for('support_services') }}">Others</a>
+        <a href="{{ url_for('business_services') }}">Gestione Imprese</a>
         <a href="{{ url_for('appointments') }}">Appointments</a>
       </div>
     </div>

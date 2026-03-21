@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 
-{% block title %}Embassy Services | ciaocaf{% endblock %}
+{% block title %}Immigration Services | ciaocaf{% endblock %}
 {% block meta_description %}Embassy service support including passport application, OCI card application, and passport surrender assistance.{% endblock %}
 
 {% block content %}
 <main class="page-shell">
   <section class="page-hero">
     <div class="container narrow">
-      <p class="eyebrow">Embassy Services</p>
+      <p class="eyebrow">Immigration Services</p>
       <h1>Separate service pages for passport, OCI, and surrender support.</h1>
       <p class="lead">
         This page works as the embassy service directory. Each service has its own dedicated page, in the same style as the CAF service pages.
@@ -38,7 +38,7 @@
         </p>
       </div>
       <div class="panel">
-        <p class="panel-kicker">Available Embassy Services</p>
+        <p class="panel-kicker">Available Consular Services</p>
         <ul>
           {% for service in embassy_services.values() %}
             <li>{{ service.name }}</li>

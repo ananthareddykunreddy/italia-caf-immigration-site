@@ -1,16 +1,16 @@
 {% extends "base.html" %}
 
 {% block title %}Immigration Services | ciaocaf{% endblock %}
-{% block meta_description %}Immigration services in Italy including kit soggiorno filling, residence permit document support, translations, and international document assistance.{% endblock %}
+{% block meta_description %}Immigration services in Italy including permesso kit, citizenship, family reunification, consular paperwork support, passport support, OCI support, and document assistance.{% endblock %}
 
 {% block content %}
 <main class="page-shell">
   <section class="page-hero">
     <div class="container narrow">
       <p class="eyebrow">Immigration Services</p>
-      <h1>Document support for residence, relocation, translations, and international cases.</h1>
+      <h1>Immigration and consular document support in one section.</h1>
       <p class="lead">
-        This page is dedicated to immigration-related services in Italy, including kit soggiorno filling, residence permit paperwork support, document translation, and international document assistance.
+        This page brings together immigration and consular support, including kit soggiorno, citizenship, family reunification, document translation, passport application support, OCI, and surrender-related files.
       </p>
     </div>
   </section>
@@ -31,18 +31,18 @@
   <section class="section section-alt">
     <div class="container split">
       <div>
-        <p class="eyebrow">Booking</p>
-        <h2>Use the appointment form for all immigration-related cases.</h2>
+        <p class="eyebrow">Consular Support Included</p>
+        <h2>Embassy-facing services are grouped here instead of staying in a separate top-level category.</h2>
         <p class="lead">
-          Clients can choose the exact immigration or document support type, upload files, and request an appointment from the same system used for other services.
+          Clients can also book passport application support, OCI card application support, and passport surrender support from this same immigration-facing area.
         </p>
       </div>
       <div class="panel">
-        <p class="panel-kicker">Common Appointment Types</p>
+        <p class="panel-kicker">Consular Services</p>
         <ul>
-          {% for service in immigration_services.values() %}
-            <li>{{ service.name }}</li>
-          {% endfor %}
+          <li><a href="{{ url_for('embassy_service_detail', slug='passport-application') }}">Passport Application Support</a></li>
+          <li><a href="{{ url_for('embassy_service_detail', slug='oci-card') }}">OCI Card Application Support</a></li>
+          <li><a href="{{ url_for('embassy_service_detail', slug='passport-surrender') }}">Passport Surrender Support</a></li>
         </ul>
         <a class="btn" href="{{ url_for('appointments') }}">Book Immigration Appointment</a>
       </div>

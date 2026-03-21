@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block title %}Services | ciaocaf{% endblock %}
-{% block meta_description %}Browse CAF, patronato, immigration, translation, consular document support, and university application consulting services offered by ciaocaf in Italy.{% endblock %}
+{% block meta_description %}Browse CAF, patronato, immigration support including consular paperwork, university consulting, gestione imprese, and other services offered by ciaocaf in Italy.{% endblock %}
 
 {% block content %}
 <main class="page-shell">
@@ -88,7 +88,7 @@
     <div class="container">
       <div class="section-heading">
         <p class="eyebrow">Immigration Services</p>
-        <h2>Residency support, immigration paperwork, and translations.</h2>
+        <h2>Residency, citizenship, consular paperwork support, and translations.</h2>
       </div>
       <div class="cards cards-two">
         <article class="card">
@@ -103,47 +103,18 @@
           </ul>
         </article>
         <article class="card">
-          <h3>Document Translation</h3>
+          <h3>Translation and Consular Support</h3>
           <ul>
             <li><a href="{{ url_for('immigration_service_detail', slug='document-translation') }}">Document Translation Support</a></li>
             <li><a href="{{ url_for('immigration_service_detail', slug='international-documents') }}">International Document Support</a></li>
+            <li><a href="{{ url_for('embassy_service_detail', slug='passport-application') }}">Passport Application Support</a></li>
+            <li><a href="{{ url_for('embassy_service_detail', slug='oci-card') }}">OCI Card Application Support</a></li>
+            <li><a href="{{ url_for('embassy_service_detail', slug='passport-surrender') }}">Passport Surrender Support</a></li>
           </ul>
         </article>
       </div>
       <div class="section-link-row">
         <a class="btn btn-outline" href="{{ url_for('immigration_services') }}">Open Full Immigration Services Page</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section section-alt" id="international-services">
-    <div class="container">
-      <div class="section-heading">
-        <p class="eyebrow">Embassy Services</p>
-        <h2>Consular and international document support.</h2>
-      </div>
-      <div class="cards cards-two">
-        <article class="card">
-          <h3>Passport and OCI File Support</h3>
-          <ul>
-            <li>Passport application file preparation</li>
-            <li>OCI card application support</li>
-            <li>Photo, document, and upload readiness checks</li>
-            <li>Pre-submission organization support</li>
-          </ul>
-        </article>
-        <article class="card">
-          <h3>Passport Surrender and Related Documents</h3>
-          <ul>
-            <li>Passport surrender document preparation</li>
-            <li>Supporting file review</li>
-            <li>Application form guidance</li>
-            <li>Case notes and follow-up support</li>
-          </ul>
-        </article>
-      </div>
-      <div class="section-link-row">
-        <a class="btn btn-outline" href="{{ url_for('embassy_services') }}">Open Full Embassy Services Page</a>
       </div>
     </div>
   </section>
@@ -183,7 +154,7 @@
   <section class="section section-alt" id="business-services">
     <div class="container">
       <div class="section-heading">
-        <p class="eyebrow">Business Services</p>
+        <p class="eyebrow">Gestione Imprese</p>
         <h2>Business-management services from your uploaded list.</h2>
       </div>
       <div class="cards cards-two">
@@ -199,7 +170,7 @@
         </article>
       </div>
       <div class="section-link-row">
-        <a class="btn btn-outline" href="{{ url_for('business_services') }}">Open Full Business Services Page</a>
+        <a class="btn btn-outline" href="{{ url_for('business_services') }}">Open Gestione Imprese Page</a>
       </div>
     </div>
   </section>
@@ -207,7 +178,7 @@
   <section class="section" id="support-services">
     <div class="container">
       <div class="section-heading">
-        <p class="eyebrow">Support Services</p>
+        <p class="eyebrow">Others</p>
         <h2>Extra practical services from your uploaded list.</h2>
       </div>
       <div class="cards cards-two">
@@ -219,12 +190,12 @@
             <li><a href="{{ url_for('support_service_detail', slug='appartamenti-affitto-garanzie') }}">Appartamenti / Affitto / Garanzie</a></li>
             <li><a href="{{ url_for('support_service_detail', slug='assicurazione-auto-moto') }}">Assicurazione Auto / Moto</a></li>
             <li><a href="{{ url_for('support_service_detail', slug='tessera-sanitaria-codice-fiscale') }}">Tessera Sanitaria / Codice Fiscale</a></li>
-            <li><a href="{{ url_for('support_service_detail', slug='account-registration-apps') }}">Account Registration (Glovo / Deliveroo)</a></li>
+            <li><a href="{{ url_for('support_service_detail', slug='account-registration-apps') }}">Account Registration (Glovo / Deliveroo / Just Eat)</a></li>
           </ul>
         </article>
       </div>
       <div class="section-link-row">
-        <a class="btn btn-outline" href="{{ url_for('support_services') }}">Open Full Support Services Page</a>
+        <a class="btn btn-outline" href="{{ url_for('support_services') }}">Open Others Page</a>
       </div>
     </div>
   </section>

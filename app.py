@@ -1106,7 +1106,7 @@ SUPPORT_SERVICES = {
         ],
     },
     "account-registration-apps": {
-        "name": "Account Registration (Glovo / Deliveroo)",
+        "name": "Account Registration (Glovo / Deliveroo / Just Eat)",
         "summary": "Support for app-account registration readiness and related document organization.",
         "who_needs_it": [
             "Clients who need help preparing the documents used for platform account registration",
@@ -1126,7 +1126,7 @@ SUPPORT_SERVICES = {
             "Platform requirements vary by service and account type",
         ],
         "official_basis": [
-            "The uploaded list includes account registration support for Glovo and Deliveroo",
+            "The uploaded list includes account registration support for Glovo, Deliveroo, and Just Eat",
         ],
     },
 }
@@ -1240,7 +1240,7 @@ def caf_service_detail(slug: str):
 
 @app.route("/embassy-services")
 def embassy_services():
-    return render_template("embassy_services.html", embassy_services=EMBASSY_SERVICES)
+    return redirect(url_for("immigration_services"))
 
 
 @app.route("/embassy-services/<slug>")
@@ -1294,11 +1294,11 @@ def admission_service_detail(slug: str):
 def business_services():
     return render_template(
         "generic_services.html",
-        title="Business Services | ciaocaf",
-        eyebrow="Business Services",
-        heading="Business and enterprise support from your uploaded list.",
+        title="Gestione Imprese | ciaocaf",
+        eyebrow="Gestione Imprese",
+        heading="Business setup and enterprise support from your uploaded list.",
         lead="These services cover business setup and administrative management items listed in your uploaded note.",
-        category_label="Business",
+        category_label="Impresa",
         services=BUSINESS_SERVICES,
         detail_endpoint="business_service_detail",
     )
@@ -1311,10 +1311,10 @@ def business_service_detail(slug: str):
         return redirect(url_for("business_services"))
     return render_template(
         "generic_service_detail.html",
-        page_title=f'{service["name"]} | Business Services | ciaocaf',
-        eyebrow="Business Service",
-        category_label="Business",
-        booking_label="Book this business service.",
+        page_title=f'{service["name"]} | Gestione Imprese | ciaocaf',
+        eyebrow="Gestione Imprese",
+        category_label="Impresa",
+        booking_label="Book this gestione imprese service.",
         service=service,
     )
 
@@ -1323,11 +1323,11 @@ def business_service_detail(slug: str):
 def support_services():
     return render_template(
         "generic_services.html",
-        title="Support Services | ciaocaf",
-        eyebrow="Support Services",
-        heading="Additional practical support services from your uploaded list.",
+        title="Others | ciaocaf",
+        eyebrow="Others",
+        heading="Additional practical services grouped under Others.",
         lead="These services cover translation, legalization, housing, insurance, health-card, and account-registration support.",
-        category_label="Support",
+        category_label="Others",
         services=SUPPORT_SERVICES,
         detail_endpoint="support_service_detail",
     )
@@ -1340,10 +1340,10 @@ def support_service_detail(slug: str):
         return redirect(url_for("support_services"))
     return render_template(
         "generic_service_detail.html",
-        page_title=f'{service["name"]} | Support Services | ciaocaf',
-        eyebrow="Support Service",
-        category_label="Support",
-        booking_label="Book this support service.",
+        page_title=f'{service["name"]} | Others | ciaocaf',
+        eyebrow="Others",
+        category_label="Others",
+        booking_label="Book this service from Others.",
         service=service,
     )
 

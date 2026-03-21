@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
-{% block title %}ciaocaf | CAF, Patronato, Immigration, Translation and University Consulting{% endblock %}
-{% block meta_description %}ciaocaf offers CAF services, patronato services, kit soggiorno filling, document translation, university application consulting, and consular document assistance in Italy.{% endblock %}
+{% block title %}ciaocaf | CAF, Patronato, Immigration, Gestione Imprese and University Consulting{% endblock %}
+{% block meta_description %}ciaocaf offers CAF services, patronato services, immigration and consular document support, gestione imprese, university application consulting, and practical everyday services in Italy.{% endblock %}
 
 {% block content %}
 <main>
@@ -11,7 +11,7 @@
         <p class="eyebrow">CAF, Immigration and Document Support</p>
         <h1>Professional assistance for everyday paperwork and major life moves in Italy.</h1>
         <p class="lead">
-          ciaocaf helps individuals and families handle CAF services, patronato services, immigration support, university application consulting, document translation, and consular paperwork from one organized office.
+          ciaocaf helps individuals and families handle CAF services, patronato services, immigration support, gestione imprese, university application consulting, document translation, and consular paperwork from one organized office.
         </p>
         <div class="hero-cta">
           <a class="btn" href="{{ url_for('appointments') }}">Book Appointment</a>
@@ -31,6 +31,7 @@
           <li>Disoccupazione, assegno unico, dimissioni, maternita, invalidita civile, 104, and pensione patronato support</li>
           <li>Kit soggiorno filling, immigration document checks, and residence process guidance</li>
           <li>Document translation and consular support for passport, OCI, and surrender-related files</li>
+          <li>Gestione imprese support, account registration, insurance, and tessera sanitaria or codice fiscale assistance</li>
         </ul>
         <div class="panel-note">
           <span>Appointments, file intake, and admin record tracking are built into this project.</span>
@@ -43,7 +44,7 @@
     <div class="container band-grid">
       <div>
         <p class="stat">All-in-One Desk</p>
-        <p class="stat-label">CAF, patronato, immigration, translations, and university consulting in one place</p>
+        <p class="stat-label">CAF, patronato, immigration, gestione imprese, translations, and university consulting in one place</p>
       </div>
       <div>
         <p class="stat">Practical Workflow</p>
@@ -75,15 +76,21 @@
         </article>
         <article class="card">
           <span class="card-tag">Immigration</span>
-          <h3>Immigration and Documents</h3>
-          <p>Assistance with kit soggiorno filling, document preparation, translations, and international paperwork support.</p>
+          <h3>Immigration and Consular Documents</h3>
+          <p>Assistance with kit soggiorno filling, document preparation, translations, passport and OCI paperwork, and international support.</p>
           <a href="{{ url_for('immigration_services') }}">Explore immigration services</a>
         </article>
         <article class="card">
-          <span class="card-tag">Embassy</span>
-          <h3>Embassy and Consular Support</h3>
-          <p>Support for passport application files, OCI card applications, passport surrender, and related international paperwork.</p>
-          <a href="{{ url_for('embassy_services') }}">Explore embassy services</a>
+          <span class="card-tag">Others</span>
+          <h3>Practical Everyday Services</h3>
+          <p>Support for translations, housing paperwork, account registration for delivery apps, insurance, and tessera sanitaria or codice fiscale assistance.</p>
+          <a href="{{ url_for('support_services') }}">Explore other services</a>
+        </article>
+        <article class="card">
+          <span class="card-tag">Gestione Imprese</span>
+          <h3>Business Setup and Management</h3>
+          <p>Support for partita IVA, fattura elettronica, certificazione unica, camera di commercio, and SCIA-related paperwork.</p>
+          <a href="{{ url_for('business_services') }}">Explore gestione imprese</a>
         </article>
       </div>
     </div>
@@ -99,7 +106,7 @@
             <span>01</span>
             <div>
               <h3>Browse by need</h3>
-              <p>Clients can quickly understand whether they need CAF, patronato, immigration, translation, consular help, or university application consulting.</p>
+              <p>Clients can quickly understand whether they need CAF, patronato, immigration, other practical help, gestione imprese, or university application consulting.</p>
             </div>
           </div>
           <div class="step">
