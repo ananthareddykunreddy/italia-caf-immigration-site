@@ -195,6 +195,11 @@ a {
   align-items: center;
 }
 
+.campaign-grid {
+  grid-template-columns: minmax(0, 1.45fr) minmax(320px, 0.85fr);
+  align-items: stretch;
+}
+
 .split {
   grid-template-columns: minmax(0, 1.1fr) minmax(320px, 1fr);
 }
@@ -339,6 +344,90 @@ a {
 .featured-strips {
   display: grid;
   gap: 1rem;
+}
+
+.campaign-card,
+.utility-panel,
+.cluster-card,
+.final-cta {
+  border: 1px solid var(--line);
+  border-radius: 1.4rem;
+  box-shadow: var(--shadow);
+}
+
+.campaign-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(220px, 0.95fr);
+  gap: 1rem;
+  padding: 1.6rem;
+  background: linear-gradient(135deg, rgba(15, 118, 110, 0.12), rgba(255, 255, 255, 0.96));
+}
+
+.campaign-art img {
+  width: 100%;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.utility-panel {
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.utility-links {
+  display: grid;
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+.utility-link {
+  display: block;
+  padding: 0.95rem 1rem;
+  border-radius: 1rem;
+  background: rgba(15, 118, 110, 0.05);
+  text-decoration: none;
+}
+
+.utility-link strong {
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.utility-link span {
+  color: var(--muted);
+}
+
+.home-service-clusters {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.1rem;
+}
+
+.cluster-card {
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr);
+  gap: 1rem;
+  padding: 1.2rem;
+  background: rgba(255, 255, 255, 0.94);
+}
+
+.cluster-card img {
+  width: 100%;
+  border-radius: 1rem;
+  background: rgba(15, 118, 110, 0.04);
+}
+
+.process-panel {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(221, 231, 239, 0.72));
+}
+
+.final-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.8rem;
+  background: linear-gradient(135deg, rgba(217, 119, 6, 0.1), rgba(255, 255, 255, 0.96));
 }
 
 .featured-strip {
@@ -633,6 +722,10 @@ a {
   .split,
   .cards,
   .cards-two,
+  .campaign-grid,
+  .campaign-card,
+  .home-service-clusters,
+  .cluster-card,
   .service-showcase,
   .featured-strip,
   .directory-grid,
@@ -650,6 +743,11 @@ a {
   .dashboard-head,
   .header-actions {
     flex-wrap: wrap;
+  }
+
+  .final-cta {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .nav-links,

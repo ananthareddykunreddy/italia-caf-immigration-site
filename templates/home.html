@@ -6,35 +6,48 @@
 {% block content %}
 <main>
   <section class="hero service-hero">
-    <div class="container hero-grid">
-      <div class="hero-copy">
-        <p class="eyebrow">Service Center</p>
-        <h1>One place for appointments, required documents, and practical support in Italy.</h1>
-        <p class="lead">
-          ciaocaf is structured like a modern service center: clear service areas, a dedicated appointment flow, required-document guidance, and practical support for families, workers, students, and businesses in Italy.
-        </p>
-        <div class="hero-cta">
-          <a class="btn" href="{{ url_for('appointments') }}">Book Appointment</a>
-          <a class="btn btn-outline" href="{{ url_for('required_documents') }}">Required Documents</a>
+    <div class="container hero-grid campaign-grid">
+      <article class="campaign-card">
+        <div class="campaign-copy">
+          <p class="eyebrow">Featured Service</p>
+          <h1>Prepare your 730, ISEE, and main annual practices from one service center.</h1>
+          <p class="lead">
+            ciaocaf combines CAF, patronato, immigration, university consulting, gestione imprese, and practical support in one structured workflow.
+          </p>
+          <div class="hero-cta">
+            <a class="btn" href="{{ url_for('appointments') }}">Prenota un appuntamento</a>
+            <a class="btn btn-outline" href="{{ url_for('required_documents') }}">Documenti richiesti</a>
+          </div>
         </div>
-        <div class="hero-highlights">
-          <p><strong>Service-first navigation</strong> with documents, news, and contact information easy to reach</p>
-          <p><strong>Appointment-based workflow</strong> with file upload and follow-up support</p>
-          <p><strong>Category coverage</strong> for CAF, patronato, immigration, admission, others, and gestione imprese</p>
+        <div class="campaign-art">
+          <img src="{{ url_for('static', filename='illustrations/caf.svg') }}" alt="Featured CAF service illustration">
         </div>
-      </div>
-      <aside class="hero-panel">
-        <p class="panel-kicker">Quick Actions</p>
-        <h2>Start from the action you need.</h2>
-        <ul>
-          <li><a href="{{ url_for('appointments') }}">Prenota un appuntamento</a></li>
-          <li><a href="{{ url_for('required_documents') }}">Controlla i documenti richiesti</a></li>
-          <li><a href="{{ url_for('services') }}">Apri la directory dei servizi</a></li>
-          <li><a href="{{ url_for('client_area') }}">Accedi all'area cliente</a></li>
-          <li><a href="{{ url_for('contact') }}">Contatta l'ufficio</a></li>
-        </ul>
-        <div class="panel-note">
-          <span>Appointments, required-document guidance, and admin record tracking are built into this project.</span>
+      </article>
+
+      <aside class="utility-panel">
+        <p class="panel-kicker">Quick Access</p>
+        <h2>Start from the service you need.</h2>
+        <div class="utility-links">
+          <a class="utility-link" href="{{ url_for('appointments') }}">
+            <strong>Prenota un appuntamento</strong>
+            <span>Book a service and upload your files.</span>
+          </a>
+          <a class="utility-link" href="{{ url_for('services') }}">
+            <strong>Servizi</strong>
+            <span>Browse all categories and single practices.</span>
+          </a>
+          <a class="utility-link" href="{{ url_for('required_documents') }}">
+            <strong>Documenti richiesti</strong>
+            <span>Check the checklist before the appointment.</span>
+          </a>
+          <a class="utility-link" href="{{ url_for('news') }}">
+            <strong>News</strong>
+            <span>Read updates and seasonal reminders.</span>
+          </a>
+          <a class="utility-link" href="{{ url_for('contact') }}">
+            <strong>Contatti</strong>
+            <span>Open the contact and booking guidance page.</span>
+          </a>
         </div>
       </aside>
     </div>
@@ -43,16 +56,16 @@
   <section class="section section-band">
     <div class="container band-grid">
       <div>
-        <p class="stat">Utility First</p>
-        <p class="stat-label">Appointments, required documents, and updates are visible from the start</p>
+        <p class="stat">One Desk</p>
+        <p class="stat-label">CAF, patronato, immigration, admission, others, and gestione imprese in one place</p>
       </div>
       <div>
-        <p class="stat">Service Coverage</p>
-        <p class="stat-label">CAF, patronato, immigration, admission, others, and gestione imprese in one structure</p>
+        <p class="stat">Document Ready</p>
+        <p class="stat-label">Required documents are linked directly to each service detail page</p>
       </div>
       <div>
-        <p class="stat">Italy Focused</p>
-        <p class="stat-label">Designed for clients living, studying, working, or relocating in Italy</p>
+        <p class="stat">Appointment Flow</p>
+        <p class="stat-label">Book, upload files, and keep each case organized through the site</p>
       </div>
     </div>
   </section>
@@ -60,157 +73,65 @@
   <section class="section">
     <div class="container">
       <div class="section-heading">
-        <p class="eyebrow">Featured Areas</p>
-        <h2>Main services at a glance.</h2>
+        <p class="eyebrow">Our Services</p>
+        <h2>Main service areas organized like a professional directory.</h2>
       </div>
-      <div class="featured-strips">
-        <article class="featured-strip featured-strip-caf">
-          <div>
-            <p class="card-tag">CAF</p>
-            <h3>730, ISEE, F24, IMU, SPID, and family paperwork</h3>
-            <p>Tax, family, and document support from one service area.</p>
-            <a href="{{ url_for('caf_services') }}">Open CAF services</a>
-          </div>
-          <img src="{{ url_for('static', filename='illustrations/caf.svg') }}" alt="CAF featured illustration">
-        </article>
-        <article class="featured-strip featured-strip-immigration">
-          <div>
-            <p class="card-tag">Immigration</p>
-            <h3>Permesso, cittadinanza, family reunification, and consular files</h3>
-            <p>Immigration and consular support with clear document guidance.</p>
-            <a href="{{ url_for('immigration_services') }}">Open immigration services</a>
-          </div>
-          <img src="{{ url_for('static', filename='illustrations/immigration.svg') }}" alt="Immigration featured illustration">
-        </article>
-        <article class="featured-strip featured-strip-business">
-          <div>
-            <p class="card-tag">Gestione Imprese</p>
-            <h3>Partita IVA, invoices, SCIA, and business administration</h3>
-            <p>Administrative support for freelancers, workers, and small businesses.</p>
-            <a href="{{ url_for('business_services') }}">Open gestione imprese</a>
-          </div>
-          <img src="{{ url_for('static', filename='illustrations/business.svg') }}" alt="Business featured illustration">
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div class="section-heading">
-        <p class="eyebrow">Quick Access</p>
-        <h2>Start from the practical task, not from confusion.</h2>
-      </div>
-      <div class="cards cards-two">
-        <article class="card">
-          <span class="card-tag">Appointments</span>
-          <h3>Prenota un appuntamento</h3>
-          <p>Choose the service, preferred date and time, city, and upload documents before you come to the office.</p>
-          <a href="{{ url_for('appointments') }}">Book now</a>
-        </article>
-        <article class="card">
-          <span class="card-tag">Documents</span>
-          <h3>Required Documents</h3>
-          <p>Open one page that links every service detail with the checklist of documents usually required for the practice.</p>
-          <a href="{{ url_for('required_documents') }}">Open checklist hub</a>
-        </article>
-        <article class="card">
-          <span class="card-tag">Client Area</span>
-          <h3>Client Area</h3>
-          <p>A dedicated page for online-service access, document workflows, and future digital follow-up features.</p>
-          <a href="{{ url_for('client_area') }}">Open client area</a>
-        </article>
-        <article class="card">
-          <span class="card-tag">Contact</span>
-          <h3>Contact and Office Info</h3>
-          <p>Open the contact page and booking flow from one clear access point.</p>
-          <a href="{{ url_for('contact') }}">View contact page</a>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="section section-alt">
-    <div class="container">
-      <div class="section-heading">
-        <p class="eyebrow">Why Choose Us</p>
-        <h2>A stronger service promise, shaped by the best parts of the reference sites.</h2>
-      </div>
-      <div class="reasons-grid">
-        <article class="reason-card">
-          <h3>Wide coverage</h3>
-          <p>CAF, patronato, immigration, consular support, admission consulting, others, and gestione imprese in one desk.</p>
-        </article>
-        <article class="reason-card">
-          <h3>Document-first workflow</h3>
-          <p>Each service detail page explains the documents usually required before clients arrive.</p>
-        </article>
-        <article class="reason-card">
-          <h3>Appointment ready</h3>
-          <p>The booking flow supports file upload, service selection, scheduling, and admin review.</p>
-        </article>
-        <article class="reason-card">
-          <h3>Practical guidance</h3>
-          <p>Service pages are written for real cases, not generic brochure language.</p>
-        </article>
-        <article class="reason-card">
-          <h3>Professional presentation</h3>
-          <p>The site is structured like a serious Italian service portal, without copying any reference site.</p>
-        </article>
-        <article class="reason-card">
-          <h3>Built to grow</h3>
-          <p>News, client area, contact, and document hubs are already in place for future expansion.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <p class="eyebrow">Service Categories</p>
-      <h2>The complete service directory.</h2>
-      <div class="service-showcase">
-        <article class="visual-card">
+      <div class="home-service-clusters">
+        <article class="cluster-card">
           <img src="{{ url_for('static', filename='illustrations/caf.svg') }}" alt="CAF services illustration">
-          <span class="card-tag">CAF</span>
-          <h3>Fiscal and Family Services</h3>
-          <p>Support for core CAF services including ISEE, 730, IMU, RED/ICRIC, Assegno Unico, Modello Redditi, Successioni, cambio residenza, F24, bonus, and SPID.</p>
-          <a href="{{ url_for('caf_services') }}">Explore CAF services</a>
+          <div>
+            <p class="card-tag">Fisco / Dichiarazioni</p>
+            <h3>CAF Services</h3>
+            <ul class="directory-links">
+              <li><a href="{{ url_for('caf_service_detail', slug='730') }}">730</a></li>
+              <li><a href="{{ url_for('caf_service_detail', slug='isee') }}">ISEE</a></li>
+              <li><a href="{{ url_for('caf_service_detail', slug='imu') }}">IMU</a></li>
+              <li><a href="{{ url_for('caf_service_detail', slug='f24') }}">F24</a></li>
+              <li><a href="{{ url_for('caf_services') }}">View all CAF services</a></li>
+            </ul>
+          </div>
         </article>
-        <article class="visual-card">
+        <article class="cluster-card">
           <img src="{{ url_for('static', filename='illustrations/patronato.svg') }}" alt="Patronato services illustration">
-          <span class="card-tag">Patronato</span>
-          <h3>Patronato and Welfare Support</h3>
-          <p>Support for disoccupazione, assegno unico, dimissioni, maternita, invalidita civile, 104, and pensione-related paperwork.</p>
-          <a href="{{ url_for('patronato_services') }}">Explore patronato services</a>
+          <div>
+            <p class="card-tag">Modelli INPS / Welfare</p>
+            <h3>Patronato Services</h3>
+            <ul class="directory-links">
+              <li><a href="{{ url_for('patronato_service_detail', slug='disoccupazione') }}">Disoccupazione</a></li>
+              <li><a href="{{ url_for('patronato_service_detail', slug='naspi-dis-coll') }}">NASPI / DIS-COLL</a></li>
+              <li><a href="{{ url_for('patronato_service_detail', slug='adi') }}">ADI</a></li>
+              <li><a href="{{ url_for('patronato_service_detail', slug='pensione') }}">Pensione</a></li>
+              <li><a href="{{ url_for('patronato_services') }}">View all patronato services</a></li>
+            </ul>
+          </div>
         </article>
-        <article class="visual-card">
+        <article class="cluster-card">
           <img src="{{ url_for('static', filename='illustrations/immigration.svg') }}" alt="Immigration services illustration">
-          <span class="card-tag">Immigration</span>
-          <h3>Immigration and Consular Documents</h3>
-          <p>Assistance with kit soggiorno filling, document preparation, translations, passport and OCI paperwork, and international support.</p>
-          <a href="{{ url_for('immigration_services') }}">Explore immigration services</a>
+          <div>
+            <p class="card-tag">Immigration / Consular</p>
+            <h3>Immigration Services</h3>
+            <ul class="directory-links">
+              <li><a href="{{ url_for('immigration_service_detail', slug='kit-soggiorno') }}">Kit Soggiorno</a></li>
+              <li><a href="{{ url_for('immigration_service_detail', slug='cittadinanza') }}">Cittadinanza</a></li>
+              <li><a href="{{ url_for('embassy_service_detail', slug='passport-application') }}">Passport Support</a></li>
+              <li><a href="{{ url_for('embassy_service_detail', slug='oci-card') }}">OCI Card Support</a></li>
+              <li><a href="{{ url_for('immigration_services') }}">View all immigration services</a></li>
+            </ul>
+          </div>
         </article>
-        <article class="visual-card">
-          <img src="{{ url_for('static', filename='illustrations/others.svg') }}" alt="Other services illustration">
-          <span class="card-tag">Others</span>
-          <h3>Practical Everyday Services</h3>
-          <p>Support for translations, housing paperwork, account registration for delivery apps, insurance, and tessera sanitaria or codice fiscale assistance.</p>
-          <a href="{{ url_for('support_services') }}">Explore other services</a>
-        </article>
-        <article class="visual-card">
-          <img src="{{ url_for('static', filename='illustrations/admission.svg') }}" alt="Admission services illustration">
-          <span class="card-tag">Admission</span>
-          <h3>University Application Consulting</h3>
-          <p>Educational consulting for students applying to universities in Italy and support organizing admission documentation.</p>
-          <a href="{{ url_for('admission_services') }}">Explore admission services</a>
-        </article>
-        <article class="visual-card">
+        <article class="cluster-card">
           <img src="{{ url_for('static', filename='illustrations/business.svg') }}" alt="Business services illustration">
-          <span class="card-tag">Gestione Imprese</span>
-          <h3>Business Setup and Management</h3>
-          <p>Support for partita IVA, fattura elettronica, certificazione unica, camera di commercio, and SCIA-related paperwork.</p>
-          <a href="{{ url_for('business_services') }}">Explore gestione imprese</a>
+          <div>
+            <p class="card-tag">Autonomi / Imprese</p>
+            <h3>Gestione Imprese</h3>
+            <ul class="directory-links">
+              <li><a href="{{ url_for('business_service_detail', slug='partita-iva') }}">P. IVA</a></li>
+              <li><a href="{{ url_for('business_service_detail', slug='fattura-elettronica') }}">Fattura Elettronica</a></li>
+              <li><a href="{{ url_for('business_service_detail', slug='camera-di-commercio') }}">Camera di Commercio</a></li>
+              <li><a href="{{ url_for('business_service_detail', slug='scia') }}">SCIA</a></li>
+              <li><a href="{{ url_for('business_services') }}">View all business services</a></li>
+            </ul>
+          </div>
         </article>
       </div>
     </div>
@@ -219,8 +140,10 @@
   <section class="section section-alt">
     <div class="container split">
       <div>
-        <p class="eyebrow">Latest Updates</p>
-        <h2>Homepage news blocks for deadlines and seasonal services.</h2>
+        <div class="section-heading">
+          <p class="eyebrow">Latest Updates</p>
+          <h2>News and seasonal service reminders.</h2>
+        </div>
         <div class="news-stack">
           {% for item in news_items %}
             <article class="news-card">
@@ -232,29 +155,29 @@
           {% endfor %}
         </div>
       </div>
-      <div class="panel">
-        <p class="panel-kicker">How The Site Works</p>
-        <h3>Structured like a service center.</h3>
+      <div class="panel process-panel">
+        <p class="panel-kicker">How It Works</p>
+        <h3>A simpler workflow for each practice.</h3>
         <div class="steps">
           <div class="step">
             <span>01</span>
             <div>
-              <h3>Check the right service</h3>
-              <p>Open the services hub and go directly to CAF, patronato, immigration, others, admission, or gestione imprese.</p>
+              <h3>Choose the service</h3>
+              <p>Open the directory and identify the exact practice you need.</p>
             </div>
           </div>
           <div class="step">
             <span>02</span>
             <div>
-              <h3>Read the required documents</h3>
-              <p>Each service detail page now explains the documents usually required, based on official or primary public sources.</p>
+              <h3>Read the checklist</h3>
+              <p>Use the service page to review the required documents before the appointment.</p>
             </div>
           </div>
           <div class="step">
             <span>03</span>
             <div>
               <h3>Book and upload files</h3>
-              <p>The appointment page collects service type, contact details, date, time, city, and supporting files.</p>
+              <p>Send the request with your preferred date, time, and supporting documents.</p>
             </div>
           </div>
         </div>
@@ -263,36 +186,15 @@
   </section>
 
   <section class="section">
-    <div class="container split">
-      <div class="panel territory-panel">
-        <p class="panel-kicker">Dove Siamo</p>
-        <h3>Make office coverage visible on the homepage.</h3>
-        <p>
-          Like larger Italian service portals, your site should show where clients can reach you. This section is designed so your city coverage and branch model are visible at a glance.
-        </p>
-        <div class="territory-tags">
-          <span>Rome</span>
-          <span>Lazio</span>
-          <span>Online Support</span>
-          <span>Appointments by Request</span>
-          <span>Document Review</span>
-          <span>WhatsApp Follow-up</span>
-        </div>
-        <a class="btn" href="{{ url_for('contact') }}">View contact and office info</a>
+    <div class="container final-cta">
+      <div>
+        <p class="eyebrow">Need Help Now?</p>
+        <h2>Use the appointment page or open the full services directory.</h2>
+        <p class="lead">The site is built to move clients directly from service search to document preparation and booking.</p>
       </div>
-      <div class="panel contact-panel">
-        <p class="panel-kicker">Contattaci</p>
-        <h3>Keep a direct contact block on the homepage.</h3>
-        <ul>
-          <li>Appointments available for document-heavy cases</li>
-          <li>Online document preparation support for selected services</li>
-          <li>Quick guidance through the required-documents hub</li>
-          <li>Direct booking flow for faster follow-up</li>
-        </ul>
-        <div class="hero-cta">
-          <a class="btn" href="{{ url_for('appointments') }}">Book Appointment</a>
-          <a class="btn btn-outline" href="{{ url_for('contact') }}">Open Contact Page</a>
-        </div>
+      <div class="hero-cta">
+        <a class="btn" href="{{ url_for('appointments') }}">Book Appointment</a>
+        <a class="btn btn-outline" href="{{ url_for('services') }}">Browse All Services</a>
       </div>
     </div>
   </section>
