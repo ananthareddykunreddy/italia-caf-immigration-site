@@ -60,6 +60,44 @@
   <section class="section">
     <div class="container">
       <div class="section-heading">
+        <p class="eyebrow">Featured Areas</p>
+        <h2>High-visibility service banners inspired by large service portals.</h2>
+      </div>
+      <div class="featured-strips">
+        <article class="featured-strip featured-strip-caf">
+          <div>
+            <p class="card-tag">CAF</p>
+            <h3>730, ISEE, F24, IMU, SPID, and family paperwork</h3>
+            <p>Keep your most requested CAF services visible from the homepage, especially during filing season.</p>
+            <a href="{{ url_for('caf_services') }}">Open CAF services</a>
+          </div>
+          <img src="{{ url_for('static', filename='illustrations/caf.svg') }}" alt="CAF featured illustration">
+        </article>
+        <article class="featured-strip featured-strip-immigration">
+          <div>
+            <p class="card-tag">Immigration</p>
+            <h3>Permesso, cittadinanza, family reunification, and consular files</h3>
+            <p>Show immigration and passport or OCI assistance as a major service pillar, not a small add-on.</p>
+            <a href="{{ url_for('immigration_services') }}">Open immigration services</a>
+          </div>
+          <img src="{{ url_for('static', filename='illustrations/immigration.svg') }}" alt="Immigration featured illustration">
+        </article>
+        <article class="featured-strip featured-strip-business">
+          <div>
+            <p class="card-tag">Gestione Imprese</p>
+            <h3>Partita IVA, invoices, SCIA, and business administration</h3>
+            <p>Bring business services higher on the page so workers, freelancers, and small businesses can spot them quickly.</p>
+            <a href="{{ url_for('business_services') }}">Open gestione imprese</a>
+          </div>
+          <img src="{{ url_for('static', filename='illustrations/business.svg') }}" alt="Business featured illustration">
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
         <p class="eyebrow">Quick Access</p>
         <h2>Start from the practical task, not from confusion.</h2>
       </div>
@@ -184,6 +222,41 @@
               <p>The appointment page collects service type, contact details, date, time, city, and supporting files.</p>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container split">
+      <div class="panel territory-panel">
+        <p class="panel-kicker">Dove Siamo</p>
+        <h3>Make office coverage visible on the homepage.</h3>
+        <p>
+          Like larger Italian service portals, your site should show where clients can reach you. Replace these placeholders with your actual city, office coverage, and branch points.
+        </p>
+        <div class="territory-tags">
+          <span>Rome</span>
+          <span>Lazio</span>
+          <span>Online Support</span>
+          <span>Appointments by Request</span>
+          <span>Document Review</span>
+          <span>WhatsApp Follow-up</span>
+        </div>
+        <a class="btn" href="{{ url_for('contact') }}">View contact and office info</a>
+      </div>
+      <div class="panel contact-panel">
+        <p class="panel-kicker">Contattaci</p>
+        <h3>Keep a direct contact block on the homepage.</h3>
+        <ul>
+          <li>Phone: +39 000 000 0000</li>
+          <li>WhatsApp: +39 000 000 0000</li>
+          <li>Email: info@ciaocaf.it</li>
+          <li>Appointments available for document-heavy cases</li>
+        </ul>
+        <div class="hero-cta">
+          <a class="btn" href="{{ url_for('appointments') }}">Book Appointment</a>
+          <a class="btn btn-outline" href="{{ url_for('contact') }}">Open Contact Page</a>
         </div>
       </div>
     </div>

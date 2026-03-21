@@ -336,6 +336,41 @@ a {
   gap: 1.2rem;
 }
 
+.featured-strips {
+  display: grid;
+  gap: 1rem;
+}
+
+.featured-strip {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(220px, 0.8fr);
+  align-items: center;
+  gap: 1rem;
+  padding: 1.4rem;
+  border-radius: 1.4rem;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.featured-strip img {
+  width: 100%;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.featured-strip-caf {
+  background: linear-gradient(120deg, rgba(126, 193, 232, 0.24), rgba(255, 250, 244, 0.95));
+}
+
+.featured-strip-immigration {
+  background: linear-gradient(120deg, rgba(33, 73, 61, 0.18), rgba(255, 250, 244, 0.96));
+}
+
+.featured-strip-business {
+  background: linear-gradient(120deg, rgba(155, 77, 47, 0.2), rgba(255, 250, 244, 0.96));
+}
+
 .directory-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -421,6 +456,26 @@ a {
 .news-cta {
   font-weight: 700;
   color: var(--brand-dark);
+}
+
+.territory-panel,
+.contact-panel {
+  height: 100%;
+}
+
+.territory-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin: 1rem 0 1.3rem;
+}
+
+.territory-tags span {
+  padding: 0.55rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(33, 73, 61, 0.08);
+  color: var(--accent);
+  font-weight: 700;
 }
 
 .section {
@@ -543,6 +598,7 @@ a {
   .cards,
   .cards-two,
   .service-showcase,
+  .featured-strip,
   .directory-grid,
   .service-board,
   .service-board-wide,
