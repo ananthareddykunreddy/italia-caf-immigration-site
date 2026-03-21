@@ -16,15 +16,28 @@
   </section>
 
   <section class="section">
-    <div class="container cards cards-two">
-      {% for slug, service in admission_services.items() %}
-        <article class="card">
+    <div class="container">
+      <div class="service-board">
+        <article class="service-list-panel">
           <span class="card-tag">Admission</span>
-          <h3>{{ service.name }}</h3>
-          <p>{{ service.summary }}</p>
-          <a href="{{ url_for('admission_service_detail', slug=slug) }}">Open {{ service.name }}</a>
+          <h3>University Application Consulting</h3>
+          <ul class="service-bullets">
+            {% for slug, service in admission_services.items() %}
+              <li><a href="{{ url_for('admission_service_detail', slug=slug) }}">{{ service.name }}</a></li>
+            {% endfor %}
+          </ul>
         </article>
-      {% endfor %}
+        <article class="service-list-panel">
+          <span class="card-tag">Admission</span>
+          <h3>What We Help With</h3>
+          <ul class="service-bullets">
+            <li>University selection and application planning</li>
+            <li>Document checks before submission</li>
+            <li>File organization for admissions and follow-up</li>
+            <li>Guidance for students applying to universities in Italy</li>
+          </ul>
+        </article>
+      </div>
     </div>
   </section>
 </main>

@@ -13,15 +13,20 @@
   </section>
 
   <section class="section">
-    <div class="container cards cards-two">
-      {% for slug, service in services.items() %}
-        <article class="card">
-          <span class="card-tag">{{ category_label }}</span>
-          <h3>{{ service.name }}</h3>
-          <p>{{ service.summary }}</p>
-          <a href="{{ url_for(detail_endpoint, slug=slug) }}">Open {{ service.name }}</a>
-        </article>
-      {% endfor %}
+    <div class="container">
+      <div class="service-board">
+        {% for group in services.items()|list|batch(3, None) %}
+          <article class="service-list-panel">
+            <span class="card-tag">{{ category_label }}</span>
+            <h3>{{ eyebrow }}</h3>
+            <ul class="service-bullets">
+              {% for item in group if item %}
+                <li><a href="{{ url_for(detail_endpoint, slug=item[0]) }}">{{ item[1].name }}</a></li>
+              {% endfor %}
+            </ul>
+          </article>
+        {% endfor %}
+      </div>
     </div>
   </section>
 </main>

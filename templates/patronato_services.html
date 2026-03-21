@@ -16,15 +16,30 @@
   </section>
 
   <section class="section">
-    <div class="container cards cards-two">
-      {% for slug, service in patronato_services.items() %}
-        <article class="card">
+    <div class="container">
+      <div class="service-board">
+        <article class="service-list-panel">
           <span class="card-tag">Patronato</span>
-          <h3>{{ service.name }}</h3>
-          <p>{{ service.summary }}</p>
-          <a href="{{ url_for('patronato_service_detail', slug=slug) }}">Open {{ service.name }}</a>
+          <h3>Main Patronato Services</h3>
+          <ul class="service-bullets">
+            <li><a href="{{ url_for('patronato_service_detail', slug='disoccupazione') }}">Disoccupazione</a></li>
+            <li><a href="{{ url_for('patronato_service_detail', slug='naspi-dis-coll') }}">NASPI / DIS-COLL</a></li>
+            <li><a href="{{ url_for('patronato_service_detail', slug='assegno-unico-patronato') }}">Assegno Unico</a></li>
+            <li><a href="{{ url_for('patronato_service_detail', slug='adi') }}">ADI</a></li>
+            <li><a href="{{ url_for('patronato_service_detail', slug='dimissioni') }}">Dimissioni</a></li>
+            <li><a href="{{ url_for('patronato_service_detail', slug='maternita') }}">Maternita</a></li>
+          </ul>
         </article>
-      {% endfor %}
+        <article class="service-list-panel">
+          <span class="card-tag">Patronato</span>
+          <h3>Additional Patronato Support</h3>
+          <ul class="service-bullets">
+            <li><a href="{{ url_for('patronato_service_detail', slug='invalidita-civile') }}">Invalidita Civile</a></li>
+            <li><a href="{{ url_for('patronato_service_detail', slug='legge-104') }}">104</a></li>
+            <li><a href="{{ url_for('patronato_service_detail', slug='pensione') }}">Pensione</a></li>
+          </ul>
+        </article>
+      </div>
     </div>
   </section>
 </main>

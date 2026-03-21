@@ -16,15 +16,38 @@
   </section>
 
   <section class="section">
-    <div class="container cards cards-two">
-      {% for slug, service in immigration_services.items() %}
-        <article class="card">
+    <div class="container">
+      <div class="service-board service-board-wide">
+        <article class="service-list-panel">
           <span class="card-tag">Immigration</span>
-          <h3>{{ service.name }}</h3>
-          <p>{{ service.summary }}</p>
-          <a href="{{ url_for('immigration_service_detail', slug=slug) }}">Open {{ service.name }}</a>
+          <h3>Permesso and Residency</h3>
+          <ul class="service-bullets">
+            <li><a href="{{ url_for('immigration_service_detail', slug='kit-soggiorno') }}">Kit Soggiorno Filling</a></li>
+            <li><a href="{{ url_for('immigration_service_detail', slug='residence-permit') }}">Residence Permit Document Support</a></li>
+            <li><a href="{{ url_for('immigration_service_detail', slug='conversione-permesso') }}">Conversione Permesso</a></li>
+            <li><a href="{{ url_for('immigration_service_detail', slug='flussi') }}">Flussi</a></li>
+          </ul>
         </article>
-      {% endfor %}
+        <article class="service-list-panel">
+          <span class="card-tag">Immigration</span>
+          <h3>Family and Status Support</h3>
+          <ul class="service-bullets">
+            <li><a href="{{ url_for('immigration_service_detail', slug='ricongiungimento-familiare') }}">Ricongiungimento Familiare</a></li>
+            <li><a href="{{ url_for('immigration_service_detail', slug='cittadinanza') }}">Cittadinanza</a></li>
+            <li><a href="{{ url_for('immigration_service_detail', slug='document-translation') }}">Document Translation Support</a></li>
+            <li><a href="{{ url_for('immigration_service_detail', slug='international-documents') }}">International Document Support</a></li>
+          </ul>
+        </article>
+        <article class="service-list-panel">
+          <span class="card-tag">Consular</span>
+          <h3>Passport and OCI Support</h3>
+          <ul class="service-bullets">
+            <li><a href="{{ url_for('embassy_service_detail', slug='passport-application') }}">Passport Application Support</a></li>
+            <li><a href="{{ url_for('embassy_service_detail', slug='oci-card') }}">OCI Card Application Support</a></li>
+            <li><a href="{{ url_for('embassy_service_detail', slug='passport-surrender') }}">Passport Surrender Support</a></li>
+          </ul>
+        </article>
+      </div>
     </div>
   </section>
 
