@@ -1,16 +1,16 @@
 :root {
-  --bg: #f6efe4;
-  --bg-soft: #efe2d0;
-  --paper: #fffaf4;
-  --text: #2d241d;
-  --muted: #65584d;
-  --brand: #9b4d2f;
-  --brand-dark: #6f3119;
-  --accent: #21493d;
-  --line: rgba(80, 50, 30, 0.14);
-  --shadow: 0 24px 60px rgba(70, 36, 18, 0.12);
-  --success: #1e6b51;
-  --error: #8b2f24;
+  --bg: #eef4f8;
+  --bg-soft: #dde7ef;
+  --paper: #ffffff;
+  --text: #1f2b37;
+  --muted: #5d6b79;
+  --brand: #0f766e;
+  --brand-dark: #0b4f4a;
+  --accent: #d97706;
+  --line: rgba(31, 43, 55, 0.1);
+  --shadow: 0 24px 60px rgba(23, 45, 68, 0.1);
+  --success: #146c5a;
+  --error: #a13a2b;
 }
 
 * {
@@ -27,8 +27,8 @@ body {
   font-family: "Manrope", sans-serif;
   color: var(--text);
   background:
-    radial-gradient(circle at top left, rgba(255, 255, 255, 0.88), transparent 34%),
-    linear-gradient(180deg, #f3e6d4 0%, var(--bg) 34%, #f8f2ea 100%);
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.92), transparent 32%),
+    linear-gradient(180deg, #e4eef5 0%, var(--bg) 34%, #f6f9fb 100%);
   line-height: 1.6;
 }
 
@@ -37,8 +37,8 @@ body::before {
   position: fixed;
   inset: 0;
   background:
-    linear-gradient(120deg, rgba(155, 77, 47, 0.06), transparent 45%),
-    radial-gradient(circle at 80% 10%, rgba(33, 73, 61, 0.09), transparent 20%);
+    linear-gradient(120deg, rgba(15, 118, 110, 0.06), transparent 45%),
+    radial-gradient(circle at 80% 10%, rgba(217, 119, 6, 0.08), transparent 20%);
   pointer-events: none;
   z-index: -1;
 }
@@ -114,8 +114,8 @@ a {
   width: 2.7rem;
   height: 2.7rem;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--brand), #c77b52);
-  color: #fff8f0;
+  background: linear-gradient(135deg, var(--brand), #169a90);
+  color: #f7fffd;
   font-weight: 800;
 }
 
@@ -153,9 +153,9 @@ a {
   padding: 0.8rem 1.2rem;
   border: 0;
   border-radius: 999px;
-  background: linear-gradient(135deg, var(--brand), #b6643f);
-  box-shadow: 0 10px 24px rgba(111, 49, 25, 0.18);
-  color: #fffaf4;
+  background: linear-gradient(135deg, var(--brand), #169a90);
+  box-shadow: 0 10px 24px rgba(11, 79, 74, 0.18);
+  color: #f7fffd;
   cursor: pointer;
   font-weight: 700;
   text-decoration: none;
@@ -168,7 +168,7 @@ a {
 .btn-outline {
   background: transparent;
   color: var(--brand-dark);
-  border: 1px solid rgba(111, 49, 25, 0.28);
+  border: 1px solid rgba(11, 79, 74, 0.22);
   box-shadow: none;
 }
 
@@ -255,7 +255,7 @@ a {
 .hero-highlights p {
   margin: 0;
   padding-left: 1rem;
-  border-left: 3px solid rgba(33, 73, 61, 0.2);
+  border-left: 3px solid rgba(15, 118, 110, 0.2);
 }
 
 .hero-panel,
@@ -528,7 +528,7 @@ a {
   gap: 1rem;
   align-items: start;
   padding: 1rem 0;
-  border-top: 1px solid rgba(80, 50, 30, 0.12);
+  border-top: 1px solid rgba(31, 43, 55, 0.08);
 }
 
 .step:first-child {
@@ -542,7 +542,7 @@ a {
   width: 3.2rem;
   height: 3.2rem;
   border-radius: 50%;
-  background: rgba(33, 73, 61, 0.1);
+  background: rgba(15, 118, 110, 0.1);
   color: var(--accent);
   font-weight: 800;
 }
