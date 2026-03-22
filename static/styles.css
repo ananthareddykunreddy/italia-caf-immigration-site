@@ -458,6 +458,25 @@ a {
   background: rgba(255, 255, 255, 0.72);
 }
 
+.sheet-banner {
+  margin-bottom: 1.2rem;
+  border: 1px solid var(--line);
+  border-radius: 1.3rem;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.sheet-banner img,
+.hero-sheet-image {
+  display: block;
+  width: 100%;
+}
+
+.hero-sheet-image {
+  border-radius: 1rem;
+}
+
 .utility-panel {
   padding: 1.5rem;
   background: rgba(255, 255, 255, 0.9);
