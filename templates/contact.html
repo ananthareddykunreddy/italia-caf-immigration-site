@@ -18,23 +18,28 @@
       <article class="panel">
         <p class="panel-kicker">{{ t('direct_contact') }}</p>
         <h3>{{ t('office_details') }}</h3>
-        <ul>
-          <li>Phone: 06 31072585</li>
-          <li>Email: cafbixio5@gmail.com</li>
-          <li>Address: Via Bixio 5, 00185 Roma</li>
-          <li>Office Hours: 09:00-13:00 and 15:00-19:00</li>
-        </ul>
+        <div class="contact-detail-list">
+          <a href="tel:+390631072585">Phone: 06 31072585</a>
+          <a href="mailto:cafbixio5@gmail.com">Email: cafbixio5@gmail.com</a>
+          <span>Address: Via Bixio 5, 00185 Roma</span>
+          <span>Office Hours: 09:00-13:00 and 15:00-19:00</span>
+        </div>
         <a class="btn" href="{{ url_for('appointments') }}">{{ t('nav_book') }}</a>
       </article>
-      <article class="panel">
-        <p class="panel-kicker">{{ t('booking_guidance') }}</p>
-        <h3>{{ t('prepare_visit') }}</h3>
-        <ul>
-          <li><a href="{{ url_for('services') }}">Browse all service categories</a></li>
-          <li><a href="{{ url_for('required_documents') }}">Open required documents hub</a></li>
-          <li>Appointments are recommended for document-heavy and time-sensitive practices</li>
-          <li>Upload files in advance through the appointment form when possible</li>
-        </ul>
+      <article class="panel contact-map-panel">
+        <p class="panel-kicker">Google Maps</p>
+        <h3>Find the office in Rome</h3>
+        <div class="map-embed">
+          <iframe
+            title="CAF Bixio Google Maps"
+            src="https://www.google.com/maps?q=Via%20Bixio%205%2C%2000185%20Roma&z=16&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="contact-map-links">
+          <a href="https://www.google.com/maps/search/?api=1&query=Via+Bixio+5%2C+00185+Roma" target="_blank" rel="noreferrer">Open in Google Maps</a>
+          <a href="{{ url_for('services') }}">Browse all services</a>
+        </div>
       </article>
     </div>
   </section>
