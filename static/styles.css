@@ -579,6 +579,32 @@ a {
   background: rgba(255, 255, 255, 0.9);
 }
 
+.home-news-panel h2 {
+  margin-bottom: 1rem;
+}
+
+.home-news-list {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.home-news-item {
+  padding: 0.95rem 1rem;
+  border-radius: 1rem;
+  background: rgba(15, 118, 110, 0.05);
+}
+
+.home-news-item h3 {
+  margin: 0.2rem 0 0.35rem;
+  font-size: 1.35rem;
+}
+
+.home-news-item p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
 .home-contact-mini {
   display: flex;
   flex-wrap: wrap;

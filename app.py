@@ -1336,6 +1336,12 @@ SUPPORT_SERVICES = {
 
 NEWS_ITEMS = [
     {
+        "title": "Abbonamento Agevolazione",
+        "date": "March 2026",
+        "summary": "Reduced-fare transport subscriptions often require updated identity, residence, ISEE, or category-specific supporting documents before submission.",
+        "cta": "Check the required documents before booking an agevolazione appointment.",
+    },
+    {
         "title": "730 Campaign Support",
         "date": "March 2026",
         "summary": "Prepare your 730 file early with income records, deductible expense receipts, and any family documents that affect detrazioni or credits.",

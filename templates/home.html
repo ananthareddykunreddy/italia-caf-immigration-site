@@ -49,22 +49,21 @@
         </div>
       </article>
 
-      <aside class="utility-panel">
-        <p class="panel-kicker">{{ t('quick_access') }}</p>
-        <h2>{{ t('quick_access_title') }}</h2>
-        <div class="utility-links">
-          <a class="utility-link" href="{{ url_for('appointments') }}">
-            <strong>{{ t('nav_book') }}</strong>
-            <span>{{ t('qa_book_desc') }}</span>
-          </a>
-          <a class="utility-link" href="{{ url_for('required_documents') }}">
-            <strong>{{ t('nav_documents') }}</strong>
-            <span>{{ t('qa_docs_desc') }}</span>
-          </a>
-          <a class="utility-link" href="{{ url_for('contact') }}">
-            <strong>{{ t('nav_contact') }}</strong>
-            <span>{{ t('qa_contact_desc') }}</span>
-          </a>
+      <aside class="utility-panel home-news-panel">
+        <p class="panel-kicker">{{ t('updates_title') }}</p>
+        <h2>Latest service news</h2>
+        <div class="home-news-list">
+          {% for item in news_items[:3] %}
+            <article class="home-news-item">
+              <span class="news-date">{{ item.date }}</span>
+              <h3>{{ item.title }}</h3>
+              <p>{{ item.summary }}</p>
+            </article>
+          {% endfor %}
+        </div>
+        <div class="hero-cta">
+          <a class="btn btn-small" href="{{ url_for('news') }}">{{ t('view_all_news') }}</a>
+          <a class="btn btn-small btn-outline" href="{{ url_for('required_documents') }}">{{ t('nav_documents') }}</a>
         </div>
       </aside>
     </div>
