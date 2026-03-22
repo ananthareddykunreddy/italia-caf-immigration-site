@@ -81,9 +81,57 @@ a {
   position: sticky;
   top: 0;
   z-index: 20;
-  background: rgba(246, 239, 228, 0.88);
+  background: rgba(255, 255, 255, 0.94);
   backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--line);
+}
+
+.topbar {
+  border-bottom: 1px solid rgba(31, 43, 55, 0.08);
+  background: linear-gradient(90deg, var(--brand-dark), #155e75);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.topbar-wrap,
+.topbar-contact,
+.topbar-quicklinks,
+.brand-block,
+.nav-main,
+.footer-bottom,
+.footer-contact-list,
+.footer-cta-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.topbar-wrap,
+.footer-bottom {
+  justify-content: space-between;
+}
+
+.topbar-wrap {
+  min-height: 2.9rem;
+  padding: 0.35rem 0;
+}
+
+.topbar-contact,
+.topbar-quicklinks {
+  flex-wrap: wrap;
+}
+
+.topbar a,
+.topbar span {
+  color: inherit;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.topbar-quicklinks a {
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
 }
 
 .nav-wrap,
@@ -96,7 +144,21 @@ a {
 }
 
 .nav-wrap {
-  padding: 1rem 0;
+  padding: 1rem 0 1.1rem;
+}
+
+.brand-block,
+.nav-main {
+  justify-content: space-between;
+}
+
+.brand-block {
+  flex: 0 0 auto;
+}
+
+.nav-main {
+  flex: 1 1 auto;
+  gap: 1.25rem;
 }
 
 .brand {
@@ -120,7 +182,19 @@ a {
 }
 
 .brand-text {
+  display: block;
   font-weight: 800;
+  font-size: 1.2rem;
+}
+
+.brand-subtext {
+  display: block;
+  margin-top: 0.18rem;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 .nav-links,
@@ -137,6 +211,29 @@ a {
   color: var(--muted);
   text-decoration: none;
   font-weight: 600;
+}
+
+.nav-links a {
+  position: relative;
+  padding: 0.35rem 0;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.2rem;
+  width: 100%;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--brand), var(--accent));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s ease;
+}
+
+.nav-links a:hover::after {
+  transform: scaleX(1);
 }
 
 .header-actions {
@@ -826,9 +923,85 @@ a {
 }
 
 .site-footer {
-  padding: 1.4rem 0 2rem;
+  padding: 0;
   border-top: 1px solid var(--line);
-  margin-top: 2rem;
+  margin-top: 3rem;
+  background: linear-gradient(180deg, rgba(11, 79, 74, 0.04), rgba(255, 255, 255, 0.94));
+}
+
+.footer-shell {
+  display: grid;
+  grid-template-columns: minmax(280px, 1fr) minmax(0, 1.7fr);
+  gap: 2rem;
+  padding: 2.4rem 0 1.8rem;
+}
+
+.footer-brand {
+  margin-bottom: 1rem;
+}
+
+.footer-lead p {
+  margin: 0 0 1rem;
+  color: var(--muted);
+}
+
+.footer-contact-list {
+  flex-wrap: wrap;
+  margin: 1rem 0 1.2rem;
+}
+
+.footer-contact-list a,
+.footer-contact-list span {
+  padding: 0.55rem 0.85rem;
+  border-radius: 999px;
+  background: rgba(15, 118, 110, 0.08);
+  color: var(--brand-dark);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.3rem;
+}
+
+.footer-column {
+  padding: 1.25rem;
+  border: 1px solid var(--line);
+  border-radius: 1.2rem;
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: var(--shadow);
+}
+
+.footer-column h3 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.footer-links {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.7rem;
+}
+
+.footer-links a {
+  color: var(--text);
+}
+
+.footer-links a:hover {
+  color: var(--brand-dark);
+}
+
+.footer-bottom {
+  padding: 1rem 0 1.4rem;
+  border-top: 1px solid rgba(31, 43, 55, 0.08);
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.footer-bottom p {
+  margin: 0;
 }
 
 @media (max-width: 980px) {
@@ -852,10 +1025,19 @@ a {
     grid-template-columns: 1fr;
   }
 
+  .footer-shell,
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
   .nav-wrap,
   .footer-wrap,
   .dashboard-head,
-  .header-actions {
+  .header-actions,
+  .nav-main,
+  .topbar-wrap,
+  .footer-bottom,
+  .footer-cta-row {
     flex-wrap: wrap;
   }
 
@@ -891,6 +1073,14 @@ a {
 
   .step {
     grid-template-columns: 1fr;
+  }
+
+  .topbar-contact,
+  .topbar-quicklinks,
+  .header-actions,
+  .footer-contact-list,
+  .footer-cta-row {
+    width: 100%;
   }
 
   .btn,
