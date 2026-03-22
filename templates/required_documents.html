@@ -5,19 +5,6 @@
 
 {% block content %}
 <main class="page-shell">
-  <section class="page-hero">
-    <div class="container hero-grid services-hero-grid">
-      <div>
-        <p class="eyebrow">{{ t('required_documents_title') }}</p>
-        <h1>{{ t('required_documents_heading') }}</h1>
-        <p class="lead">{{ t('required_documents_lead') }}</p>
-      </div>
-      <aside class="hero-panel">
-        <img class="hero-sheet-image" src="{{ url_for('static', filename='service-images/service-collage-gold.png') }}" alt="Required documents collage">
-      </aside>
-    </div>
-  </section>
-
   <section class="section">
     <div class="container docs-grid">
       {% for category in service_directory %}

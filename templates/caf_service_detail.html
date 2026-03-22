@@ -5,31 +5,6 @@
 
 {% block content %}
 <main class="page-shell">
-  <section class="page-hero">
-    <div class="container hero-grid service-detail-hero">
-      <div>
-        <p class="eyebrow">CAF Service</p>
-        <h1>{{ service.name }}</h1>
-        <p class="lead">{{ service.summary }}</p>
-      </div>
-      <aside class="service-hero-art">
-        {% if slug == 'isee' %}
-          <img src="{{ url_for('static', filename='service-images/isee.png') }}" alt="{{ service.name }} illustration">
-        {% elif slug == '730' %}
-          <img src="{{ url_for('static', filename='service-images/730.png') }}" alt="{{ service.name }} illustration">
-        {% elif slug == 'modello-redditi' %}
-          <img src="{{ url_for('static', filename='service-images/modello-redditi.png') }}" alt="{{ service.name }} illustration">
-        {% elif slug == 'f24' %}
-          <img src="{{ url_for('static', filename='service-images/f24.png') }}" alt="{{ service.name }} illustration">
-        {% elif slug == 'successioni' %}
-          <img src="{{ url_for('static', filename='service-images/successioni.png') }}" alt="{{ service.name }} illustration">
-        {% else %}
-          <img src="{{ url_for('static', filename='illustrations/caf.svg') }}" alt="{{ service.name }} illustration">
-        {% endif %}
-      </aside>
-    </div>
-  </section>
-
   <section class="section">
     <div class="container split">
       <div class="card">

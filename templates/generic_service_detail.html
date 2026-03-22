@@ -5,23 +5,6 @@
 
 {% block content %}
 <main class="page-shell">
-  <section class="page-hero">
-    <div class="container hero-grid service-detail-hero">
-      <div>
-        <p class="eyebrow">{{ eyebrow }}</p>
-        <h1>{{ service.name }}</h1>
-        <p class="lead">{{ service.summary }}</p>
-      </div>
-      <aside class="service-hero-art">
-        {% if category_label == "Impresa" %}
-          <img src="{{ url_for('static', filename='illustrations/business.svg') }}" alt="{{ service.name }} illustration">
-        {% else %}
-          <img src="{{ url_for('static', filename='illustrations/others.svg') }}" alt="{{ service.name }} illustration">
-        {% endif %}
-      </aside>
-    </div>
-  </section>
-
   <section class="section">
     <div class="container split">
       <div class="card">
