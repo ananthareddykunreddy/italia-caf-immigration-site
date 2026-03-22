@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ current_lang }}" dir="{{ text_direction }}">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{% block title %}{{ business_name }}{% endblock %}</title>
-  <meta name="description" content="{% block meta_description %}CAF services, patronato, immigration support including consular paperwork, required document checklists, university application consulting, gestione imprese, and practical services in Italy.{% endblock %}">
+  <meta name="description" content="{% block meta_description %}{{ t('site_meta_description') }}{% endblock %}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
@@ -19,17 +19,22 @@
       </a>
       <nav aria-label="Main navigation">
         <ul class="nav-links">
-          <li><a href="{{ url_for('home') }}">Home</a></li>
-          <li><a href="{{ url_for('services') }}">Services</a></li>
-          <li><a href="{{ url_for('required_documents') }}">Required Documents</a></li>
-          <li><a href="{{ url_for('news') }}">News</a></li>
-          <li><a href="{{ url_for('contact') }}">Contact</a></li>
-          <li><a href="{{ url_for('admin_login') }}">Admin</a></li>
+          <li><a href="{{ url_for('home') }}">{{ t('nav_home') }}</a></li>
+          <li><a href="{{ url_for('services') }}">{{ t('nav_services') }}</a></li>
+          <li><a href="{{ url_for('required_documents') }}">{{ t('nav_documents') }}</a></li>
+          <li><a href="{{ url_for('news') }}">{{ t('nav_news') }}</a></li>
+          <li><a href="{{ url_for('contact') }}">{{ t('nav_contact') }}</a></li>
+          <li><a href="{{ url_for('admin_login') }}">{{ t('nav_admin') }}</a></li>
         </ul>
       </nav>
       <div class="header-actions">
-        <a class="btn btn-small btn-outline" href="{{ url_for('client_area') }}">Client Area</a>
-        <a class="btn btn-small" href="{{ url_for('appointments') }}">Book Appointment</a>
+        <div class="language-switcher">
+          {% for code, label in available_languages.items() %}
+            <a class="{% if current_lang == code %}active{% endif %}" href="{{ url_for('set_language', lang=code) }}">{{ label }}</a>
+          {% endfor %}
+        </div>
+        <a class="btn btn-small btn-outline" href="{{ url_for('client_area') }}">{{ t('nav_client_area') }}</a>
+        <a class="btn btn-small" href="{{ url_for('appointments') }}">{{ t('nav_book') }}</a>
       </div>
     </div>
   </header>
@@ -49,22 +54,22 @@
   <footer class="site-footer">
     <div class="container footer-wrap">
       <div>
-        <p>&copy; 2026 {{ business_name }}. All rights reserved.</p>
-        <p>CAF services, patronato support, immigration assistance including consular paperwork, university consulting, gestione imprese, and practical services in Italy.</p>
+        <p>&copy; 2026 {{ business_name }}. {{ t('footer_rights') }}</p>
+        <p>{{ t('footer_summary') }}</p>
       </div>
       <div class="footer-links">
-        <a href="{{ url_for('services') }}">All Services</a>
-        <a href="{{ url_for('required_documents') }}">Required Documents</a>
-        <a href="{{ url_for('news') }}">News</a>
-        <a href="{{ url_for('contact') }}">Contact</a>
-        <a href="{{ url_for('client_area') }}">Client Area</a>
+        <a href="{{ url_for('services') }}">{{ t('footer_all_services') }}</a>
+        <a href="{{ url_for('required_documents') }}">{{ t('nav_documents') }}</a>
+        <a href="{{ url_for('news') }}">{{ t('nav_news') }}</a>
+        <a href="{{ url_for('contact') }}">{{ t('nav_contact') }}</a>
+        <a href="{{ url_for('client_area') }}">{{ t('nav_client_area') }}</a>
         <a href="{{ url_for('caf_services') }}">CAF Services</a>
         <a href="{{ url_for('patronato_services') }}">Patronato Services</a>
         <a href="{{ url_for('immigration_services') }}">Immigration Services</a>
         <a href="{{ url_for('admission_services') }}">Admission Services</a>
         <a href="{{ url_for('support_services') }}">Others</a>
         <a href="{{ url_for('business_services') }}">Gestione Imprese</a>
-        <a href="{{ url_for('appointments') }}">Appointments</a>
+        <a href="{{ url_for('appointments') }}">{{ t('appointments_page') }}</a>
       </div>
     </div>
   </footer>

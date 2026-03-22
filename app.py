@@ -20,6 +20,185 @@ app.config["SECRET_KEY"] = os.environ.get("FLASK_SECRET_KEY", "change-this-secre
 app.config["MAX_CONTENT_LENGTH"] = 16 * 1024 * 1024
 app.config["UPLOAD_FOLDER"] = str(UPLOAD_DIR)
 
+SUPPORTED_LANGS = {
+    "it": "Italiano",
+    "en": "English",
+    "fa": "فارسی",
+}
+
+TRANSLATIONS = {
+    "site_meta_description": {
+        "it": "Servizi CAF, patronato, supporto immigrazione e pratiche consolari, check-list documenti, consulenza universitaria, gestione imprese e servizi pratici in Italia.",
+        "en": "CAF services, patronato, immigration and consular support, required document checklists, university consulting, business management, and practical services in Italy.",
+        "fa": "خدمات CAF، پاتروناتو، امور مهاجرت و کنسولی، فهرست مدارک لازم، مشاوره دانشگاهی، مدیریت کسب‌وکار و خدمات کاربردی در ایتالیا.",
+    },
+    "nav_home": {"it": "Home", "en": "Home", "fa": "خانه"},
+    "nav_services": {"it": "Servizi", "en": "Services", "fa": "خدمات"},
+    "nav_documents": {"it": "Documenti richiesti", "en": "Required Documents", "fa": "مدارک لازم"},
+    "nav_news": {"it": "News", "en": "News", "fa": "اخبار"},
+    "nav_contact": {"it": "Contatti", "en": "Contact", "fa": "تماس"},
+    "nav_admin": {"it": "Admin", "en": "Admin", "fa": "مدیریت"},
+    "nav_client_area": {"it": "Area Cliente", "en": "Client Area", "fa": "پنل مشتری"},
+    "nav_book": {"it": "Prenota Appuntamento", "en": "Book Appointment", "fa": "رزرو وقت"},
+    "footer_all_services": {"it": "Tutti i Servizi", "en": "All Services", "fa": "همه خدمات"},
+    "footer_rights": {"it": "Tutti i diritti riservati.", "en": "All rights reserved.", "fa": "تمامی حقوق محفوظ است."},
+    "footer_summary": {
+        "it": "Servizi CAF, patronato, immigrazione, consulenza universitaria, gestione imprese e servizi pratici in Italia.",
+        "en": "CAF services, patronato, immigration, university consulting, business management, and practical services in Italy.",
+        "fa": "خدمات CAF، پاتروناتو، مهاجرت، مشاوره دانشگاهی، مدیریت کسب‌وکار و خدمات کاربردی در ایتالیا.",
+    },
+    "updates_title": {"it": "Ultimi Aggiornamenti", "en": "Latest Updates", "fa": "آخرین به‌روزرسانی‌ها"},
+    "view_all_news": {"it": "Vedi tutte le news", "en": "View all news", "fa": "مشاهده همه اخبار"},
+    "featured_service": {"it": "Servizio in Evidenza", "en": "Featured Service", "fa": "خدمت ویژه"},
+    "hero_title": {
+        "it": "Prepara 730, ISEE e le principali pratiche annuali da un unico centro servizi.",
+        "en": "Prepare your 730, ISEE, and main annual practices from one service center.",
+        "fa": "پرونده‌های 730، ISEE و مهم‌ترین امور سالانه را از یک مرکز خدمات پیگیری کنید.",
+    },
+    "hero_lead": {
+        "it": "ciaocaf unisce CAF, patronato, immigrazione, consulenza universitaria, gestione imprese e servizi pratici in un flusso di lavoro organizzato.",
+        "en": "ciaocaf combines CAF, patronato, immigration, university consulting, business management, and practical support in one structured workflow.",
+        "fa": "ciaocaf خدمات CAF، پاتروناتو، مهاجرت، مشاوره دانشگاهی، مدیریت کسب‌وکار و پشتیبانی کاربردی را در یک فرایند منظم ارائه می‌کند.",
+    },
+    "quick_access": {"it": "Accesso Rapido", "en": "Quick Access", "fa": "دسترسی سریع"},
+    "quick_access_title": {
+        "it": "Inizia dal servizio che ti serve.",
+        "en": "Start from the service you need.",
+        "fa": "از خدمتی که نیاز دارید شروع کنید.",
+    },
+    "qa_book_desc": {
+        "it": "Prenota il servizio e carica i tuoi documenti.",
+        "en": "Book a service and upload your files.",
+        "fa": "خدمت را رزرو کنید و مدارک خود را بارگذاری کنید.",
+    },
+    "qa_services_desc": {
+        "it": "Consulta tutte le categorie e le singole pratiche.",
+        "en": "Browse all categories and single practices.",
+        "fa": "همه دسته‌ها و خدمات را ببینید.",
+    },
+    "qa_docs_desc": {
+        "it": "Controlla la checklist prima dell'appuntamento.",
+        "en": "Check the checklist before the appointment.",
+        "fa": "پیش از وقت، فهرست مدارک را بررسی کنید.",
+    },
+    "qa_news_desc": {
+        "it": "Leggi aggiornamenti e promemoria stagionali.",
+        "en": "Read updates and seasonal reminders.",
+        "fa": "به‌روزرسانی‌ها و یادآوری‌های دوره‌ای را بخوانید.",
+    },
+    "qa_contact_desc": {
+        "it": "Apri la pagina contatti e prenotazioni.",
+        "en": "Open the contact and booking guidance page.",
+        "fa": "صفحه تماس و راهنمای رزرو را باز کنید.",
+    },
+    "one_desk": {"it": "Uno Sportello", "en": "One Desk", "fa": "یک مرکز"},
+    "one_desk_desc": {
+        "it": "CAF, patronato, immigrazione, admission, others e gestione imprese in un unico posto",
+        "en": "CAF, patronato, immigration, admission, others, and business management in one place",
+        "fa": "CAF، پاتروناتو، مهاجرت، پذیرش، سایر خدمات و مدیریت کسب‌وکار در یک مکان",
+    },
+    "document_ready": {"it": "Documenti Pronti", "en": "Document Ready", "fa": "مدارک آماده"},
+    "document_ready_desc": {
+        "it": "I documenti richiesti sono collegati direttamente a ogni pagina servizio",
+        "en": "Required documents are linked directly to each service detail page",
+        "fa": "مدارک لازم مستقیماً به هر صفحه خدمت متصل شده‌اند.",
+    },
+    "appointment_flow": {"it": "Flusso Appuntamento", "en": "Appointment Flow", "fa": "فرآیند رزرو"},
+    "appointment_flow_desc": {
+        "it": "Prenota, carica file e tieni ogni pratica organizzata attraverso il sito",
+        "en": "Book, upload files, and keep each case organized through the site",
+        "fa": "از طریق سایت وقت بگیرید، فایل بارگذاری کنید و هر پرونده را منظم نگه دارید.",
+    },
+    "our_services": {"it": "I Nostri Servizi", "en": "Our Services", "fa": "خدمات ما"},
+    "our_services_title": {
+        "it": "Aree principali organizzate come una directory professionale.",
+        "en": "Main service areas organized like a professional directory.",
+        "fa": "بخش‌های اصلی خدمات مانند یک فهرست حرفه‌ای سازمان‌دهی شده‌اند.",
+    },
+    "view_all_caf": {"it": "Vedi tutti i servizi CAF", "en": "View all CAF services", "fa": "همه خدمات CAF"},
+    "view_all_patronato": {"it": "Vedi tutti i servizi patronato", "en": "View all patronato services", "fa": "همه خدمات پاتروناتو"},
+    "view_all_immigration": {"it": "Vedi tutti i servizi immigrazione", "en": "View all immigration services", "fa": "همه خدمات مهاجرت"},
+    "view_all_business": {"it": "Vedi tutti i servizi imprese", "en": "View all business services", "fa": "همه خدمات کسب‌وکار"},
+    "news_highlights": {"it": "News in Evidenza", "en": "News Highlights", "fa": "اخبار مهم"},
+    "news_highlights_title": {
+        "it": "News e promemoria stagionali sui servizi.",
+        "en": "News and seasonal service reminders.",
+        "fa": "اخبار و یادآوری‌های فصلی خدمات.",
+    },
+    "how_it_works": {"it": "Come Funziona", "en": "How It Works", "fa": "نحوه کار"},
+    "how_it_works_title": {
+        "it": "Un flusso piu semplice per ogni pratica.",
+        "en": "A simpler workflow for each practice.",
+        "fa": "یک روند ساده‌تر برای هر خدمت.",
+    },
+    "step_choose": {"it": "Scegli il servizio", "en": "Choose the service", "fa": "خدمت را انتخاب کنید"},
+    "step_choose_desc": {
+        "it": "Apri la directory e individua la pratica esatta che ti serve.",
+        "en": "Open the directory and identify the exact practice you need.",
+        "fa": "فهرست خدمات را باز کنید و خدمت دقیق موردنیاز را پیدا کنید.",
+    },
+    "step_read": {"it": "Leggi la checklist", "en": "Read the checklist", "fa": "فهرست را بخوانید"},
+    "step_read_desc": {
+        "it": "Usa la pagina servizio per controllare i documenti richiesti prima dell'appuntamento.",
+        "en": "Use the service page to review the required documents before the appointment.",
+        "fa": "پیش از رزرو، مدارک لازم را در صفحه خدمت بررسی کنید.",
+    },
+    "step_book": {"it": "Prenota e carica file", "en": "Book and upload files", "fa": "رزرو و بارگذاری فایل"},
+    "step_book_desc": {
+        "it": "Invia la richiesta con data, ora e documenti di supporto.",
+        "en": "Send the request with your preferred date, time, and supporting documents.",
+        "fa": "درخواست را با تاریخ، زمان و مدارک پشتیبان ارسال کنید.",
+    },
+    "need_help": {"it": "Hai Bisogno di Aiuto?", "en": "Need Help Now?", "fa": "به کمک نیاز دارید؟"},
+    "need_help_title": {
+        "it": "Usa la pagina appuntamenti o apri la directory completa dei servizi.",
+        "en": "Use the appointment page or open the full services directory.",
+        "fa": "از صفحه رزرو وقت استفاده کنید یا فهرست کامل خدمات را باز کنید.",
+    },
+    "need_help_desc": {
+        "it": "Il sito accompagna il cliente dalla ricerca del servizio alla preparazione documenti e alla prenotazione.",
+        "en": "The site is built to move clients directly from service search to document preparation and booking.",
+        "fa": "این سایت کاربر را از جست‌وجوی خدمت تا آماده‌سازی مدارک و رزرو هدایت می‌کند.",
+    },
+    "contact_title": {"it": "Contatti", "en": "Contact", "fa": "تماس"},
+    "contact_heading": {
+        "it": "Contatti CAF Bixio e guida prenotazioni in un unico posto.",
+        "en": "CAF Bixio contact and booking guidance in one place.",
+        "fa": "اطلاعات تماس CAF Bixio و راهنمای رزرو در یک صفحه.",
+    },
+    "contact_lead": {
+        "it": "Usa i dati verificati di CAF Bixio qui sotto per contatti diretti, prenotazioni e pianificazione della visita a Roma.",
+        "en": "Use the verified CAF Bixio details below for direct contact, bookings, and visit planning in Rome.",
+        "fa": "برای تماس مستقیم، رزرو و برنامه‌ریزی مراجعه در رم از اطلاعات تاییدشده CAF Bixio استفاده کنید.",
+    },
+    "direct_contact": {"it": "Contatto Diretto", "en": "Direct Contact", "fa": "تماس مستقیم"},
+    "office_details": {"it": "Dettagli ufficio CAF Bixio", "en": "CAF Bixio office details", "fa": "اطلاعات دفتر CAF Bixio"},
+    "booking_guidance": {"it": "Guida Prenotazione", "en": "Booking Guidance", "fa": "راهنمای رزرو"},
+    "prepare_visit": {"it": "Prepara la visita prima di arrivare.", "en": "Prepare the visit before you come.", "fa": "پیش از مراجعه، مدارک را آماده کنید."},
+    "appointments_page": {"it": "Appuntamenti", "en": "Appointments", "fa": "وقت‌ها"},
+    "appointments_heading": {"it": "Prenota appuntamenti e carica i file cliente.", "en": "Book appointments and upload client files.", "fa": "وقت رزرو کنید و فایل‌های مشتری را بارگذاری کنید."},
+    "appointments_lead": {"it": "Questo modulo salva ogni richiesta nel database locale e archivia i file caricati per la revisione amministrativa.", "en": "This form stores each appointment request in the local database and saves uploaded files for admin review.", "fa": "این فرم هر درخواست را در پایگاه‌داده محلی ذخیره می‌کند و فایل‌های بارگذاری‌شده را برای بررسی مدیریت نگه می‌دارد."},
+    "required_documents_title": {"it": "Documenti Richiesti", "en": "Required Documents", "fa": "مدارک لازم"},
+    "required_documents_heading": {"it": "Un unico hub per le checklist collegate a ogni pagina servizio.", "en": "One hub for the checklists linked to every service page.", "fa": "یک مرکز واحد برای فهرست مدارک هر صفحه خدمت."},
+    "required_documents_lead": {"it": "Apri la categoria che ti serve e scegli la pratica esatta per vedere i documenti richiesti, le note sul processo e il percorso di prenotazione.", "en": "Open the category you need, then choose the exact practice to see the required documents, process notes, and booking path.", "fa": "دسته موردنیاز را باز کنید و خدمت دقیق را انتخاب کنید تا مدارک لازم، روند و مسیر رزرو را ببینید."},
+    "news_page_heading": {"it": "Aggiornamenti di servizio e promemoria pratici.", "en": "Service updates and practical reminders.", "fa": "به‌روزرسانی خدمات و یادآوری‌های کاربردی."},
+    "news_page_lead": {"it": "Usa questa pagina per promemoria campagna, scadenze fiscali, aggiornamenti welfare e avvisi sulla preparazione documenti.", "en": "Use this page for campaign reminders, tax-season timing, welfare updates, and document-preparation notices.", "fa": "از این صفحه برای یادآوری کمپین‌ها، زمان‌بندی مالیاتی، به‌روزرسانی‌های رفاهی و اطلاعیه‌های مدارک استفاده کنید."},
+    "client_area_heading": {"it": "Uno spazio dedicato ai servizi digitali per i clienti.", "en": "A dedicated space for digital client services.", "fa": "بخشی اختصاصی برای خدمات دیجیتال مشتریان."},
+    "client_area_lead": {"it": "Questa pagina puo evolvere in area online per caricamento documenti, firme digitali, follow-up appuntamenti e aggiornamenti.", "en": "This page can evolve into your online area for document uploads, digital signatures, appointment follow-up, and service updates.", "fa": "این صفحه می‌تواند به ناحیه آنلاین برای بارگذاری مدارک، امضاهای دیجیتال، پیگیری وقت‌ها و به‌روزرسانی‌ها تبدیل شود."},
+    "services_page_heading": {"it": "Panoramica completa dei servizi per chi ha bisogno di supporto pratico in Italia.", "en": "Full service overview for clients who need practical help in Italy.", "fa": "نمای کلی خدمات برای افرادی که در ایتالیا به کمک عملی نیاز دارند."},
+}
+
+
+def get_lang() -> str:
+    lang = session.get("lang", "en")
+    return lang if lang in SUPPORTED_LANGS else "en"
+
+
+def t(key: str) -> str:
+    lang = get_lang()
+    values = TRANSLATIONS.get(key, {})
+    return values.get(lang) or values.get("en") or key
+
 
 CAF_SERVICES = {
     "isee": {
@@ -1293,7 +1472,14 @@ def require_admin():
 
 @app.context_processor
 def inject_globals():
-    return {"business_name": "ciaocaf"}
+    lang = get_lang()
+    return {
+        "business_name": "ciaocaf",
+        "current_lang": lang,
+        "available_languages": SUPPORTED_LANGS,
+        "text_direction": "rtl" if lang == "fa" else "ltr",
+        "t": t,
+    }
 
 
 ensure_directories()
@@ -1303,6 +1489,13 @@ init_db()
 @app.route("/")
 def home():
     return render_template("home.html", news_items=NEWS_ITEMS)
+
+
+@app.route("/set-language/<lang>")
+def set_language(lang: str):
+    if lang in SUPPORTED_LANGS:
+        session["lang"] = lang
+    return redirect(request.referrer or url_for("home"))
 
 
 @app.route("/services")

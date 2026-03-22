@@ -1,15 +1,15 @@
 {% extends "base.html" %}
 
 {% block title %}ciaocaf | CAF Services, Appointments, Documents and Practical Support{% endblock %}
-{% block meta_description %}ciaocaf offers CAF services, patronato support, immigration and consular document support, required-document guidance, gestione imprese, and appointment booking in Italy.{% endblock %}
+{% block meta_description %}{{ t('site_meta_description') }}{% endblock %}
 
 {% block content %}
 <main>
   <section class="updates-strip-section">
     <div class="container">
       <div class="updates-strip-head">
-        <p class="eyebrow">Latest Updates</p>
-        <a href="{{ url_for('news') }}">View all news</a>
+        <p class="eyebrow">{{ t('updates_title') }}</p>
+        <a href="{{ url_for('news') }}">{{ t('view_all_news') }}</a>
       </div>
       <div class="updates-ticker" aria-label="Latest updates">
         <div class="updates-track">
@@ -31,14 +31,12 @@
     <div class="container hero-grid campaign-grid">
       <article class="campaign-card">
         <div class="campaign-copy">
-          <p class="eyebrow">Featured Service</p>
-          <h1>Prepare your 730, ISEE, and main annual practices from one service center.</h1>
-          <p class="lead">
-            ciaocaf combines CAF, patronato, immigration, university consulting, gestione imprese, and practical support in one structured workflow.
-          </p>
+          <p class="eyebrow">{{ t('featured_service') }}</p>
+          <h1>{{ t('hero_title') }}</h1>
+          <p class="lead">{{ t('hero_lead') }}</p>
           <div class="hero-cta">
-            <a class="btn" href="{{ url_for('appointments') }}">Prenota un appuntamento</a>
-            <a class="btn btn-outline" href="{{ url_for('required_documents') }}">Documenti richiesti</a>
+            <a class="btn" href="{{ url_for('appointments') }}">{{ t('nav_book') }}</a>
+            <a class="btn btn-outline" href="{{ url_for('required_documents') }}">{{ t('nav_documents') }}</a>
           </div>
         </div>
         <div class="campaign-art">
@@ -47,28 +45,28 @@
       </article>
 
       <aside class="utility-panel">
-        <p class="panel-kicker">Quick Access</p>
-        <h2>Start from the service you need.</h2>
+        <p class="panel-kicker">{{ t('quick_access') }}</p>
+        <h2>{{ t('quick_access_title') }}</h2>
         <div class="utility-links">
           <a class="utility-link" href="{{ url_for('appointments') }}">
-            <strong>Prenota un appuntamento</strong>
-            <span>Book a service and upload your files.</span>
+            <strong>{{ t('nav_book') }}</strong>
+            <span>{{ t('qa_book_desc') }}</span>
           </a>
           <a class="utility-link" href="{{ url_for('services') }}">
-            <strong>Servizi</strong>
-            <span>Browse all categories and single practices.</span>
+            <strong>{{ t('nav_services') }}</strong>
+            <span>{{ t('qa_services_desc') }}</span>
           </a>
           <a class="utility-link" href="{{ url_for('required_documents') }}">
-            <strong>Documenti richiesti</strong>
-            <span>Check the checklist before the appointment.</span>
+            <strong>{{ t('nav_documents') }}</strong>
+            <span>{{ t('qa_docs_desc') }}</span>
           </a>
           <a class="utility-link" href="{{ url_for('news') }}">
-            <strong>News</strong>
-            <span>Read updates and seasonal reminders.</span>
+            <strong>{{ t('nav_news') }}</strong>
+            <span>{{ t('qa_news_desc') }}</span>
           </a>
           <a class="utility-link" href="{{ url_for('contact') }}">
-            <strong>Contatti</strong>
-            <span>Open the contact and booking guidance page.</span>
+            <strong>{{ t('nav_contact') }}</strong>
+            <span>{{ t('qa_contact_desc') }}</span>
           </a>
         </div>
       </aside>
@@ -78,16 +76,16 @@
   <section class="section section-band">
     <div class="container band-grid">
       <div>
-        <p class="stat">One Desk</p>
-        <p class="stat-label">CAF, patronato, immigration, admission, others, and gestione imprese in one place</p>
+        <p class="stat">{{ t('one_desk') }}</p>
+        <p class="stat-label">{{ t('one_desk_desc') }}</p>
       </div>
       <div>
-        <p class="stat">Document Ready</p>
-        <p class="stat-label">Required documents are linked directly to each service detail page</p>
+        <p class="stat">{{ t('document_ready') }}</p>
+        <p class="stat-label">{{ t('document_ready_desc') }}</p>
       </div>
       <div>
-        <p class="stat">Appointment Flow</p>
-        <p class="stat-label">Book, upload files, and keep each case organized through the site</p>
+        <p class="stat">{{ t('appointment_flow') }}</p>
+        <p class="stat-label">{{ t('appointment_flow_desc') }}</p>
       </div>
     </div>
   </section>
@@ -95,8 +93,8 @@
   <section class="section">
     <div class="container">
       <div class="section-heading">
-        <p class="eyebrow">Our Services</p>
-        <h2>Main service areas organized like a professional directory.</h2>
+        <p class="eyebrow">{{ t('our_services') }}</p>
+        <h2>{{ t('our_services_title') }}</h2>
       </div>
       <div class="home-service-clusters">
         <article class="cluster-card">
@@ -109,7 +107,7 @@
               <li><a href="{{ url_for('caf_service_detail', slug='isee') }}">ISEE</a></li>
               <li><a href="{{ url_for('caf_service_detail', slug='imu') }}">IMU</a></li>
               <li><a href="{{ url_for('caf_service_detail', slug='f24') }}">F24</a></li>
-              <li><a href="{{ url_for('caf_services') }}">View all CAF services</a></li>
+              <li><a href="{{ url_for('caf_services') }}">{{ t('view_all_caf') }}</a></li>
             </ul>
           </div>
         </article>
@@ -123,7 +121,7 @@
               <li><a href="{{ url_for('patronato_service_detail', slug='naspi-dis-coll') }}">NASPI / DIS-COLL</a></li>
               <li><a href="{{ url_for('patronato_service_detail', slug='adi') }}">ADI</a></li>
               <li><a href="{{ url_for('patronato_service_detail', slug='pensione') }}">Pensione</a></li>
-              <li><a href="{{ url_for('patronato_services') }}">View all patronato services</a></li>
+              <li><a href="{{ url_for('patronato_services') }}">{{ t('view_all_patronato') }}</a></li>
             </ul>
           </div>
         </article>
@@ -137,7 +135,7 @@
               <li><a href="{{ url_for('immigration_service_detail', slug='cittadinanza') }}">Cittadinanza</a></li>
               <li><a href="{{ url_for('embassy_service_detail', slug='passport-application') }}">Passport Support</a></li>
               <li><a href="{{ url_for('embassy_service_detail', slug='oci-card') }}">OCI Card Support</a></li>
-              <li><a href="{{ url_for('immigration_services') }}">View all immigration services</a></li>
+              <li><a href="{{ url_for('immigration_services') }}">{{ t('view_all_immigration') }}</a></li>
             </ul>
           </div>
         </article>
@@ -151,7 +149,7 @@
               <li><a href="{{ url_for('business_service_detail', slug='fattura-elettronica') }}">Fattura Elettronica</a></li>
               <li><a href="{{ url_for('business_service_detail', slug='camera-di-commercio') }}">Camera di Commercio</a></li>
               <li><a href="{{ url_for('business_service_detail', slug='scia') }}">SCIA</a></li>
-              <li><a href="{{ url_for('business_services') }}">View all business services</a></li>
+              <li><a href="{{ url_for('business_services') }}">{{ t('view_all_business') }}</a></li>
             </ul>
           </div>
         </article>
@@ -163,8 +161,8 @@
     <div class="container split">
       <div>
         <div class="section-heading">
-          <p class="eyebrow">News Highlights</p>
-          <h2>News and seasonal service reminders.</h2>
+          <p class="eyebrow">{{ t('news_highlights') }}</p>
+          <h2>{{ t('news_highlights_title') }}</h2>
         </div>
         <div class="news-stack">
           {% for item in news_items %}
@@ -178,28 +176,28 @@
         </div>
       </div>
       <div class="panel process-panel">
-        <p class="panel-kicker">How It Works</p>
-        <h3>A simpler workflow for each practice.</h3>
+        <p class="panel-kicker">{{ t('how_it_works') }}</p>
+        <h3>{{ t('how_it_works_title') }}</h3>
         <div class="steps">
           <div class="step">
             <span>01</span>
             <div>
-              <h3>Choose the service</h3>
-              <p>Open the directory and identify the exact practice you need.</p>
+              <h3>{{ t('step_choose') }}</h3>
+              <p>{{ t('step_choose_desc') }}</p>
             </div>
           </div>
           <div class="step">
             <span>02</span>
             <div>
-              <h3>Read the checklist</h3>
-              <p>Use the service page to review the required documents before the appointment.</p>
+              <h3>{{ t('step_read') }}</h3>
+              <p>{{ t('step_read_desc') }}</p>
             </div>
           </div>
           <div class="step">
             <span>03</span>
             <div>
-              <h3>Book and upload files</h3>
-              <p>Send the request with your preferred date, time, and supporting documents.</p>
+              <h3>{{ t('step_book') }}</h3>
+              <p>{{ t('step_book_desc') }}</p>
             </div>
           </div>
         </div>
@@ -210,14 +208,14 @@
   <section class="section">
     <div class="container final-cta">
       <div>
-        <p class="eyebrow">Need Help Now?</p>
-        <h2>Use the appointment page or open the full services directory.</h2>
-        <p class="lead">The site is built to move clients directly from service search to document preparation and booking.</p>
+        <p class="eyebrow">{{ t('need_help') }}</p>
+        <h2>{{ t('need_help_title') }}</h2>
+        <p class="lead">{{ t('need_help_desc') }}</p>
         <p class="contact-inline">CAF Bixio, Via Bixio 5, 00185 Roma | 06 31072585 | cafbixio5@gmail.com</p>
       </div>
       <div class="hero-cta">
-        <a class="btn" href="{{ url_for('appointments') }}">Book Appointment</a>
-        <a class="btn btn-outline" href="{{ url_for('services') }}">Browse All Services</a>
+        <a class="btn" href="{{ url_for('appointments') }}">{{ t('nav_book') }}</a>
+        <a class="btn btn-outline" href="{{ url_for('services') }}">{{ t('footer_all_services') }}</a>
       </div>
     </div>
   </section>

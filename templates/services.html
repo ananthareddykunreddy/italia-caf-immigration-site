@@ -1,15 +1,15 @@
 {% extends "base.html" %}
 
 {% block title %}Services | ciaocaf{% endblock %}
-{% block meta_description %}Browse CAF, patronato, immigration support including consular paperwork, university consulting, gestione imprese, and other services offered by ciaocaf in Italy.{% endblock %}
+{% block meta_description %}{{ t('site_meta_description') }}{% endblock %}
 
 {% block content %}
 <main class="page-shell">
   <section class="page-hero">
     <div class="container hero-grid services-hero-grid">
       <div>
-        <p class="eyebrow">All Services</p>
-        <h1>Full service overview for clients who need practical help in Italy.</h1>
+        <p class="eyebrow">{{ t('footer_all_services') }}</p>
+        <h1>{{ t('services_page_heading') }}</h1>
         <p class="lead">
           This services page is organized like a professional help center: clear categories, broad coverage, direct appointment paths, and faster visual scanning through category illustrations.
         </p>

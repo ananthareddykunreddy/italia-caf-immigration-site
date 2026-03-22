@@ -1,16 +1,14 @@
 {% extends "base.html" %}
 
-{% block title %}Appointments | ciaocaf{% endblock %}
+{% block title %}{{ t('appointments_page') }} | ciaocaf{% endblock %}
 
 {% block content %}
 <main class="page-shell">
   <section class="page-hero">
     <div class="container narrow">
-      <p class="eyebrow">Appointments</p>
-      <h1>Book appointments and upload client files.</h1>
-      <p class="lead">
-        This form stores each appointment request in the local SQLite database and saves uploaded files on the server for admin review.
-      </p>
+      <p class="eyebrow">{{ t('appointments_page') }}</p>
+      <h1>{{ t('appointments_heading') }}</h1>
+      <p class="lead">{{ t('appointments_lead') }}</p>
     </div>
   </section>
 

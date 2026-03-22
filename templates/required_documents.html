@@ -1,17 +1,15 @@
 {% extends "base.html" %}
 
 {% block title %}Required Documents | ciaocaf{% endblock %}
-{% block meta_description %}Required document checklists for CAF, patronato, immigration, consular, admission, gestione imprese, and other services at ciaocaf.{% endblock %}
+{% block meta_description %}{{ t('site_meta_description') }}{% endblock %}
 
 {% block content %}
 <main class="page-shell">
   <section class="page-hero">
     <div class="container narrow">
-      <p class="eyebrow">Required Documents</p>
-      <h1>One hub for the checklists linked to every service page.</h1>
-      <p class="lead">
-        Open the category you need, then choose the exact practice to see the required documents, process notes, and booking path.
-      </p>
+      <p class="eyebrow">{{ t('required_documents_title') }}</p>
+      <h1>{{ t('required_documents_heading') }}</h1>
+      <p class="lead">{{ t('required_documents_lead') }}</p>
     </div>
   </section>
 
