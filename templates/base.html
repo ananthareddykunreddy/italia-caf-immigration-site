@@ -12,20 +12,6 @@
 </head>
 <body>
   <header class="site-header">
-    <div class="topbar">
-      <div class="container topbar-wrap">
-        <div class="topbar-contact">
-          <a href="tel:+390631072585">06 31072585</a>
-          <a href="mailto:cafbixio5@gmail.com">cafbixio5@gmail.com</a>
-          <span>Via Bixio 5, 00185 Roma</span>
-        </div>
-        <div class="topbar-quicklinks">
-          <a href="{{ url_for('client_area') }}">{{ t('nav_client_area') }}</a>
-          <a href="{{ url_for('required_documents') }}">{{ t('nav_documents') }}</a>
-          <a href="{{ url_for('contact') }}">{{ t('nav_contact') }}</a>
-        </div>
-      </div>
-    </div>
     <div class="container nav-wrap">
       <div class="brand-block">
         <a href="{{ url_for('home') }}" class="brand">
@@ -64,19 +50,6 @@
           </div>
           <a class="btn btn-small btn-outline" href="{{ url_for('client_area') }}">{{ t('nav_client_area') }}</a>
           <a class="btn btn-small" href="{{ url_for('appointments') }}">{{ t('nav_book') }}</a>
-        </div>
-      </div>
-    </div>
-    <div class="subnav">
-      <div class="container subnav-wrap">
-        <span class="subnav-label">Servizi principali</span>
-        <div class="subnav-links">
-          <a href="{{ url_for('caf_services') }}">CAF</a>
-          <a href="{{ url_for('patronato_services') }}">Patronato</a>
-          <a href="{{ url_for('immigration_services') }}">Immigrazione</a>
-          <a href="{{ url_for('admission_services') }}">Ammissioni</a>
-          <a href="{{ url_for('support_services') }}">Others</a>
-          <a href="{{ url_for('business_services') }}">Gestione Imprese</a>
         </div>
       </div>
     </div>
