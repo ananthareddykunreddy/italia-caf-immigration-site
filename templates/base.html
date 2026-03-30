@@ -40,7 +40,17 @@
         <nav aria-label="Main navigation">
           <ul class="nav-links">
             <li><a href="{{ url_for('home') }}">{{ t('nav_home') }}</a></li>
-            <li><a href="{{ url_for('services') }}">{{ t('nav_services') }}</a></li>
+            <li class="nav-dropdown">
+              <a href="{{ url_for('services') }}">{{ t('nav_services') }}</a>
+              <ul class="dropdown-menu" aria-label="Services submenu">
+                <li><a href="{{ url_for('caf_services') }}">CAF</a></li>
+                <li><a href="{{ url_for('patronato_services') }}">Patronato</a></li>
+                <li><a href="{{ url_for('immigration_services') }}">Immigrazione</a></li>
+                <li><a href="{{ url_for('admission_services') }}">Ammissioni</a></li>
+                <li><a href="{{ url_for('support_services') }}">Others</a></li>
+                <li><a href="{{ url_for('business_services') }}">Gestione Imprese</a></li>
+              </ul>
+            </li>
             <li><a href="{{ url_for('news') }}">{{ t('nav_news') }}</a></li>
             <li><a href="{{ url_for('contact') }}">{{ t('nav_contact') }}</a></li>
             <li><a href="{{ url_for('admin_login') }}">{{ t('nav_admin') }}</a></li>
