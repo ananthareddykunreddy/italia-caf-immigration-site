@@ -44,7 +44,7 @@
         <div class="header-actions">
           <div class="language-switcher">
             {% for code, label in available_languages.items() %}
-              <a class="{% if current_lang == code %}active{% endif %}" href="{{ url_for('set_language', lang=code) }}">{{ label }}</a>
+              <a class="{% if current_lang == code %}active{% endif %}" href="{{ url_for('set_language', lang=code) }}" title="{{ label }}">{{ code|upper }}</a>
             {% endfor %}
           </div>
           <a class="btn btn-small btn-outline" href="{{ url_for('client_area') }}">{{ t('nav_client_area') }}</a>
