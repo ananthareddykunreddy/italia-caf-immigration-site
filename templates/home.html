@@ -5,28 +5,6 @@
 
 {% block content %}
 <main>
-  <section class="updates-strip-section">
-    <div class="container">
-      <div class="updates-strip-head">
-        <p class="eyebrow">{{ t('updates_title') }}</p>
-        <a href="{{ url_for('news') }}">{{ t('view_all_news') }}</a>
-      </div>
-      <div class="updates-ticker" aria-label="Latest updates">
-        <div class="updates-track">
-          {% for _ in range(2) %}
-            {% for item in news_items %}
-              <a class="update-pill" href="{{ url_for('news') }}">
-                <span class="update-date">{{ item.date }}</span>
-                <strong>{{ item.title }}</strong>
-                <span>{{ item.cta }}</span>
-              </a>
-            {% endfor %}
-          {% endfor %}
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section class="hero service-hero">
     <div class="container hero-grid campaign-grid">
       <article class="campaign-card">
