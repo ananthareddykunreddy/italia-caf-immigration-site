@@ -1433,6 +1433,19 @@ def init_db() -> None:
         )
         """
     )
+    db.execute(
+        """
+        CREATE TABLE IF NOT EXISTS contact_messages (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            full_name TEXT NOT NULL,
+            email TEXT NOT NULL,
+            phone TEXT NOT NULL,
+            message TEXT NOT NULL,
+            uploaded_files TEXT,
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        )
+        """
+    )
     db.commit()
     db.close()
 
@@ -1480,7 +1493,7 @@ def require_admin():
 def inject_globals():
     lang = get_lang()
     return {
-        "business_name": "ciaocaf",
+        "business_name": "smdoniya consulting",
         "current_lang": lang,
         "available_languages": SUPPORTED_LANGS,
         "text_direction": "rtl" if lang == "fa" else "ltr",
@@ -1519,9 +1532,49 @@ def news():
     return render_template("news.html", news_items=NEWS_ITEMS)
 
 
-@app.route("/contact")
+@app.route("/contact", methods=["GET", "POST"])
 def contact():
-    return render_template("contact.html")
+    if request.method == "POST":
+        full_name = request.form.get("full_name", "").strip()
+        email = request.form.get("email", "").strip()
+        phone = request.form.get("phone", "").strip()
+        message = request.form.get("message", "").strip()
+        captcha_answer = request.form.get("captcha", "").strip()
+        expected = session.get("contact_captcha")
+
+        if not full_name or not email or not phone or not message:
+            flash("Please fill in all required fields.", "error")
+            return redirect(url_for("contact"))
+
+        if expected is None or not captcha_answer.isdigit() or int(captcha_answer) != expected:
+            flash("Captcha verification failed. Please try again.", "error")
+            return redirect(url_for("contact"))
+
+        uploaded_files = store_uploaded_files(request.files.getlist("documents"))
+        db = get_db()
+        db.execute(
+            """
+            INSERT INTO contact_messages (
+                full_name, email, phone, message, uploaded_files
+            ) VALUES (?, ?, ?, ?, ?)
+            """,
+            (
+                full_name,
+                email,
+                phone,
+                message,
+                json.dumps(uploaded_files),
+            ),
+        )
+        db.commit()
+        session.pop("contact_captcha", None)
+        flash("Thank you! Your message has been saved.", "success")
+        return redirect(url_for("contact"))
+
+    captcha_a = uuid.uuid4().int % 8 + 1
+    captcha_b = uuid.uuid4().int % 8 + 1
+    session["contact_captcha"] = captcha_a + captcha_b
+    return render_template("contact.html", captcha_question=f"{captcha_a} + {captcha_b}")
 
 
 @app.route("/client-area")
