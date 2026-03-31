@@ -27,6 +27,31 @@ PAGES = {
     "/client-area": "client-area.html",
 }
 
+LINK_MAP = {
+    "/services": "services.html",
+    "/news": "news.html",
+    "/contact": "contact.html",
+    "/appointments": "appointments.html",
+    "/required-documents": "required-documents.html",
+    "/caf-services": "caf-services.html",
+    "/patronato-services": "patronato-services.html",
+    "/immigration-services": "immigration-services.html",
+    "/admission-services": "admission-services.html",
+    "/support-services": "support-services.html",
+    "/business-services": "business-services.html",
+    "/client-area": "client-area.html",
+}
+
+DETAIL_REWRITES = [
+    (re.compile(r'href="/caf-services/[^"]+"'), 'href="caf-services.html"'),
+    (re.compile(r'href="/patronato-services/[^"]+"'), 'href="patronato-services.html"'),
+    (re.compile(r'href="/immigration-services/[^"]+"'), 'href="immigration-services.html"'),
+    (re.compile(r'href="/embassy-services/[^"]+"'), 'href="immigration-services.html"'),
+    (re.compile(r'href="/admission-services/[^"]+"'), 'href="admission-services.html"'),
+    (re.compile(r'href="/support-services/[^"]+"'), 'href="support-services.html"'),
+    (re.compile(r'href="/business-services/[^"]+"'), 'href="business-services.html"'),
+]
+
 LANG_SWITCHER_RE = re.compile(r'<div class="language-switcher">.*?</div>', re.DOTALL)
 FORM_RE = re.compile(r"<form[^>]*>.*?</form>", re.DOTALL)
 
@@ -81,6 +106,10 @@ def copy_static_assets() -> None:
 
 def transform_html(html: str, route: str) -> str:
     html = LANG_SWITCHER_RE.sub("", html)
+    for path, filename in LINK_MAP.items():
+        html = html.replace(f'href="{path}"', f'href="{filename}"')
+    for pattern, replacement in DETAIL_REWRITES:
+        html = pattern.sub(replacement, html)
     if route == "/appointments":
         html = FORM_RE.sub(STATIC_APPOINTMENT_FORM.strip(), html, count=1)
     return html
