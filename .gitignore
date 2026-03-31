@@ -1,8 +1,0 @@
-.DS_Store
-Thumbs.db
-__pycache__/
-server.out
-server.err
-data/site.db
-uploads/*
-!uploads/.gitkeep
