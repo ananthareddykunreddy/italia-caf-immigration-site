@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}{{ t('legal_title') }} | SM SOLUTIONS{% endblock %}
+{% block meta_description %}{{ t('legal_intro') }}{% endblock %}
+
+{% block content %}
+<main class="page-shell">
+  <section class="section">
+    <div class="container narrow">
+      <h1>{{ t('legal_title') }}</h1>
+      <p>{{ t('legal_intro') }}</p>
+
+      <div class="panel">
+        <h3>{{ t('legal_company_title') }}</h3>
+        <p>{{ t('legal_company_body') }}</p>
+        <p><strong>{{ t('privacy_vat_label') }}:</strong> {{ t('privacy_vat_pending') }}</p>
+      </div>
+
+      <div class="panel">
+        <h3>{{ t('legal_services_title') }}</h3>
+        <p>{{ t('legal_services_body') }}</p>
+      </div>
+
+      <div class="panel">
+        <h3>{{ t('legal_liability_title') }}</h3>
+        <p>{{ t('legal_liability_body') }}</p>
+      </div>
+
+      <div class="panel">
+        <h3>{{ t('legal_contact_title') }}</h3>
+        <p>{{ t('legal_contact_body') }}</p>
+      </div>
+    </div>
+  </section>
+</main>
+{% endblock %}

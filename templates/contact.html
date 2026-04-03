@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}Contact | ciaocaf{% endblock %}
+{% block title %}Contact | SM SOLUTIONS{% endblock %}
 {% block meta_description %}{{ t('site_meta_description') }}{% endblock %}
 
 {% block content %}
@@ -11,26 +11,26 @@
         <p class="panel-kicker">{{ t('direct_contact') }}</p>
         <h3>{{ t('office_details') }}</h3>
         <div class="contact-detail-list">
-          <a href="tel:+390631072585">Phone: 06 31072585</a>
-          <a href="mailto:cafbixio5@gmail.com">Email: cafbixio5@gmail.com</a>
-          <span>Address: Via Bixio 5, 00185 Roma</span>
-          <span>Office Hours: 09:00-13:00 and 15:00-19:00</span>
+          <a href="tel:+390631072585">{{ t('label_phone') }}: 06 31072585</a>
+          <a href="mailto:cafbixio5@gmail.com">{{ t('label_email') }}: cafbixio5@gmail.com</a>
+          <span>{{ t('label_address') }}: Via Bixio 5, 00185 Roma</span>
+          <span>{{ t('label_office_hours') }}: 09:00-13:00 | 15:00-19:00</span>
         </div>
         <a class="btn" href="{{ url_for('appointments') }}">{{ t('nav_book') }}</a>
       </article>
       <article class="panel contact-map-panel">
-        <p class="panel-kicker">Google Maps</p>
-        <h3>Find the office in Rome</h3>
+        <p class="panel-kicker">{{ t('label_google_maps') }}</p>
+        <h3>{{ t('contact_find_office') }}</h3>
         <div class="map-embed">
           <iframe
-            title="CAF Bixio Google Maps"
+            title="{{ t('label_google_maps') }}"
             src="https://www.google.com/maps?q=Via%20Bixio%205%2C%2000185%20Roma&z=16&output=embed"
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
         <div class="contact-map-links">
-          <a href="https://www.google.com/maps/search/?api=1&query=Via+Bixio+5%2C+00185+Roma" target="_blank" rel="noreferrer">Open in Google Maps</a>
-          <a href="{{ url_for('services') }}">Browse all services</a>
+          <a href="https://www.google.com/maps/search/?api=1&query=Via+Bixio+5%2C+00185+Roma" target="_blank" rel="noreferrer">{{ t('label_open_maps') }}</a>
+          <a href="{{ url_for('services') }}">{{ t('label_browse_services') }}</a>
         </div>
       </article>
     </div>
@@ -39,31 +39,36 @@
   <section class="section">
     <div class="container">
       <div class="panel contact-form-panel">
-        <p class="panel-kicker">Contact Form</p>
-        <h3>Send your request and upload documents.</h3>
-        <form class="contact-form" action="{{ url_for('contact') }}" method="post" enctype="multipart/form-data">
-          <label for="full_name">Full name</label>
+        <p class="panel-kicker">{{ t('label_contact_form') }}</p>
+        <h3>{{ t('contact_send_request') }}</h3>
+        <form class="contact-form" action="{{ url_for('contact') }}" method="post" enctype="multipart/form-data" data-recaptcha-action="contact" data-ajax="true">
+          <label for="full_name">{{ t('label_full_name') }}</label>
           <input id="full_name" name="full_name" type="text" required>
 
-          <label for="email">Email</label>
+          <label for="email">{{ t('label_email') }}</label>
           <input id="email" name="email" type="email" required>
 
-          <label for="phone">Phone</label>
+          <label for="phone">{{ t('label_phone') }}</label>
           <input id="phone" name="phone" type="tel" required>
 
-          <label for="message">Message</label>
+          <label for="message">{{ t('label_message') }}</label>
           <textarea id="message" name="message" rows="5" required></textarea>
 
-          <label for="documents">Upload documents (optional)</label>
-          <input id="documents" name="documents" type="file" multiple>
+          <label>{{ t('label_upload_optional') }}</label>
+          <div class="file-input-stack" data-file-stack>
+            <input name="documents[]" type="file">
+          </div>
+          <button class="btn btn-outline btn-small add-file-btn" type="button" data-add-file>{{ t('label_add_document') }}</button>
 
-          <label for="captcha">Captcha: {{ captcha_question }}</label>
-          <input id="captcha" name="captcha" type="text" inputmode="numeric" required>
+          <input type="hidden" name="g-recaptcha-response">
+          <input type="hidden" name="recaptcha_action" value="contact">
 
-          <button class="btn" type="submit">Send message</button>
+          <div class="form-status" data-form-status role="status" aria-live="polite"></div>
+          <button class="btn" type="submit">{{ t('button_send_message') }}</button>
         </form>
       </div>
     </div>
   </section>
 </main>
 {% endblock %}
+

@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}{{ t('gdpr_title') }} | SM SOLUTIONS{% endblock %}
+{% block meta_description %}{{ t('gdpr_intro') }}{% endblock %}
+
+{% block content %}
+<main class="page-shell">
+  <section class="section">
+    <div class="container narrow">
+      <h1>{{ t('gdpr_title') }}</h1>
+      <p>{{ t('gdpr_intro') }}</p>
+
+      <div class="panel">
+        <h3>{{ t('gdpr_rights_title') }}</h3>
+        <p>{{ t('gdpr_rights_body') }}</p>
+      </div>
+
+      <div class="panel">
+        <h3>{{ t('gdpr_contact_title') }}</h3>
+        <p>{{ t('gdpr_contact_body') }}</p>
+      </div>
+
+      <div class="panel">
+        <h3>{{ t('gdpr_storage_title') }}</h3>
+        <p>{{ t('gdpr_storage_body') }}</p>
+      </div>
+
+      <div class="panel">
+        <h3>{{ t('gdpr_third_title') }}</h3>
+        <p>{{ t('gdpr_third_body') }}</p>
+      </div>
+    </div>
+  </section>
+</main>
+{% endblock %}

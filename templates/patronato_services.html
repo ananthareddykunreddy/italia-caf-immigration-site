@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}Patronato Services | ciaocaf{% endblock %}
+{% block title %}Patronato Services | SM SOLUTIONS{% endblock %}
 {% block meta_description %}Patronato services including disoccupazione, assegno unico, dimissioni, maternita, invalidita civile, 104, and pensione support.{% endblock %}
 
 {% block content %}
@@ -10,11 +10,11 @@
       <div class="service-board">
         <article class="service-list-panel">
           <span class="card-tag">Patronato</span>
-          <h3>Main Patronato Services</h3>
+          <h3>{{ t('patronato_main_services') }}</h3>
           <ul class="service-bullets">
-            <li><a href="{{ url_for('patronato_service_detail', slug='disoccupazione') }}">Disoccupazione</a></li>
+            <li><a href="{{ url_for('patronato_service_detail', slug='disoccupazione') }}">DISCO-NASPI</a></li>
             <li><a href="{{ url_for('patronato_service_detail', slug='naspi-dis-coll') }}">NASPI / DIS-COLL</a></li>
-            <li><a href="{{ url_for('patronato_service_detail', slug='assegno-unico-patronato') }}">Assegno Unico</a></li>
+            <li><a href="{{ url_for('patronato_service_detail', slug='assegno-unico-patronato') }}">Assegno Unico Universale</a></li>
             <li><a href="{{ url_for('patronato_service_detail', slug='adi') }}">ADI</a></li>
             <li><a href="{{ url_for('patronato_service_detail', slug='dimissioni') }}">Dimissioni</a></li>
             <li><a href="{{ url_for('patronato_service_detail', slug='maternita') }}">Maternita</a></li>
@@ -22,7 +22,7 @@
         </article>
         <article class="service-list-panel">
           <span class="card-tag">Patronato</span>
-          <h3>Additional Patronato Support</h3>
+          <h3>{{ t('patronato_additional_support') }}</h3>
           <ul class="service-bullets">
             <li><a href="{{ url_for('patronato_service_detail', slug='invalidita-civile') }}">Invalidita Civile</a></li>
             <li><a href="{{ url_for('patronato_service_detail', slug='legge-104') }}">104</a></li>
@@ -34,3 +34,4 @@
   </section>
 </main>
 {% endblock %}
+

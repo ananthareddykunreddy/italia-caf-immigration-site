@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{% block title %}{{ business_name }}{% endblock %}</title>
   <meta name="description" content="{% block meta_description %}{{ t('site_meta_description') }}{% endblock %}">
+  <link rel="icon" href="{{ url_for('static', filename='logo.png') }}">
+  <script src="https://www.google.com/recaptcha/api.js?render={{ recaptcha_site_key }}"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
@@ -15,10 +17,11 @@
     <div class="container nav-wrap">
       <div class="brand-block">
         <a href="{{ url_for('home') }}" class="brand">
-          <span class="brand-mark">CC</span>
+          <span class="brand-mark">
+            <img src="{{ url_for('static', filename='logo.png') }}" alt="SM SOLUTIONS logo">
+          </span>
           <span>
-            <span class="brand-text">smdoniya consulting</span>
-            <span class="brand-subtext">CAF Bixio Roma</span>
+            <span class="brand-text">SM SOLUTIONS</span>
           </span>
         </a>
       </div>
@@ -27,14 +30,15 @@
           <ul class="nav-links">
             <li><a href="{{ url_for('home') }}">{{ t('nav_home') }}</a></li>
             <li class="nav-dropdown">
-              <a href="{{ url_for('services') }}">{{ t('nav_services') }}</a>
+              <button class="nav-link-button" type="button" aria-haspopup="true" aria-expanded="false">{{ t('nav_services') }}</button>
               <ul class="dropdown-menu" aria-label="Services submenu">
-                <li><a href="{{ url_for('caf_services') }}">CAF</a></li>
-                <li><a href="{{ url_for('patronato_services') }}">Patronato</a></li>
-                <li><a href="{{ url_for('immigration_services') }}">Immigrazione</a></li>
-                <li><a href="{{ url_for('admission_services') }}">Ammissioni</a></li>
-                <li><a href="{{ url_for('support_services') }}">Others</a></li>
-                <li><a href="{{ url_for('business_services') }}">Gestione Imprese</a></li>
+                <li><a href="{{ url_for('services') }}">{{ t('nav_all_services') }}</a></li>
+                <li><a href="{{ url_for('caf_services') }}">{{ t('nav_caf') }}</a></li>
+                <li><a href="{{ url_for('patronato_services') }}">{{ t('nav_patronato') }}</a></li>
+                <li><a href="{{ url_for('immigration_services') }}">{{ t('nav_immigration') }}</a></li>
+                <li><a href="{{ url_for('admission_services') }}">{{ t('nav_admission') }}</a></li>
+                <li><a href="{{ url_for('support_services') }}">{{ t('nav_others') }}</a></li>
+                <li><a href="{{ url_for('business_services') }}">{{ t('nav_business') }}</a></li>
               </ul>
             </li>
             <li><a href="{{ url_for('news') }}">{{ t('nav_news') }}</a></li>
@@ -67,68 +71,121 @@
   {% block content %}{% endblock %}
 
   <footer class="site-footer">
-    <div class="container footer-shell">
-      <div class="footer-lead">
-        <a href="{{ url_for('home') }}" class="brand footer-brand">
-          <span class="brand-mark">CC</span>
-          <span>
-            <span class="brand-text">ciaocaf</span>
-            <span class="brand-subtext">CAF, patronato, immigration and document support in Rome</span>
-          </span>
-        </a>
-        <p>{{ t('footer_summary') }}</p>
-        <div class="footer-contact-list">
-          <a href="tel:+390631072585">06 31072585</a>
-          <a href="mailto:cafbixio5@gmail.com">cafbixio5@gmail.com</a>
-          <span>Via Bixio 5, 00185 Roma</span>
-          <span>09:00-13:00 | 15:00-19:00</span>
+    <div class="container footer-shell footer-compact footer-compact-wide">
+      <div class="footer-legal-text footer-legal-grid">
+        <div class="footer-legal-left">
+          <p class="footer-line">{{ t('footer_line_rights') }}</p>
+          <p class="footer-line">
+            <a href="mailto:cafbixio5@gmail.com">cafbixio5@gmail.com</a>
+            <span>|</span>
+            <a href="tel:+390631072585">+39 06 31072585</a>
+            <span>|</span>
+            <a href="#" rel="noreferrer">WhatsApp</a>
+            <span>|</span>
+            <a href="#" rel="noreferrer">LinkedIn</a>
+            <span>|</span>
+            <a href="#" rel="noreferrer">Telegram</a>
+            <span>|</span>
+            <a href="#" rel="noreferrer">Instagram</a>
+            <span>|</span>
+            <a href="#" rel="noreferrer">Facebook</a>
+          </p>
+          <div class="footer-links footer-legal-links footer-legal-links-vertical">
+            <a href="{{ url_for('privacy') }}">{{ t('nav_privacy') }}</a>
+            <a href="{{ url_for('gdpr') }}">{{ t('nav_gdpr') }}</a>
+            <a href="{{ url_for('legal') }}">{{ t('nav_technical_trust') }}</a>
+          </div>
         </div>
-        <div class="footer-cta-row">
-          <a class="btn btn-small" href="{{ url_for('appointments') }}">{{ t('nav_book') }}</a>
-          <a class="btn btn-small btn-outline" href="{{ url_for('client_area') }}">{{ t('nav_client_area') }}</a>
+        <div class="footer-legal-right">
+          <p class="footer-line">{{ t('footer_legal_name') }}</p>
+          <p class="footer-line">{{ t('footer_registered_office') }}</p>
         </div>
       </div>
-      <div class="footer-grid">
-        <div class="footer-column">
-          <h3>Servizi</h3>
-          <div class="footer-links">
-            <a href="{{ url_for('services') }}">{{ t('footer_all_services') }}</a>
-            <a href="{{ url_for('caf_services') }}">CAF Services</a>
-            <a href="{{ url_for('patronato_services') }}">Patronato Services</a>
-            <a href="{{ url_for('immigration_services') }}">Immigration Services</a>
-            <a href="{{ url_for('admission_services') }}">Admission Services</a>
-            <a href="{{ url_for('support_services') }}">Others</a>
-            <a href="{{ url_for('business_services') }}">Gestione Imprese</a>
-          </div>
-        </div>
-        <div class="footer-column">
-          <h3>Supporto</h3>
-          <div class="footer-links">
-            <a href="{{ url_for('required_documents') }}">{{ t('nav_documents') }}</a>
-            <a href="{{ url_for('appointments') }}">{{ t('appointments_page') }}</a>
-            <a href="{{ url_for('news') }}">{{ t('nav_news') }}</a>
-            <a href="{{ url_for('contact') }}">{{ t('nav_contact') }}</a>
-            <a href="{{ url_for('client_area') }}">{{ t('nav_client_area') }}</a>
-            <a href="{{ url_for('admin_login') }}">{{ t('nav_admin') }}</a>
-          </div>
-        </div>
-        <div class="footer-column">
-          <h3>Servizi Principali</h3>
-          <div class="footer-links">
-            <a href="{{ url_for('caf_service_detail', slug='isee') }}">ISEE</a>
-            <a href="{{ url_for('caf_service_detail', slug='730') }}">730</a>
-            <a href="{{ url_for('caf_service_detail', slug='modello-redditi') }}">Modello Redditi</a>
-            <a href="{{ url_for('patronato_service_detail', slug='naspi-dis-coll') }}">NASPI / DIS-COLL</a>
-            <a href="{{ url_for('immigration_service_detail', slug='kit-soggiorno') }}">Kit Soggiorno</a>
-            <a href="{{ url_for('support_service_detail', slug='tessera-sanitaria-codice-fiscale') }}">Tessera Sanitaria / Codice Fiscale</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="container footer-bottom">
-      <p>&copy; 2026 {{ business_name }}. {{ t('footer_rights') }}</p>
-      <p>Rome office support for CAF, patronato, immigration and appointment-based assistance.</p>
     </div>
   </footer>
+  <script>
+    document.querySelectorAll("[data-add-file]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const stack = button.closest("form")?.querySelector("[data-file-stack]");
+        if (!stack) return;
+        const input = document.createElement("input");
+        input.type = "file";
+        input.name = "documents[]";
+        stack.appendChild(input);
+      });
+    });
+
+    const resetFileInputs = (form) => {
+      const stack = form.querySelector("[data-file-stack]");
+      if (!stack) return;
+      const inputs = Array.from(stack.querySelectorAll("input[type='file']"));
+      if (inputs.length <= 1) return;
+      inputs.slice(1).forEach((input) => input.remove());
+    };
+
+    const submitAjax = async (form) => {
+      const statusEl = form.querySelector("[data-form-status]");
+      const submitBtn = form.querySelector("button[type='submit']");
+      if (statusEl) {
+        statusEl.textContent = "Sending...";
+        statusEl.classList.remove("is-error", "is-success");
+      }
+      if (submitBtn) {
+        submitBtn.disabled = true;
+      }
+      try {
+        const response = await fetch(form.action || window.location.href, {
+          method: form.method || "POST",
+          body: new FormData(form),
+        });
+        const text = await response.text();
+        if (statusEl) {
+          statusEl.textContent = text || (response.ok ? "Submitted." : "Submission failed.");
+          statusEl.classList.add(response.ok ? "is-success" : "is-error");
+        }
+        if (response.ok) {
+          form.reset();
+          resetFileInputs(form);
+        }
+      } catch (error) {
+        if (statusEl) {
+          statusEl.textContent = "Submission failed. Please try again.";
+          statusEl.classList.add("is-error");
+        }
+      } finally {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+        }
+      }
+    };
+
+    const attachRecaptcha = (form) => {
+      const action = form.getAttribute("data-recaptcha-action");
+      if (!action || typeof grecaptcha === "undefined") return;
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        grecaptcha.ready(() => {
+          grecaptcha.execute("{{ recaptcha_site_key }}", { action }).then((token) => {
+            const tokenInput = form.querySelector("input[name='g-recaptcha-response']");
+            if (tokenInput) {
+              tokenInput.value = token;
+            }
+            const actionInput = form.querySelector("input[name='recaptcha_action']");
+            if (actionInput) {
+              actionInput.value = action;
+            }
+            if (form.dataset.ajax === "true") {
+              submitAjax(form);
+            } else {
+              form.submit();
+            }
+          });
+        });
+      });
+    };
+
+    document.querySelectorAll("form[data-recaptcha-action]").forEach(attachRecaptcha);
+  </script>
 </body>
 </html>
+

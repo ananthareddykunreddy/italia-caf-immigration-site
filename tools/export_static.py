@@ -6,7 +6,16 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(BASE_DIR))
 
-from app import app
+from app import (
+    ADMISSION_SERVICES,
+    BUSINESS_SERVICES,
+    CAF_SERVICES,
+    EMBASSY_SERVICES,
+    IMMIGRATION_SERVICES,
+    PATRONATO_SERVICES,
+    SUPPORT_SERVICES,
+    app,
+)
 
 
 OUTPUT_DIR = BASE_DIR / "shared-hosting-static"
@@ -18,6 +27,9 @@ PAGES = {
     "/contact": "contact.html",
     "/appointments": "appointments.html",
     "/required-documents": "required-documents.html",
+    "/privacy": "privacy.html",
+    "/gdpr": "gdpr.html",
+    "/legal": "legal.html",
     "/caf-services": "caf-services.html",
     "/patronato-services": "patronato-services.html",
     "/immigration-services": "immigration-services.html",
@@ -33,6 +45,9 @@ LINK_MAP = {
     "/contact": "contact.html",
     "/appointments": "appointments.html",
     "/required-documents": "required-documents.html",
+    "/privacy": "privacy.html",
+    "/gdpr": "gdpr.html",
+    "/legal": "legal.html",
     "/caf-services": "caf-services.html",
     "/patronato-services": "patronato-services.html",
     "/immigration-services": "immigration-services.html",
@@ -42,52 +57,42 @@ LINK_MAP = {
     "/client-area": "client-area.html",
 }
 
-DETAIL_REWRITES = [
-    (re.compile(r'href="/caf-services/[^"]+"'), 'href="caf-services.html"'),
-    (re.compile(r'href="/patronato-services/[^"]+"'), 'href="patronato-services.html"'),
-    (re.compile(r'href="/immigration-services/[^"]+"'), 'href="immigration-services.html"'),
-    (re.compile(r'href="/embassy-services/[^"]+"'), 'href="immigration-services.html"'),
-    (re.compile(r'href="/admission-services/[^"]+"'), 'href="admission-services.html"'),
-    (re.compile(r'href="/support-services/[^"]+"'), 'href="support-services.html"'),
-    (re.compile(r'href="/business-services/[^"]+"'), 'href="business-services.html"'),
-]
+DETAIL_LINK_MAP = {}
 
-LANG_SWITCHER_RE = re.compile(r'<div class="language-switcher">.*?</div>', re.DOTALL)
-FORM_RE = re.compile(r"<form[^>]*>.*?</form>", re.DOTALL)
-
-
-STATIC_APPOINTMENT_FORM = """
-<form class="appointment-form" action="contact-form.php" method="post">
-  <label for="full_name">Full name</label>
-  <input id="full_name" name="full_name" type="text" required>
-
-  <label for="email">Email</label>
-  <input id="email" name="email" type="email" required>
-
-  <label for="phone">Phone</label>
-  <input id="phone" name="phone" type="tel" required>
-
-  <label for="service">Service needed</label>
-  <select id="service" name="service">
-    <option>CAF</option>
-    <option>Patronato</option>
-    <option>Immigration</option>
-    <option>Admission</option>
-    <option>Gestione Imprese</option>
-    <option>Others</option>
-  </select>
-
-  <label for="message">Message</label>
-  <textarea id="message" name="message" rows="5" required></textarea>
-
-  <button class="btn" type="submit">Send request</button>
-</form>
-"""
+APPOINTMENT_FORM_SNIPPET = (
+    '<form class="contact-form appointment-form" method="post" enctype="multipart/form-data">'
+)
+APPOINTMENT_FORM_SNIPPET_V3 = (
+    '<form class="contact-form appointment-form" method="post" enctype="multipart/form-data" '
+    'data-recaptcha-action="appointment">'
+)
+APPOINTMENT_FORM_SNIPPET_V3_AJAX = (
+    '<form class="contact-form appointment-form" method="post" enctype="multipart/form-data" '
+    'data-recaptcha-action="appointment" data-ajax="true">'
+)
 
 
 def write_file(path: Path, content: str) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(content, encoding="utf-8")
+
+
+def register_detail_pages() -> None:
+    service_groups = [
+        ("caf-services", CAF_SERVICES),
+        ("patronato-services", PATRONATO_SERVICES),
+        ("immigration-services", IMMIGRATION_SERVICES),
+        ("embassy-services", EMBASSY_SERVICES),
+        ("admission-services", ADMISSION_SERVICES),
+        ("support-services", SUPPORT_SERVICES),
+        ("business-services", BUSINESS_SERVICES),
+    ]
+    for prefix, services in service_groups:
+        for slug in services.keys():
+            route = f"/{prefix}/{slug}"
+            filename = f"{prefix}-{slug}.html"
+            PAGES[route] = filename
+            DETAIL_LINK_MAP[route] = filename
 
 
 def copy_static_assets() -> None:
@@ -105,27 +110,51 @@ def copy_static_assets() -> None:
 
 
 def transform_html(html: str, route: str) -> str:
-    html = LANG_SWITCHER_RE.sub("", html)
     for path, filename in LINK_MAP.items():
         html = html.replace(f'href="{path}"', f'href="{filename}"')
-    for pattern, replacement in DETAIL_REWRITES:
-        html = pattern.sub(replacement, html)
+    for path, filename in DETAIL_LINK_MAP.items():
+        html = html.replace(f'href="{path}"', f'href="{filename}"')
+    html = html.replace('href="/set-language/it"', 'href="/it/index.html"')
+    html = html.replace('href="/set-language/en"', 'href="/en/index.html"')
+    html = html.replace('href="/set-language/fa"', 'href="/fa/index.html"')
     if route == "/appointments":
-        html = FORM_RE.sub(STATIC_APPOINTMENT_FORM.strip(), html, count=1)
+        html = html.replace(
+            APPOINTMENT_FORM_SNIPPET,
+            '<form class="contact-form appointment-form" action="contact-form.php" method="post" enctype="multipart/form-data">',
+        )
+        html = html.replace(
+            APPOINTMENT_FORM_SNIPPET_V3,
+            '<form class="contact-form appointment-form" action="contact-form.php" method="post" '
+            'enctype="multipart/form-data" data-recaptcha-action="appointment">',
+        )
+        html = html.replace(
+            APPOINTMENT_FORM_SNIPPET_V3_AJAX,
+            '<form class="contact-form appointment-form" action="contact-form.php" method="post" '
+            'enctype="multipart/form-data" data-recaptcha-action="appointment" data-ajax="true">',
+        )
+    if route == "/contact":
+        html = html.replace('action="/contact"', 'action="contact-form.php"')
     return html
 
 
 def main() -> None:
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+    register_detail_pages()
     copy_static_assets()
     client = app.test_client()
-    for route, filename in PAGES.items():
-        response = client.get(route)
-        if response.status_code != 200:
-            continue
-        html = response.get_data(as_text=True)
-        html = transform_html(html, route)
-        write_file(OUTPUT_DIR / filename, html)
+    langs = ["en", "it", "fa"]
+    for lang in langs:
+        client.get(f"/set-language/{lang}")
+        for route, filename in PAGES.items():
+            response = client.get(route)
+            if response.status_code != 200:
+                continue
+            html = response.get_data(as_text=True)
+            html = transform_html(html, route)
+            lang_dir = OUTPUT_DIR / lang
+            write_file(lang_dir / filename, html)
+            if lang == "en":
+                write_file(OUTPUT_DIR / filename, html)
 
 
 if __name__ == "__main__":

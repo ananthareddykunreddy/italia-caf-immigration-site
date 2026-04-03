@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}Required Documents | ciaocaf{% endblock %}
+{% block title %}Required Documents | SM SOLUTIONS{% endblock %}
 {% block meta_description %}{{ t('site_meta_description') }}{% endblock %}
 
 {% block content %}
@@ -24,16 +24,17 @@
   <section class="section section-alt">
     <div class="container split">
       <div class="panel">
-        <p class="panel-kicker">How To Use This Page</p>
-        <h3>Start with the category, then open the exact practice.</h3>
-        <p>Each detail page contains the required documents, process notes, and a booking button connected to the appointment form.</p>
+        <p class="panel-kicker">{{ t('required_docs_kicker') }}</p>
+        <h3>{{ t('required_docs_steps_heading') }}</h3>
+        <p>{{ t('required_docs_steps_detail') }}</p>
       </div>
       <div class="panel">
-        <p class="panel-kicker">Best Practice</p>
-        <h3>Prepare documents before the appointment.</h3>
-        <p>Clients get a better result when identity documents, payment receipts, translations, and service-specific records are organized before booking.</p>
+        <p class="panel-kicker">{{ t('required_docs_best_kicker') }}</p>
+        <h3>{{ t('required_docs_prepare_heading') }}</h3>
+        <p>{{ t('required_docs_prepare_detail') }}</p>
       </div>
     </div>
   </section>
 </main>
 {% endblock %}
+

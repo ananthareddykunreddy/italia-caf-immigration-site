@@ -1,15 +1,24 @@
 {% extends "base.html" %}
 
-{% block title %}{{ service.name }} | Immigration Services | ciaocaf{% endblock %}
+{% block title %}{{ service.name }} | Immigration Services | SM SOLUTIONS{% endblock %}
 {% block meta_description %}{{ service.summary }}{% endblock %}
 
 {% block content %}
 <main class="page-shell">
   <section class="section">
+    <div class="container">
+      <div class="service-hero-media">
+        <img
+          class="service-hero-image"
+          src="{{ url_for('static', filename=service.image if service.image else 'service-images/custom/services-grid.png') }}"
+          alt="{{ service.name }}"
+        >
+      </div>
+    </div>
     <div class="container split">
       <div class="card">
-        <span class="card-tag">Service Scope</span>
-        <h3>Who Usually Needs This</h3>
+        <span class="card-tag">{{ t('tag_service_scope') }}</span>
+        <h3>{{ t('who_needs') }}</h3>
         <ul>
           {% for item in service["who_needs_it"] %}
             <li>{{ item }}</li>
@@ -17,10 +26,10 @@
         </ul>
       </div>
       <div class="panel">
-        <p class="panel-kicker">Appointment</p>
-        <h3>Book this embassy service.</h3>
-        <p>Use the appointment form and choose <strong>{{ service.name }}</strong> as the service type.</p>
-        <a class="btn" href="{{ url_for('appointments') }}">Book {{ service.name }}</a>
+        <p class="panel-kicker">{{ t('kicker_appointment') }}</p>
+        <h3>{{ t('book_embassy_service') }}</h3>
+        <p>{{ t('appointment_use_form') }} <strong>{{ service.name }}</strong> {{ t('appointment_as_type') }}</p>
+        <a class="btn" href="{{ url_for('appointments') }}">{{ t('button_book') }} {{ service.name }}</a>
       </div>
     </div>
   </section>
@@ -28,45 +37,16 @@
   <section class="section section-alt">
     <div class="container cards cards-two">
       <article class="card">
-        <span class="card-tag">Documents</span>
-        <h3>Required Documents</h3>
+        <span class="card-tag">{{ t('tag_documents') }}</span>
+        <h3>{{ t('required_documents') }}</h3>
         <ul>
           {% for item in service["documents"] %}
             <li>{{ item }}</li>
           {% endfor %}
         </ul>
       </article>
-      <article class="card">
-        <span class="card-tag">Process</span>
-        <h3>How Support Usually Works</h3>
-        <ul>
-          {% for item in service["process"] %}
-            <li>{{ item }}</li>
-          {% endfor %}
-        </ul>
-      </article>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container split">
-      <div class="panel">
-        <p class="panel-kicker">Important Notes</p>
-        <ul>
-          {% for item in service["notes"] %}
-            <li>{{ item }}</li>
-          {% endfor %}
-        </ul>
-      </div>
-      <div class="panel">
-        <p class="panel-kicker">Reference Basis</p>
-        <ul>
-          {% for item in service["official_basis"] %}
-            <li>{{ item }}</li>
-          {% endfor %}
-        </ul>
-      </div>
     </div>
   </section>
 </main>
 {% endblock %}
+

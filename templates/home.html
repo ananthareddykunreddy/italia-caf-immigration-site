@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}ciaocaf | CAF Services, Appointments, Documents and Practical Support{% endblock %}
+{% block title %}SM SOLUTIONS | CAF Services, Appointments, Documents and Practical Support{% endblock %}
 {% block meta_description %}{{ t('site_meta_description') }}{% endblock %}
 
 {% block content %}
@@ -29,10 +29,13 @@
 
   <section class="hero service-hero">
     <div class="container hero-grid campaign-grid">
-      <article class="campaign-card">
+      <article class="campaign-card campaign-vertical">
+        <div class="campaign-art">
+          <img src="{{ url_for('static', filename='service-images/category-icons.png') }}" alt="Main service categories">
+        </div>
         <div class="campaign-copy">
           <p class="eyebrow">{{ t('featured_service') }}</p>
-          <h1>{{ t('hero_title') }}</h1>
+          <h1 class="hero-clamp">{{ t('hero_title') }}</h1>
           <p class="lead">{{ t('hero_lead') }}</p>
           <div class="hero-cta">
             <a class="btn" href="{{ url_for('appointments') }}">{{ t('nav_book') }}</a>
@@ -44,14 +47,11 @@
             <span>09:00-13:00 | 15:00-19:00</span>
           </div>
         </div>
-        <div class="campaign-art">
-          <img src="{{ url_for('static', filename='service-images/category-icons.png') }}" alt="Main service categories">
-        </div>
       </article>
 
       <aside class="utility-panel home-news-panel">
         <p class="panel-kicker">{{ t('updates_title') }}</p>
-        <h2>Latest service news</h2>
+        <h2>{{ t('home_latest_news') }}</h2>
         <div class="home-news-list">
           {% for item in news_items[:3] %}
             <article class="home-news-item">
@@ -73,28 +73,28 @@
     <div class="container">
       <div class="section-heading">
         <p class="eyebrow">{{ t('our_services') }}</p>
-        <h2>Core services clients ask for most.</h2>
+        <h2>{{ t('home_core_services') }}</h2>
       </div>
       <div class="essentials-grid">
         <article class="essential-card">
-          <h3>CAF</h3>
+          <h3>{{ t('home_core_caf') }}</h3>
           <p>ISEE, 730, Modello Redditi, IMU, F24, SPID and document preparation for tax and household practices.</p>
-          <a href="{{ url_for('caf_services') }}">Open CAF services</a>
+          <a href="{{ url_for('caf_services') }}">{{ t('home_open_caf') }}</a>
         </article>
         <article class="essential-card">
-          <h3>Patronato</h3>
+          <h3>{{ t('home_core_patronato') }}</h3>
           <p>NASPI, ADI, pensione, maternita, invalidita civile and other welfare-related support.</p>
-          <a href="{{ url_for('patronato_services') }}">Open Patronato services</a>
+          <a href="{{ url_for('patronato_services') }}">{{ t('home_open_patronato') }}</a>
         </article>
         <article class="essential-card">
-          <h3>Immigration</h3>
+          <h3>{{ t('home_core_immigration') }}</h3>
           <p>Kit soggiorno, permesso, cittadinanza, ricongiungimento, passport support, OCI and document translation.</p>
-          <a href="{{ url_for('immigration_services') }}">Open Immigration services</a>
+          <a href="{{ url_for('immigration_services') }}">{{ t('home_open_immigration') }}</a>
         </article>
         <article class="essential-card">
-          <h3>Business and Others</h3>
+          <h3>{{ t('home_core_business_others') }}</h3>
           <p>P. IVA, fattura elettronica, SCIA, health card, codice fiscale, insurance and practical daily support.</p>
-          <a href="{{ url_for('services') }}">Browse all services</a>
+          <a href="{{ url_for('services') }}">{{ t('label_browse_services') }}</a>
         </article>
       </div>
     </div>
@@ -132,12 +132,12 @@
 
       <div class="panel contact-panel home-contact-panel">
         <p class="panel-kicker">{{ t('nav_contact') }}</p>
-        <h3>CAF Bixio Rome office</h3>
+        <h3>{{ t('home_rome_office') }}</h3>
         <div class="contact-detail-list">
-          <a href="tel:+390631072585">Phone: 06 31072585</a>
-          <a href="mailto:cafbixio5@gmail.com">Email: cafbixio5@gmail.com</a>
-          <span>Address: Via Bixio 5, 00185 Roma</span>
-          <span>Office Hours: 09:00-13:00 and 15:00-19:00</span>
+          <a href="tel:+390631072585">{{ t('label_phone') }}: 06 31072585</a>
+          <a href="mailto:cafbixio5@gmail.com">{{ t('label_email') }}: cafbixio5@gmail.com</a>
+          <span>{{ t('label_address') }}: Via Bixio 5, 00185 Roma</span>
+          <span>{{ t('label_office_hours') }}: 09:00-13:00 | 15:00-19:00</span>
         </div>
         <div class="hero-cta">
           <a class="btn" href="{{ url_for('appointments') }}">{{ t('nav_book') }}</a>
@@ -148,3 +148,4 @@
   </section>
 </main>
 {% endblock %}
+

@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block title %}{{ t('privacy_title') }} | SM SOLUTIONS{% endblock %}
+{% block meta_description %}{{ t('privacy_intro') }}{% endblock %}
+
+{% block content %}
+<main class="page-shell">
+  <section class="section">
+    <div class="container narrow">
+      <h1>{{ t('privacy_title') }}</h1>
+      <p>{{ t('privacy_intro') }}</p>
+
+      <div class="panel">
+        <h3>{{ t('privacy_controller_title') }}</h3>
+        <p>{{ t('privacy_controller_body') }}</p>
+        <p><strong>{{ t('privacy_vat_label') }}:</strong> {{ t('privacy_vat_pending') }}</p>
+      </div>
+
+      <div class="panel">
+        <h3>{{ t('privacy_data_title') }}</h3>
+        <p>{{ t('privacy_data_body') }}</p>
+      </div>
+
+      <div class="panel">
+        <h3>{{ t('privacy_purpose_title') }}</h3>
+        <p>{{ t('privacy_purpose_body') }}</p>
+      </div>
+
+      <div class="panel">
+        <h3>{{ t('privacy_legal_title') }}</h3>
+        <p>{{ t('privacy_legal_body') }}</p>
+      </div>
+
+      <div class="panel">
+        <h3>{{ t('privacy_storage_title') }}</h3>
+        <p>{{ t('privacy_storage_body') }}</p>
+      </div>
+
+      <div class="panel">
+        <h3>{{ t('privacy_rights_title') }}</h3>
+        <p>{{ t('privacy_rights_body') }}</p>
+      </div>
+
+      <div class="panel">
+        <h3>{{ t('privacy_recaptcha_title') }}</h3>
+        <p>{{ t('privacy_recaptcha_body') }}</p>
+      </div>
+
+      <div class="panel">
+        <h3>{{ t('privacy_changes_title') }}</h3>
+        <p>{{ t('privacy_changes_body') }}</p>
+      </div>
+    </div>
+  </section>
+</main>
+{% endblock %}

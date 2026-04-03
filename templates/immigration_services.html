@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}Immigration Services | ciaocaf{% endblock %}
+{% block title %}Immigration Services | SM SOLUTIONS{% endblock %}
 {% block meta_description %}Immigration services in Italy including permesso kit, citizenship, family reunification, consular paperwork support, passport support, OCI support, and document assistance.{% endblock %}
 
 {% block content %}
@@ -9,8 +9,8 @@
     <div class="container">
       <div class="service-board service-board-wide">
         <article class="service-list-panel">
-          <span class="card-tag">Immigration</span>
-          <h3>Permesso and Residency</h3>
+          <span class="card-tag">{{ t('services_tag_immigration') }}</span>
+          <h3>{{ t('immigration_permesso_residency') }}</h3>
           <ul class="service-bullets">
             <li><a href="{{ url_for('immigration_service_detail', slug='kit-soggiorno') }}">Kit Soggiorno Filling</a></li>
             <li><a href="{{ url_for('immigration_service_detail', slug='residence-permit') }}">Residence Permit Document Support</a></li>
@@ -19,8 +19,8 @@
           </ul>
         </article>
         <article class="service-list-panel">
-          <span class="card-tag">Immigration</span>
-          <h3>Family and Status Support</h3>
+          <span class="card-tag">{{ t('services_tag_immigration') }}</span>
+          <h3>{{ t('immigration_family_status') }}</h3>
           <ul class="service-bullets">
             <li><a href="{{ url_for('immigration_service_detail', slug='ricongiungimento-familiare') }}">Ricongiungimento Familiare</a></li>
             <li><a href="{{ url_for('immigration_service_detail', slug='cittadinanza') }}">Cittadinanza</a></li>
@@ -29,8 +29,8 @@
           </ul>
         </article>
         <article class="service-list-panel">
-          <span class="card-tag">Consular</span>
-          <h3>Passport and OCI Support</h3>
+          <span class="card-tag">{{ t('immigration_consular_tag') }}</span>
+          <h3>{{ t('immigration_passport_oci') }}</h3>
           <ul class="service-bullets">
             <li><a href="{{ url_for('embassy_service_detail', slug='passport-application') }}">Passport Application Support</a></li>
             <li><a href="{{ url_for('embassy_service_detail', slug='oci-card') }}">OCI Card Application Support</a></li>
@@ -44,22 +44,23 @@
   <section class="section section-alt">
     <div class="container split">
       <div>
-        <p class="eyebrow">Consular Support Included</p>
-        <h2>Embassy-facing services are grouped here instead of staying in a separate top-level category.</h2>
+        <p class="eyebrow">{{ t('immigration_consular_kicker') }}</p>
+        <h2>{{ t('immigration_embassy_note') }}</h2>
         <p class="lead">
-          Clients can also book passport application support, OCI card application support, and passport surrender support from this same immigration-facing area.
+          {{ t('immigration_consular_detail') }}
         </p>
       </div>
       <div class="panel">
-        <p class="panel-kicker">Consular Services</p>
+        <p class="panel-kicker">{{ t('immigration_consular_services') }}</p>
         <ul>
           <li><a href="{{ url_for('embassy_service_detail', slug='passport-application') }}">Passport Application Support</a></li>
           <li><a href="{{ url_for('embassy_service_detail', slug='oci-card') }}">OCI Card Application Support</a></li>
           <li><a href="{{ url_for('embassy_service_detail', slug='passport-surrender') }}">Passport Surrender Support</a></li>
         </ul>
-        <a class="btn" href="{{ url_for('appointments') }}">Book Immigration Appointment</a>
+        <a class="btn" href="{{ url_for('appointments') }}">{{ t('immigration_book_button') }}</a>
       </div>
     </div>
   </section>
 </main>
 {% endblock %}
+

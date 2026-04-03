@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}CAF Services | ciaocaf{% endblock %}
+{% block title %}CAF Services | SM SOLUTIONS{% endblock %}
 {% block meta_description %}CAF services including ISEE, 730, IMU, RED/ICRIC, cambio residenza, F24, bonus, and SPID support in Italy.{% endblock %}
 
 {% block content %}
@@ -10,19 +10,18 @@
       <div class="service-board">
         <article class="service-list-panel">
           <span class="card-tag">CAF</span>
-          <h3>Main CAF Services</h3>
+          <h3>{{ t('caf_main_services') }}</h3>
           <ul class="service-bullets">
             <li><a href="{{ url_for('caf_service_detail', slug='isee') }}">ISEE</a></li>
             <li><a href="{{ url_for('caf_service_detail', slug='730') }}">730</a></li>
             <li><a href="{{ url_for('caf_service_detail', slug='imu') }}">IMU</a></li>
             <li><a href="{{ url_for('caf_service_detail', slug='red-icric') }}">RED / ICRIC</a></li>
-            <li><a href="{{ url_for('caf_service_detail', slug='assegno-unico') }}">Assegno Unico</a></li>
             <li><a href="{{ url_for('caf_service_detail', slug='modello-redditi') }}">Modello Redditi</a></li>
           </ul>
         </article>
         <article class="service-list-panel">
           <span class="card-tag">CAF</span>
-          <h3>Administrative CAF Support</h3>
+          <h3>{{ t('caf_admin_support') }}</h3>
           <ul class="service-bullets">
             <li><a href="{{ url_for('caf_service_detail', slug='cambio-residenza') }}">Cambio Residenza</a></li>
             <li><a href="{{ url_for('caf_service_detail', slug='f24') }}">F24</a></li>
@@ -39,22 +38,23 @@
   <section class="section section-alt">
     <div class="container split">
       <div>
-        <p class="eyebrow">Appointment Flow</p>
-        <h2>Book specific CAF support directly.</h2>
+        <p class="eyebrow">{{ t('caf_appointment_flow') }}</p>
+        <h2>{{ t('caf_book_specific') }}</h2>
         <p class="lead">
-          Clients can choose the exact CAF service from the appointment form and upload supporting documents before their visit.
+          {{ t('caf_appointment_detail') }}
         </p>
       </div>
       <div class="panel">
-        <p class="panel-kicker">Available Booking Types</p>
+        <p class="panel-kicker">{{ t('caf_booking_types') }}</p>
         <ul>
           {% for service in caf_services.values() %}
             <li>{{ service.name }}</li>
           {% endfor %}
         </ul>
-        <a class="btn" href="{{ url_for('appointments') }}">Book CAF Appointment</a>
+        <a class="btn" href="{{ url_for('appointments') }}">{{ t('caf_book_button') }}</a>
       </div>
     </div>
   </section>
 </main>
 {% endblock %}
+
